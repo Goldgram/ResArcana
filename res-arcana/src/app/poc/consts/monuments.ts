@@ -205,6 +205,11 @@ const TEMPLE: ItemInfo = {
   ],
 };
 
+// OBELISK
+// WARRIORS_HALL
+// DARK_CATHEDRAL
+// GOLDEN_STATUE
+
 export const MONUMENTS = [
   GREAT_PYRAMID,
   SOLOMONS_MUSE,

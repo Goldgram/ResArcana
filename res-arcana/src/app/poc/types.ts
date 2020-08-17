@@ -1,9 +1,10 @@
 // Generic
+
 type Creature = 'dragon' | 'creature' | 'demon';
 
 type TapType = 'self' | 'any' | Creature;
 
-type Restrictions = 'gold';
+type Restrictions = 'red' | 'green' | 'blue' | 'black' | 'gold';
 
 interface Resources {
   red?: number;
@@ -25,7 +26,7 @@ interface Action {
 // Cost
 
 interface Discard {
-  resources?: Resources;
+  resources?: Resources | OrResources;
   creature?: Creature[];
 }
 
@@ -70,9 +71,13 @@ interface Reaction {
 // Discount
 
 interface Discount {
-  type: 'artifact';
+  type: 'artifact' | 'demon';
   resources: Resources;
 }
+
+// points
+
+// type pointsPerResource = (resourcesOnCard: Resources) => number;
 
 // Item
 
@@ -88,13 +93,6 @@ export interface ItemInfo {
   reactions?: Reaction[];
   discount?: Discount;
 }
-
-// interface Mage extends ItemInfo {}
-// interface Artifact extends ItemInfo {}
-// interface Monument extends ItemInfo {}
-// interface PlaceOfPower extends ItemInfo {}
-
-// type pointsPerResource = (resourcesOnCard: Resources) => number;
 
 export interface Item {
   info: ItemInfo;
