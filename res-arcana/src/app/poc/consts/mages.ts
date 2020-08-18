@@ -282,7 +282,7 @@ const HEALER: ItemInfo = {
   collect: [{ blue: 1 }, { green: 1 }],
   reactions: [
     {
-      type: 'attack',
+      type: 'any-life-loss',
       cost: {
         tap: ['self'],
       },

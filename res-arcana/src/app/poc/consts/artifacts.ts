@@ -215,7 +215,7 @@ const ELEMENTAL_SPRING: ItemInfo = {
   },
   reactions: [
     {
-      type: 'attack',
+      type: 'any-life-loss',
       cost: {
         discard: {
           resources: {
@@ -301,7 +301,7 @@ const CHALICE_OF_LIFE: ItemInfo = {
   ],
   reactions: [
     {
-      type: 'attack',
+      type: 'any-life-loss',
       cost: { tap: ['self'] },
       reward: { ignore: true },
     },
@@ -400,7 +400,7 @@ const DANCING_SWORD: ItemInfo = {
   },
   reactions: [
     {
-      type: 'attack',
+      type: 'any-life-loss',
       cost: {
         discard: {
           resources: {
@@ -515,7 +515,7 @@ const GOLDEN_LION: ItemInfo = {
   },
   reactions: [
     {
-      type: 'attack',
+      type: 'any-life-loss',
       cost: {
         tap: ['self'],
       },
@@ -683,6 +683,97 @@ const SHADOWY_FIGURE: ItemInfo = {
       },
     },
   ],
+};
+
+const TREE_OF_LIFE: ItemInfo = {
+  id: 'artifact-22',
+  title: 'Tree of Life',
+  type: 'artifact',
+  cost: {
+    wild: 2,
+    green: 1,
+  },
+  actions: [
+    {
+      cost: { tap: ['self'] },
+      reward: {
+        gain: {
+          resources: { green: 3 },
+          target: 'player',
+        },
+        rivalsGainResources: { green: 1 },
+      },
+    },
+  ],
+  reactions: [
+    {
+      type: 'any-life-loss',
+      cost: {
+        discard: {
+          resources: {
+            green: 1,
+          },
+        },
+      },
+      reward: {
+        ignore: true,
+      },
+    },
+  ],
+};
+
+const HAND_OF_GLORY: ItemInfo = {
+  id: 'artifact-23',
+  title: 'Hand of Glory',
+  type: 'artifact',
+  cost: {
+    green: 1,
+    black: 1,
+  },
+  actions: [
+    {
+      cost: { tap: ['self'] },
+      reward: {
+        gain: {
+          resources: { black: 2 },
+          target: 'player',
+        },
+        rivalsGainResources: { black: 1 },
+      },
+    },
+  ],
+};
+
+const JEWELED_STATUETTE: ItemInfo = {
+  id: 'artifact-24',
+  title: 'Jeweled Statuette',
+  type: 'artifact',
+  cost: {
+    black: 2,
+    gold: 1,
+  },
+  actions: [
+    {
+      cost: { tap: ['self'] },
+      reward: {
+        gain: {
+          resources: { black: 3 },
+          target: 'player',
+        },
+        rivalsGainResources: { black: 1 },
+      },
+    },
+    {
+      cost: { destroy: 'self' },
+      reward: {
+        gain: {
+          resources: { gold: 2, red: 1 },
+          target: 'player',
+        },
+      },
+    },
+  ],
+  points: 1,
 };
 
 export const ARTIFACTS = [

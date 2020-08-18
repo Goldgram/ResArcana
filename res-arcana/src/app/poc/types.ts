@@ -32,6 +32,7 @@ interface Discard {
 
 interface ActionCost {
   tap?: TapType[];
+  destroy?: 'self';
   discard?: Discard;
 }
 
@@ -53,6 +54,7 @@ interface Gain {
 interface ActionReward {
   untap?: TapType;
   gain?: Gain;
+  rivalsGainResources?: Resources;
   reorderTopCards?: ReorderCards;
   drawCards?: number;
   drawAndDiscard?: [number, number];
@@ -63,8 +65,8 @@ interface ActionReward {
 // Reaction
 
 interface Reaction {
-  type: 'attack';
-  cost: ActionCost;
+  type: 'any-life-loss' | 'self-bought';
+  cost?: ActionCost;
   reward: ActionReward;
 }
 

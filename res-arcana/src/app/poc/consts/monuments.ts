@@ -196,7 +196,7 @@ const TEMPLE: ItemInfo = {
   points: 2,
   reactions: [
     {
-      type: 'attack',
+      type: 'any-life-loss',
       cost: {
         tap: ['self'],
       },
@@ -205,8 +205,50 @@ const TEMPLE: ItemInfo = {
   ],
 };
 
-// OBELISK
-// WARRIORS_HALL
+const OBELISK: ItemInfo = {
+  id: 'monument-11',
+  title: 'Obelisk',
+  type: 'monument',
+  cost: { gold: 4 },
+  points: 1,
+  reactions: [
+    {
+      type: 'self-bought',
+      reward: {
+        gain: {
+          resources: { wild: 6, wildRestrictions: ['gold'] },
+          target: 'player',
+        },
+      },
+    },
+  ],
+};
+
+const WARRIORS_HALL: ItemInfo = {
+  id: 'monument-12',
+  title: "Warrior's Hall",
+  type: 'monument',
+  cost: { gold: 4 },
+  collect: {
+    red: 1,
+  },
+  actions: [
+    {
+      cost: {
+        tap: ['self'],
+      },
+      reward: {
+        gain: {
+          resources: { red: 1 },
+          target: 'player',
+        },
+        rivalsGainResources: { red: 1 },
+      },
+    },
+  ],
+  points: 2,
+};
+
 // DARK_CATHEDRAL
 // GOLDEN_STATUE
 
