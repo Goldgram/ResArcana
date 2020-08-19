@@ -2,10 +2,6 @@
 
 type Creature = 'dragon' | 'creature' | 'demon';
 
-// type BaseTapType = 'self' | 'any' | Creature;
-// type OrTapType = BaseTapType[];
-// type TapType = BaseTapType | OrTapType;
-
 type TapType = 'self' | 'any' | Creature;
 
 type ResourceType = 'red' | 'green' | 'blue' | 'black' | 'gold';
@@ -110,7 +106,7 @@ interface Discount {
 export interface ItemInfo {
   id: string;
   title: string;
-  type: 'mage' | 'artifact' | 'monument' | 'placeOfPower';
+  type: 'mage' | 'artifact' | 'monument' | 'place-of-power' | 'magic-item';
   creature?: Creature[];
   cost?: Resources;
   collect?: Resources | OrResources;
