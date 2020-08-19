@@ -1,5 +1,4 @@
 import { ItemInfo } from '../types';
-import { withTranslation } from 'react-i18next';
 
 const GREAT_PYRAMID: ItemInfo = {
   id: 'monument-1',
@@ -249,8 +248,51 @@ const WARRIORS_HALL: ItemInfo = {
   points: 2,
 };
 
-// DARK_CATHEDRAL
-// GOLDEN_STATUE
+const DARK_CATHEDRAL: ItemInfo = {
+  id: 'monument-13',
+  title: 'Dark Cathedral',
+  type: 'monument',
+  cost: { gold: 4 },
+  collect: {
+    black: 1,
+  },
+  reactions: [
+    {
+      type: 'victory-check',
+      cost: {
+        tap: ['self', 'demon'],
+      },
+      reward: {
+        thisCheckVictoryBonus: 1,
+      },
+    },
+  ],
+  points: 2,
+};
+
+const GOLDEN_STATUE: ItemInfo = {
+  id: 'monument-14',
+  title: 'Golden Statue',
+  type: 'monument',
+  cost: { gold: 4 },
+  reactions: [
+    {
+      type: 'victory-check',
+      cost: {
+        tap: ['self'],
+        discard: {
+          resources: {
+            gold: 3,
+          },
+        },
+      },
+      reward: {
+        thisCheckVictoryBonus: 3,
+      },
+    },
+  ],
+  points: 1,
+};
 
 export const MONUMENTS = [
   GREAT_PYRAMID,
@@ -263,4 +305,8 @@ export const MONUMENTS = [
   LIBRARY,
   ORACLE,
   TEMPLE,
+  OBELISK,
+  WARRIORS_HALL,
+  DARK_CATHEDRAL,
+  GOLDEN_STATUE,
 ];

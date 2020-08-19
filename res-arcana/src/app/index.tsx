@@ -19,15 +19,12 @@ import { NotFoundPage } from './containers/NotFoundPage/Loadable';
 export function App() {
   return (
     <BrowserRouter>
-      <Helmet
-        titleTemplate="%s - Res Arcana"
-        defaultTitle="Res Arcana"
-      >
+      <Helmet titleTemplate="%s - Res Arcana" defaultTitle="Res Arcana">
         <meta name="description" content="Test Version of Res Arcana" />
       </Helmet>
 
       <Switch>
-      {/* <Route exact path={process.env.PUBLIC_URL + '/'} component={HomePage} /> */}
+        {/* <Route exact path={process.env.PUBLIC_URL + '/'} component={HomePage} /> */}
         <Route exact path={process.env.PUBLIC_URL + '/'} component={POC} />
         <Route component={NotFoundPage} />
       </Switch>

@@ -2,9 +2,13 @@
 
 type Creature = 'dragon' | 'creature' | 'demon';
 
+// type BaseTapType = 'self' | 'any' | Creature;
+// type OrTapType = BaseTapType[];
+// type TapType = BaseTapType | OrTapType;
+
 type TapType = 'self' | 'any' | Creature;
 
-type Restrictions = 'red' | 'green' | 'blue' | 'black' | 'gold';
+type ResourceType = 'red' | 'green' | 'blue' | 'black' | 'gold';
 
 interface Resources {
   red?: number;
@@ -13,7 +17,7 @@ interface Resources {
   black?: number;
   gold?: number;
   wild?: number;
-  wildRestrictions?: Restrictions[];
+  wildRestrictions?: ResourceType[];
 }
 
 type OrResources = Resources[];
@@ -28,11 +32,12 @@ interface Action {
 interface Discard {
   resources?: Resources | OrResources;
   creature?: Creature[];
+  card?: number;
 }
 
 interface ActionCost {
   tap?: TapType[];
-  destroy?: 'self';
+  destroy?: 'self' | 'another-artifact' | 'any-artifact';
   discard?: Discard;
 }
 
@@ -51,21 +56,39 @@ interface Gain {
   target: 'player' | 'self' | 'any';
 }
 
+interface Attack {
+  value: number;
+  discardToIgnore?: 'artifact' | 'card' | Resources;
+}
+
+type GainEqualType = ResourceType | Creature;
+
 interface ActionReward {
   untap?: TapType;
   gain?: Gain;
+  gainEqualToRival?: [GainEqualType, GainEqualType];
   rivalsGainResources?: Resources;
   reorderTopCards?: ReorderCards;
   drawCards?: number;
   drawAndDiscard?: [number, number];
   retrieveDiscardedCard?: number;
   ignore?: boolean;
+  attack?: Attack;
+  discount?: Discount;
+  thisCheckVictoryBonus?: number;
+  destroyedArtifactBonus?: Resources;
 }
 
 // Reaction
+type ReactionType =
+  | 'self-bought'
+  | 'any-life-loss'
+  | 'victory-check'
+  | 'artifact-destroyed'
+  | Creature;
 
 interface Reaction {
-  type: 'any-life-loss' | 'self-bought';
+  type: ReactionType;
   cost?: ActionCost;
   reward: ActionReward;
 }
@@ -73,8 +96,9 @@ interface Reaction {
 // Discount
 
 interface Discount {
-  type: 'artifact' | 'demon';
-  resources: Resources;
+  type: 'artifact' | 'discarded-card' | Creature;
+  resources?: Resources;
+  free?: boolean;
 }
 
 // points
