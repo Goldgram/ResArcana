@@ -14,18 +14,6 @@ const DEATH_OR_LIFE: MagicItem = {
   collect: [{ black: 1 }, { green: 1 }],
 };
 
-const DIVINATION: MagicItem = {
-  id: 'magic-item-3',
-  title: 'Divination',
-  type: 'magic-item',
-  actions: [
-    {
-      cost: { tap: ['self'] },
-      reward: { drawAndDiscard: [3, 3] },
-    },
-  ],
-};
-
 const ALCHEMY: MagicItem = {
   id: 'magic-item-4',
   title: 'Alchemy',
@@ -43,34 +31,14 @@ const ALCHEMY: MagicItem = {
   ],
 };
 
-const TRANSMUTATION: MagicItem = {
-  id: 'magic-item-5',
-  title: 'Transmutation',
+const DIVINATION: MagicItem = {
+  id: 'magic-item-3',
+  title: 'Divination',
   type: 'magic-item',
   actions: [
     {
-      cost: { tap: ['self'], discard: { resources: { wild: 3 } } },
-      reward: {
-        gain: {
-          resources: {
-            wild: 3,
-            wildRestrictions: ['gold'],
-          },
-          target: 'player',
-        },
-      },
-    },
-  ],
-};
-
-const RESEARCH: MagicItem = {
-  id: 'magic-item-6',
-  title: 'Research',
-  type: 'magic-item',
-  actions: [
-    {
-      cost: { tap: ['self'], discard: { resources: { wild: 1 } } },
-      reward: { drawCards: 1 },
+      cost: { tap: ['self'] },
+      reward: { drawAndDiscard: [3, 3] },
     },
   ],
 };
@@ -100,17 +68,53 @@ const REANIMATE: MagicItem = {
   ],
 };
 
+const RESEARCH: MagicItem = {
+  id: 'magic-item-6',
+  title: 'Research',
+  type: 'magic-item',
+  actions: [
+    {
+      cost: { tap: ['self'], discard: { resources: { wild: 1 } } },
+      reward: { drawCards: 1 },
+    },
+  ],
+};
+
+const TRANSMUTATION: MagicItem = {
+  id: 'magic-item-5',
+  title: 'Transmutation',
+  type: 'magic-item',
+  actions: [
+    {
+      cost: { tap: ['self'], discard: { resources: { wild: 3 } } },
+      reward: {
+        gain: {
+          resources: {
+            wild: 3,
+            wildRestrictions: ['gold'],
+          },
+          target: 'player',
+        },
+      },
+    },
+  ],
+};
+
 /* Expansion 1 */
-// ILLUSION
-// INSCRIPTION
+
+// ILLUSION,
+// INSCRIPTION,
 
 export const MAGIC_ITEMS = [
   CALM_OR_ELAN,
   DEATH_OR_LIFE,
-  DIVINATION,
   ALCHEMY,
-  TRANSMUTATION,
-  RESEARCH,
+  DIVINATION,
   PROTECTION,
   REANIMATE,
+  RESEARCH,
+  TRANSMUTATION,
+  /* Expansion 1 */
+  // ILLUSION,
+  // INSCRIPTION,
 ];

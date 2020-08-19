@@ -7,13 +7,41 @@ import { MAGIC_ITEMS } from './consts/magic-items';
 export const POC = () => {
   return (
     <>
-      Mages: {MAGES.length}
+      <b>Mages: {MAGES.length}</b>
+      {MAGES.map(m => {
+        return (
+          <div>
+            {m.id} - {m.title}
+          </div>
+        );
+      })}
       <br />
-      Monuments: {MONUMENTS.length}
+      <b>Monuments: {MONUMENTS.length}</b>
+      {MONUMENTS.map(m => {
+        return (
+          <div>
+            {m.id} - {m.title}
+          </div>
+        );
+      })}
       <br />
-      Artifacts: {ARTIFACTS.length}
+      <b>Artifacts: {ARTIFACTS.length}</b>
+      {ARTIFACTS.map(m => {
+        return (
+          <div>
+            {m.id} - {m.title}
+          </div>
+        );
+      })}
       <br />
-      Magic Items: {MAGIC_ITEMS.length}
+      <b>Magic Items: {MAGIC_ITEMS.length}</b>
+      {MAGIC_ITEMS.map(m => {
+        return (
+          <div>
+            {m.id} - {m.title}
+          </div>
+        );
+      })}
     </>
   );
 };

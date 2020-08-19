@@ -1,7 +1,56 @@
 import { Mage } from '../types';
 
-const ALCHEMIST: Mage = {
+/* Starting Hand */
+
+const DUELIST: Mage = {
   id: 'mage-1',
+  title: 'Duelist',
+  type: 'mage',
+  collect: [{ red: 1 }],
+  actions: [
+    {
+      cost: {
+        tap: ['self'],
+        discard: {
+          resources: {
+            black: 1,
+          },
+        },
+      },
+      reward: {
+        gain: {
+          resources: {
+            gold: 1,
+          },
+          target: 'self',
+        },
+      },
+    },
+  ],
+  startingHand: 1,
+};
+
+const SEER: Mage = {
+  id: 'mage-2',
+  title: 'Seer',
+  type: 'mage',
+  collect: { blue: 1 },
+  actions: [
+    {
+      cost: { tap: ['self'] },
+      reward: {
+        reorderTopCards: {
+          numberOfCards: 3,
+          options: ['player', 'monuments'],
+        },
+      },
+    },
+  ],
+  startingHand: 2,
+};
+
+const ALCHEMIST: Mage = {
+  id: 'mage-3',
   title: 'Alchemist',
   type: 'mage',
   actions: [
@@ -41,8 +90,38 @@ const ALCHEMIST: Mage = {
   startingHand: 3,
 };
 
+const TRANSMUTER: Mage = {
+  id: 'mage-4',
+  title: 'Transmuter',
+  type: 'mage',
+  actions: [
+    {
+      cost: {
+        tap: ['self'],
+        discard: {
+          resources: {
+            wild: 2,
+          },
+        },
+      },
+      reward: {
+        gain: {
+          resources: {
+            wild: 3,
+            wildRestrictions: ['gold'],
+          },
+          target: 'player',
+        },
+      },
+    },
+  ],
+  startingHand: 4,
+};
+
+/* Base */
+
 const ARTIFICER: Mage = {
-  id: 'mage-2',
+  id: 'mage-5',
   title: 'Artificer',
   type: 'mage',
   discount: {
@@ -55,7 +134,7 @@ const ARTIFICER: Mage = {
 };
 
 const DRUID: Mage = {
-  id: 'mage-3',
+  id: 'mage-6',
   title: 'Druid',
   type: 'mage',
   collect: { green: 1 },
@@ -67,36 +146,8 @@ const DRUID: Mage = {
   ],
 };
 
-const DUELIST: Mage = {
-  id: 'mage-4',
-  title: 'Duelist',
-  type: 'mage',
-  collect: [{ red: 1 }],
-  actions: [
-    {
-      cost: {
-        tap: ['self'],
-        discard: {
-          resources: {
-            black: 1,
-          },
-        },
-      },
-      reward: {
-        gain: {
-          resources: {
-            gold: 1,
-          },
-          target: 'self',
-        },
-      },
-    },
-  ],
-  startingHand: 1,
-};
-
 const HEALER: Mage = {
-  id: 'mage-5',
+  id: 'mage-7',
   title: 'Healer',
   type: 'mage',
   collect: [{ blue: 1 }, { green: 1 }],
@@ -112,7 +163,7 @@ const HEALER: Mage = {
 };
 
 const NECROMANCER: Mage = {
-  id: 'mage-6',
+  id: 'mage-8',
   title: 'Necromancer',
   type: 'mage',
   collect: [{ black: 1 }],
@@ -139,7 +190,7 @@ const NECROMANCER: Mage = {
 };
 
 const SCHOLAR: Mage = {
-  id: 'mage-7',
+  id: 'mage-9',
   title: 'Scholar',
   type: 'mage',
   actions: [
@@ -155,53 +206,6 @@ const SCHOLAR: Mage = {
       reward: { drawCards: 1 },
     },
   ],
-};
-
-const SEER: Mage = {
-  id: 'mage-8',
-  title: 'Seer',
-  type: 'mage',
-  collect: { blue: 1 },
-  actions: [
-    {
-      cost: { tap: ['self'] },
-      reward: {
-        reorderTopCards: {
-          numberOfCards: 3,
-          options: ['player', 'monuments'],
-        },
-      },
-    },
-  ],
-  startingHand: 2,
-};
-
-const TRANSMUTER: Mage = {
-  id: 'mage-9',
-  title: 'Transmuter',
-  type: 'mage',
-  actions: [
-    {
-      cost: {
-        tap: ['self'],
-        discard: {
-          resources: {
-            wild: 2,
-          },
-        },
-      },
-      reward: {
-        gain: {
-          resources: {
-            wild: 3,
-            wildRestrictions: ['gold'],
-          },
-          target: 'player',
-        },
-      },
-    },
-  ],
-  startingHand: 4,
 };
 
 const WITCH: Mage = {
@@ -353,15 +357,17 @@ const DIVINER: Mage = {
 };
 
 export const MAGES = [
+  /* Starting Hand */
+  DUELIST,
+  SEER,
   ALCHEMIST,
+  TRANSMUTER,
+  /* Base */
   ARTIFICER,
   DRUID,
-  DUELIST,
   HEALER,
   NECROMANCER,
   SCHOLAR,
-  SEER,
-  TRANSMUTER,
   WITCH,
   /* Expansion 1 */
   BARD,
