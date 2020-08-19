@@ -111,7 +111,7 @@ interface Discount {
 interface ItemBase {
   id: string;
   title: string;
-  // version: 'base' | 'expansion-1';
+  expansion?: number;
   collect?: Resources | OrResources;
   actions?: Action[];
   reactions?: Reaction[];
@@ -124,13 +124,13 @@ export interface Artifact extends ItemBase {
   points?: number;
   discount?: Discount;
   collectSpecial?: 'windup-man' | 'vault';
-  // startingHand?: number;
+  startingHand?: number;
 }
 
 export interface Mage extends ItemBase {
   type: 'mage';
   discount?: Discount;
-  // startingHand?: number;
+  startingHand?: number;
 }
 
 export interface MagicItem extends ItemBase {

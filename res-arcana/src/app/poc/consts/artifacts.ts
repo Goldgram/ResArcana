@@ -177,6 +177,7 @@ const CELESTIAL_HORSE: Artifact = {
     wild: 2,
     wildRestrictions: ['gold', 'black'],
   },
+  startingHand: 3,
 };
 
 const MAGICAL_SHARD: Artifact = {
@@ -198,6 +199,7 @@ const MAGICAL_SHARD: Artifact = {
       },
     },
   ],
+  startingHand: 3,
 };
 
 const ELEMENTAL_SPRING: Artifact = {
@@ -227,6 +229,7 @@ const ELEMENTAL_SPRING: Artifact = {
       reward: { ignore: true },
     },
   ],
+  startingHand: 1,
 };
 
 const HAWK: Artifact = {
@@ -265,6 +268,7 @@ const HAWK: Artifact = {
       },
     },
   ],
+  startingHand: 4,
 };
 
 const CHALICE_OF_LIFE: Artifact = {
@@ -307,6 +311,7 @@ const CHALICE_OF_LIFE: Artifact = {
       reward: { ignore: true },
     },
   ],
+  startingHand: 2,
 };
 
 const FLAMING_PIT: Artifact = {
@@ -340,6 +345,7 @@ const FLAMING_PIT: Artifact = {
       },
     },
   ],
+  startingHand: 2,
 };
 
 const CURSED_DWARVEN_KING: Artifact = {
@@ -420,6 +426,7 @@ const DANCING_SWORD: Artifact = {
       },
     },
   ],
+  startingHand: 4,
 };
 
 const FOUNTAIN_OF_YOUTH: Artifact = {
@@ -453,6 +460,7 @@ const FOUNTAIN_OF_YOUTH: Artifact = {
       },
     },
   ],
+  startingHand: 4,
 };
 
 const RING_OF_MIDAS: Artifact = {
@@ -721,6 +729,7 @@ const TREE_OF_LIFE: Artifact = {
       },
     },
   ],
+  startingHand: 3,
 };
 
 const HAND_OF_GLORY: Artifact = {
@@ -743,6 +752,7 @@ const HAND_OF_GLORY: Artifact = {
       },
     },
   ],
+  startingHand: 1,
 };
 
 const JEWELED_STATUETTE: Artifact = {
@@ -1178,6 +1188,7 @@ const DRAGON_TEETH: Artifact = {
       reward: { discount: { type: 'dragon', free: true } },
     },
   ],
+  startingHand: 1,
 };
 
 const DRAGON_EGG: Artifact = {
@@ -1552,6 +1563,7 @@ const VAULT: Artifact = {
       },
     },
   ],
+  startingHand: 2,
 };
 
 export const ARTIFACTS = [

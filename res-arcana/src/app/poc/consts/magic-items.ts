@@ -100,6 +100,7 @@ const REANIMATE: MagicItem = {
   ],
 };
 
+/* Expansion 1 */
 // ILLUSION
 // INSCRIPTION
 

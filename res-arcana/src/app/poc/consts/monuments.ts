@@ -1,38 +1,7 @@
 import { Monument } from '../types';
 
-const GREAT_PYRAMID: Monument = {
-  id: 'monument-1',
-  title: 'Great Pyramid',
-  type: 'monument',
-  cost: { gold: 4 },
-  points: 3,
-};
-
-const SOLOMONS_MUSE: Monument = {
-  id: 'monument-2',
-  title: "Solomon's Muse",
-  type: 'monument',
-  cost: { gold: 4 },
-  points: 1,
-  actions: [
-    {
-      cost: {
-        tap: ['self'],
-      },
-      reward: {
-        gain: {
-          resources: {
-            gold: 1,
-          },
-          target: 'player',
-        },
-      },
-    },
-  ],
-};
-
 const COLOSSUS: Monument = {
-  id: 'monument-3',
+  id: 'monument-1',
   title: 'Colossus',
   type: 'monument',
   cost: { gold: 4 },
@@ -59,33 +28,53 @@ const COLOSSUS: Monument = {
   ],
 };
 
-const DEMON_WORKSHOP: Monument = {
-  id: 'monument-4',
-  title: 'Demon Workshop',
+const GOLDEN_STATUE: Monument = {
+  id: 'monument-2',
+  title: 'Golden Statue',
   type: 'monument',
   cost: { gold: 4 },
-  points: 1,
-  collect: [{ red: 1 }, { black: 1 }],
-  actions: [
+  reactions: [
     {
+      type: 'victory-check',
       cost: {
         tap: ['self'],
         discard: {
           resources: {
-            gold: 1,
+            gold: 3,
           },
         },
       },
       reward: {
-        untap: 'any',
+        thisCheckVictoryBonus: 3,
       },
     },
   ],
+  points: 1,
 };
 
-const ALCHEMICAL_LAB: Monument = {
+const GREAT_PYRAMID: Monument = {
+  id: 'monument-3',
+  title: 'Great Pyramid',
+  type: 'monument',
+  cost: { gold: 4 },
+  points: 3,
+};
+
+const HANGING_GARDENS: Monument = {
+  id: 'monument-4',
+  title: 'hanging Gardens',
+  type: 'monument',
+  cost: { gold: 4 },
+  points: 1,
+  collect: {
+    wild: 3,
+    wildRestrictions: ['gold'],
+  },
+};
+
+const LIBRARY: Monument = {
   id: 'monument-5',
-  title: 'Alchemical Lab',
+  title: 'Library',
   type: 'monument',
   cost: { gold: 4 },
   points: 1,
@@ -93,17 +82,9 @@ const ALCHEMICAL_LAB: Monument = {
     {
       cost: {
         tap: ['self'],
-        discard: {
-          resources: {
-            wild: 1,
-          },
-        },
       },
       reward: {
-        gain: {
-          sameResourcesAsCost: true,
-          target: 'any',
-        },
+        drawCards: 1,
       },
     },
   ],
@@ -136,38 +117,27 @@ const MAUSOLEUM: Monument = {
   ],
 };
 
-const HANGING_GARDENS: Monument = {
+const OBELISK: Monument = {
   id: 'monument-7',
-  title: 'hanging Gardens',
+  title: 'Obelisk',
   type: 'monument',
   cost: { gold: 4 },
   points: 1,
-  collect: {
-    wild: 3,
-    wildRestrictions: ['gold'],
-  },
-};
-
-const LIBRARY: Monument = {
-  id: 'monument-8',
-  title: 'Library',
-  type: 'monument',
-  cost: { gold: 4 },
-  points: 1,
-  actions: [
+  reactions: [
     {
-      cost: {
-        tap: ['self'],
-      },
+      type: 'self-bought',
       reward: {
-        drawCards: 1,
+        gain: {
+          resources: { wild: 6, wildRestrictions: ['gold'] },
+          target: 'player',
+        },
       },
     },
   ],
 };
 
 const ORACLE: Monument = {
-  id: 'monument-9',
+  id: 'monument-8',
   title: 'Oracle',
   type: 'monument',
   cost: { gold: 4 },
@@ -181,6 +151,29 @@ const ORACLE: Monument = {
         reorderTopCards: {
           numberOfCards: 3,
           options: ['player', 'monuments'],
+        },
+      },
+    },
+  ],
+};
+
+const SOLOMONS_MUSE: Monument = {
+  id: 'monument-9',
+  title: "Solomon's Muse",
+  type: 'monument',
+  cost: { gold: 4 },
+  points: 1,
+  actions: [
+    {
+      cost: {
+        tap: ['self'],
+      },
+      reward: {
+        gain: {
+          resources: {
+            gold: 1,
+          },
+          target: 'player',
         },
       },
     },
@@ -204,27 +197,85 @@ const TEMPLE: Monument = {
   ],
 };
 
-const OBELISK: Monument = {
+/* Expansion 1 */
+
+const ALCHEMICAL_LAB: Monument = {
   id: 'monument-11',
-  title: 'Obelisk',
+  title: 'Alchemical Lab',
   type: 'monument',
   cost: { gold: 4 },
   points: 1,
-  reactions: [
+  actions: [
     {
-      type: 'self-bought',
+      cost: {
+        tap: ['self'],
+        discard: {
+          resources: {
+            wild: 1,
+          },
+        },
+      },
       reward: {
         gain: {
-          resources: { wild: 6, wildRestrictions: ['gold'] },
-          target: 'player',
+          sameResourcesAsCost: true,
+          target: 'any',
         },
       },
     },
   ],
+  expansion: 1,
+};
+
+const DARK_CATHEDRAL: Monument = {
+  id: 'monument-12',
+  title: 'Dark Cathedral',
+  type: 'monument',
+  cost: { gold: 4 },
+  collect: {
+    black: 1,
+  },
+  reactions: [
+    {
+      type: 'victory-check',
+      cost: {
+        tap: ['self', 'demon'],
+      },
+      reward: {
+        thisCheckVictoryBonus: 1,
+      },
+    },
+  ],
+  points: 2,
+  expansion: 1,
+};
+
+const DEMON_WORKSHOP: Monument = {
+  id: 'monument-13',
+  title: 'Demon Workshop',
+  type: 'monument',
+  cost: { gold: 4 },
+  points: 1,
+  collect: [{ red: 1 }, { black: 1 }],
+  actions: [
+    {
+      cost: {
+        tap: ['self'],
+        discard: {
+          resources: {
+            gold: 1,
+          },
+        },
+      },
+      reward: {
+        untap: 'any',
+      },
+    },
+  ],
+  expansion: 1,
 };
 
 const WARRIORS_HALL: Monument = {
-  id: 'monument-12',
+  id: 'monument-14',
   title: "Warrior's Hall",
   type: 'monument',
   cost: { gold: 4 },
@@ -246,67 +297,23 @@ const WARRIORS_HALL: Monument = {
     },
   ],
   points: 2,
-};
-
-const DARK_CATHEDRAL: Monument = {
-  id: 'monument-13',
-  title: 'Dark Cathedral',
-  type: 'monument',
-  cost: { gold: 4 },
-  collect: {
-    black: 1,
-  },
-  reactions: [
-    {
-      type: 'victory-check',
-      cost: {
-        tap: ['self', 'demon'],
-      },
-      reward: {
-        thisCheckVictoryBonus: 1,
-      },
-    },
-  ],
-  points: 2,
-};
-
-const GOLDEN_STATUE: Monument = {
-  id: 'monument-14',
-  title: 'Golden Statue',
-  type: 'monument',
-  cost: { gold: 4 },
-  reactions: [
-    {
-      type: 'victory-check',
-      cost: {
-        tap: ['self'],
-        discard: {
-          resources: {
-            gold: 3,
-          },
-        },
-      },
-      reward: {
-        thisCheckVictoryBonus: 3,
-      },
-    },
-  ],
-  points: 1,
+  expansion: 1,
 };
 
 export const MONUMENTS = [
-  GREAT_PYRAMID,
-  SOLOMONS_MUSE,
   COLOSSUS,
-  DEMON_WORKSHOP,
-  ALCHEMICAL_LAB,
-  MAUSOLEUM,
+  GOLDEN_STATUE,
+  GREAT_PYRAMID,
   HANGING_GARDENS,
   LIBRARY,
-  ORACLE,
-  TEMPLE,
+  MAUSOLEUM,
   OBELISK,
-  WARRIORS_HALL,
+  ORACLE,
+  SOLOMONS_MUSE,
+  TEMPLE,
+  /* Expansion 1 */
+  ALCHEMICAL_LAB,
   DARK_CATHEDRAL,
-  GOLDEN_STATUE,
+  DEMON_WORKSHOP,
+  WARRIORS_HALL,
 ];
