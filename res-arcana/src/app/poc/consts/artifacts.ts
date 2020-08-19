@@ -1,6 +1,6 @@
-import { ItemInfo } from '../types';
+import { Artifact } from '../types';
 
-const HORN_OF_PLENTY: ItemInfo = {
+const HORN_OF_PLENTY: Artifact = {
   id: 'artifact-1',
   title: 'Horn of Plenty',
   type: 'artifact',
@@ -34,7 +34,7 @@ const HORN_OF_PLENTY: ItemInfo = {
   ],
 };
 
-const MERMAID: ItemInfo = {
+const MERMAID: Artifact = {
   id: 'artifact-2',
   title: 'Mermaid',
   type: 'artifact',
@@ -56,7 +56,7 @@ const MERMAID: ItemInfo = {
       },
       reward: {
         gain: {
-          sameAsCost: true,
+          sameResourcesAsCost: true,
           target: 'any',
         },
       },
@@ -64,7 +64,7 @@ const MERMAID: ItemInfo = {
   ],
 };
 
-const HOMUNCULUS: ItemInfo = {
+const HOMUNCULUS: Artifact = {
   id: 'artifact-3',
   title: 'Homunculus',
   type: 'artifact',
@@ -94,7 +94,7 @@ const HOMUNCULUS: ItemInfo = {
   ],
 };
 
-const CHALICE_OF_FIRE: ItemInfo = {
+const CHALICE_OF_FIRE: Artifact = {
   id: 'artifact-4',
   title: 'Chalice of Fire',
   type: 'artifact',
@@ -122,7 +122,7 @@ const CHALICE_OF_FIRE: ItemInfo = {
   ],
 };
 
-const CURSED_SKULL: ItemInfo = {
+const CURSED_SKULL: Artifact = {
   id: 'artifact-5',
   title: 'Cursed Skull',
   type: 'artifact',
@@ -152,7 +152,7 @@ const CURSED_SKULL: ItemInfo = {
   ],
 };
 
-const NIGHTINGALE: ItemInfo = {
+const NIGHTINGALE: Artifact = {
   id: 'artifact-6',
   title: 'Nightingale',
   type: 'artifact',
@@ -164,7 +164,7 @@ const NIGHTINGALE: ItemInfo = {
   points: 1,
 };
 
-const CELESTIAL_HORSE: ItemInfo = {
+const CELESTIAL_HORSE: Artifact = {
   id: 'artifact-7',
   title: 'Celestial Horse',
   type: 'artifact',
@@ -179,10 +179,11 @@ const CELESTIAL_HORSE: ItemInfo = {
   },
 };
 
-const MAGICAL_SHARD: ItemInfo = {
+const MAGICAL_SHARD: Artifact = {
   id: 'artifact-8',
   title: 'Magical Shard',
   type: 'artifact',
+  cost: {},
   actions: [
     {
       cost: { tap: ['self'] },
@@ -199,7 +200,7 @@ const MAGICAL_SHARD: ItemInfo = {
   ],
 };
 
-const ELEMENTAL_SPRING: ItemInfo = {
+const ELEMENTAL_SPRING: Artifact = {
   id: 'artifact-9',
   title: 'Elemental Spring',
   type: 'artifact',
@@ -228,7 +229,7 @@ const ELEMENTAL_SPRING: ItemInfo = {
   ],
 };
 
-const HAWK: ItemInfo = {
+const HAWK: Artifact = {
   id: 'artifact-10',
   title: 'Hawk',
   type: 'artifact',
@@ -266,7 +267,7 @@ const HAWK: ItemInfo = {
   ],
 };
 
-const CHALICE_OF_LIFE: ItemInfo = {
+const CHALICE_OF_LIFE: Artifact = {
   id: 'artifact-11',
   title: 'Chalice of Life',
   type: 'artifact',
@@ -308,7 +309,7 @@ const CHALICE_OF_LIFE: ItemInfo = {
   ],
 };
 
-const FLAMING_PIT: ItemInfo = {
+const FLAMING_PIT: Artifact = {
   id: 'artifact-12',
   title: 'Flaming Pit',
   type: 'artifact',
@@ -341,7 +342,7 @@ const FLAMING_PIT: ItemInfo = {
   ],
 };
 
-const CURSED_DWARVEN_KING: ItemInfo = {
+const CURSED_DWARVEN_KING: Artifact = {
   id: 'artifact-13',
   title: 'Cursed Dwarven King',
   type: 'artifact',
@@ -386,7 +387,7 @@ const CURSED_DWARVEN_KING: ItemInfo = {
   ],
 };
 
-const DANCING_SWORD: ItemInfo = {
+const DANCING_SWORD: Artifact = {
   id: 'artifact-14',
   title: 'Dancing Sword',
   type: 'artifact',
@@ -421,7 +422,7 @@ const DANCING_SWORD: ItemInfo = {
   ],
 };
 
-const FOUNTAIN_OF_YOUTH: ItemInfo = {
+const FOUNTAIN_OF_YOUTH: Artifact = {
   id: 'artifact-15',
   title: 'Fountain of Youth',
   type: 'artifact',
@@ -454,7 +455,7 @@ const FOUNTAIN_OF_YOUTH: ItemInfo = {
   ],
 };
 
-const RING_OF_MIDAS: ItemInfo = {
+const RING_OF_MIDAS: Artifact = {
   id: 'artifact-16',
   title: 'Ring of Midas',
   type: 'artifact',
@@ -497,7 +498,7 @@ const RING_OF_MIDAS: ItemInfo = {
   points: 1,
 };
 
-const GOLDEN_LION: ItemInfo = {
+const GOLDEN_LION: Artifact = {
   id: 'artifact-17',
   title: 'Golden Lion',
   type: 'artifact',
@@ -527,7 +528,7 @@ const GOLDEN_LION: ItemInfo = {
   points: 1,
 };
 
-const PRISMATIC_DRAGON: ItemInfo = {
+const PRISMATIC_DRAGON: Artifact = {
   id: 'artifact-18',
   title: 'Prismatic Dragon',
   type: 'artifact',
@@ -565,7 +566,7 @@ const PRISMATIC_DRAGON: ItemInfo = {
   points: 1,
 };
 
-const CHAOS_IMP: ItemInfo = {
+const CHAOS_IMP: Artifact = {
   id: 'artifact-19',
   title: 'Chaos Imp',
   type: 'artifact',
@@ -609,7 +610,7 @@ const CHAOS_IMP: ItemInfo = {
   ],
 };
 
-const DWARVEN_PICKAXE: ItemInfo = {
+const DWARVEN_PICKAXE: Artifact = {
   id: 'artifact-20',
   title: 'Dwarven Pickaxe',
   type: 'artifact',
@@ -638,7 +639,7 @@ const DWARVEN_PICKAXE: ItemInfo = {
   ],
 };
 
-const SHADOWY_FIGURE: ItemInfo = {
+const SHADOWY_FIGURE: Artifact = {
   id: 'artifact-21',
   title: 'Shadowy Figure',
   type: 'artifact',
@@ -685,7 +686,7 @@ const SHADOWY_FIGURE: ItemInfo = {
   ],
 };
 
-const TREE_OF_LIFE: ItemInfo = {
+const TREE_OF_LIFE: Artifact = {
   id: 'artifact-22',
   title: 'Tree of Life',
   type: 'artifact',
@@ -722,7 +723,7 @@ const TREE_OF_LIFE: ItemInfo = {
   ],
 };
 
-const HAND_OF_GLORY: ItemInfo = {
+const HAND_OF_GLORY: Artifact = {
   id: 'artifact-23',
   title: 'Hand of Glory',
   type: 'artifact',
@@ -744,7 +745,7 @@ const HAND_OF_GLORY: ItemInfo = {
   ],
 };
 
-const JEWELED_STATUETTE: ItemInfo = {
+const JEWELED_STATUETTE: Artifact = {
   id: 'artifact-24',
   title: 'Jeweled Statuette',
   type: 'artifact',
@@ -776,7 +777,7 @@ const JEWELED_STATUETTE: ItemInfo = {
   points: 1,
 };
 
-const FIRE_DEMON: ItemInfo = {
+const FIRE_DEMON: Artifact = {
   id: 'artifact-25',
   title: 'Fire Demon',
   type: 'artifact',
@@ -823,7 +824,7 @@ const FIRE_DEMON: ItemInfo = {
   ],
 };
 
-const SEA_SERPENT: ItemInfo = {
+const SEA_SERPENT: Artifact = {
   id: 'artifact-26',
   title: 'Sea Serpent',
   type: 'artifact',
@@ -846,7 +847,7 @@ const SEA_SERPENT: ItemInfo = {
   points: 1,
 };
 
-const WIND_DRAGON: ItemInfo = {
+const WIND_DRAGON: Artifact = {
   id: 'artifact-27',
   title: 'Wind Dragon',
   type: 'artifact',
@@ -869,7 +870,7 @@ const WIND_DRAGON: ItemInfo = {
   points: 1,
 };
 
-const EARTH_DRAGON: ItemInfo = {
+const EARTH_DRAGON: Artifact = {
   id: 'artifact-28',
   title: 'Earth Dragon',
   type: 'artifact',
@@ -892,7 +893,7 @@ const EARTH_DRAGON: ItemInfo = {
   points: 1,
 };
 
-const FIRE_DRAGON: ItemInfo = {
+const FIRE_DRAGON: Artifact = {
   id: 'artifact-29',
   title: 'Fire Dragon',
   type: 'artifact',
@@ -914,7 +915,7 @@ const FIRE_DRAGON: ItemInfo = {
   points: 1,
 };
 
-const BONE_DRAGON: ItemInfo = {
+const BONE_DRAGON: Artifact = {
   id: 'artifact-30',
   title: 'Bone Dragon',
   type: 'artifact',
@@ -937,7 +938,7 @@ const BONE_DRAGON: ItemInfo = {
   points: 1,
 };
 
-const WATER_DRAGON: ItemInfo = {
+const WATER_DRAGON: Artifact = {
   id: 'artifact-31',
   title: 'Water Dragon',
   type: 'artifact',
@@ -959,7 +960,7 @@ const WATER_DRAGON: ItemInfo = {
   points: 1,
 };
 
-const ELVISH_BOW: ItemInfo = {
+const ELVISH_BOW: Artifact = {
   id: 'artifact-32',
   title: 'Elvish Bow',
   type: 'artifact',
@@ -985,7 +986,7 @@ const ELVISH_BOW: ItemInfo = {
   ],
 };
 
-const TREANT: ItemInfo = {
+const TREANT: Artifact = {
   id: 'artifact-33',
   title: 'Treant',
   type: 'artifact',
@@ -1001,13 +1002,16 @@ const TREANT: ItemInfo = {
     {
       cost: { tap: ['self'] },
       reward: {
-        gainEqualToRival: ['red', 'black'],
+        gain: {
+          equalToRival: ['red', 'black'],
+          target: 'player',
+        },
       },
     },
   ],
 };
 
-const HYPNOTIC_BASIN: ItemInfo = {
+const HYPNOTIC_BASIN: Artifact = {
   id: 'artifact-34',
   title: 'Hypnotic Basin',
   type: 'artifact',
@@ -1023,13 +1027,16 @@ const HYPNOTIC_BASIN: ItemInfo = {
     {
       cost: { tap: ['self'] },
       reward: {
-        gainEqualToRival: ['blue', 'red'],
+        gain: {
+          equalToRival: ['blue', 'red'],
+          target: 'player',
+        },
       },
     },
   ],
 };
 
-const HOUND_OF_DEATH: ItemInfo = {
+const HOUND_OF_DEATH: Artifact = {
   id: 'artifact-35',
   title: 'Hound of Death',
   type: 'artifact',
@@ -1062,13 +1069,16 @@ const HOUND_OF_DEATH: ItemInfo = {
         tap: ['self'],
       },
       reward: {
-        gainEqualToRival: ['black', 'gold'],
+        gain: {
+          equalToRival: ['black', 'gold'],
+          target: 'player',
+        },
       },
     },
   ],
 };
 
-const POSSESSED_DEMON_SLAYER: ItemInfo = {
+const POSSESSED_DEMON_SLAYER: Artifact = {
   id: 'artifact-36',
   title: 'Possessed Demon Slayer',
   type: 'artifact',
@@ -1084,7 +1094,10 @@ const POSSESSED_DEMON_SLAYER: ItemInfo = {
         tap: ['self'],
       },
       reward: {
-        gainEqualToRival: ['red', 'demon'],
+        gain: {
+          equalToRival: ['red', 'demon'],
+          target: 'player',
+        },
       },
     },
   ],
@@ -1097,7 +1110,7 @@ const POSSESSED_DEMON_SLAYER: ItemInfo = {
   points: 1,
 };
 
-const DRAGON_BRIDLE: ItemInfo = {
+const DRAGON_BRIDLE: Artifact = {
   id: 'artifact-37',
   title: 'Dragon Bridle',
   type: 'artifact',
@@ -1123,10 +1136,11 @@ const DRAGON_BRIDLE: ItemInfo = {
   points: 1,
 };
 
-const VIAL_OF_LIGHT: ItemInfo = {
+const VIAL_OF_LIGHT: Artifact = {
   id: 'artifact-38',
   title: 'Vial of Light',
   type: 'artifact',
+  cost: {},
   actions: [
     {
       cost: { tap: ['self'], discard: { resources: { black: 1 } } },
@@ -1146,7 +1160,7 @@ const VIAL_OF_LIGHT: ItemInfo = {
   ],
 };
 
-const DRAGON_TEETH: ItemInfo = {
+const DRAGON_TEETH: Artifact = {
   id: 'artifact-39',
   title: 'Dragon Teeth',
   type: 'artifact',
@@ -1166,7 +1180,7 @@ const DRAGON_TEETH: ItemInfo = {
   ],
 };
 
-const DRAGON_EGG: ItemInfo = {
+const DRAGON_EGG: Artifact = {
   id: 'artifact-40',
   title: 'Dragon Egg',
   type: 'artifact',
@@ -1182,7 +1196,7 @@ const DRAGON_EGG: ItemInfo = {
   points: 1,
 };
 
-const CRYPT: ItemInfo = {
+const CRYPT: Artifact = {
   id: 'artifact-41',
   title: 'Crypt',
   type: 'artifact',
@@ -1207,7 +1221,7 @@ const CRYPT: ItemInfo = {
   ],
 };
 
-const VORTEX_OF_DESTRUCTION: ItemInfo = {
+const VORTEX_OF_DESTRUCTION: Artifact = {
   id: 'artifact-42',
   title: 'Vortex of Destruction',
   type: 'artifact',
@@ -1238,7 +1252,7 @@ const VORTEX_OF_DESTRUCTION: ItemInfo = {
   ],
 };
 
-const FIERY_WHIP: ItemInfo = {
+const FIERY_WHIP: Artifact = {
   id: 'artifact-43',
   title: 'Fiery Whip',
   type: 'artifact',
@@ -1266,7 +1280,7 @@ const FIERY_WHIP: ItemInfo = {
   ],
 };
 
-const CORRUPT_ALTAR: ItemInfo = {
+const CORRUPT_ALTAR: Artifact = {
   id: 'artifact-44',
   title: 'Corrupt Altar',
   type: 'artifact',
@@ -1303,7 +1317,7 @@ const CORRUPT_ALTAR: ItemInfo = {
   ],
 };
 
-const GUARD_DOG: ItemInfo = {
+const GUARD_DOG: Artifact = {
   id: 'artifact-45',
   title: 'Guard Dog',
   type: 'artifact',
@@ -1328,7 +1342,7 @@ const GUARD_DOG: ItemInfo = {
   ],
 };
 
-const SACRIFICIAL_DAGGER: ItemInfo = {
+const SACRIFICIAL_DAGGER: Artifact = {
   id: 'artifact-46',
   title: 'Sacrificial Dagger',
   type: 'artifact',
@@ -1349,6 +1363,191 @@ const SACRIFICIAL_DAGGER: ItemInfo = {
         destroyedArtifactBonus: {
           wild: 1,
           wildRestrictions: ['gold'],
+        },
+      },
+    },
+  ],
+};
+
+const PRISM: Artifact = {
+  id: 'artifact-47',
+  title: 'Prism',
+  type: 'artifact',
+  cost: {},
+  actions: [
+    {
+      cost: { tap: ['self'], discard: { resources: { wild: 1 } } },
+      reward: {
+        gain: {
+          resources: { wild: 2, wildRestrictions: ['gold'] },
+          target: 'player',
+        },
+      },
+    },
+    {
+      cost: { tap: ['self'], equalDiscard: 'wild' },
+      reward: {
+        gain: {
+          sameResourceNumberAsEqualDiscard: {
+            wild: 1000,
+            wildRestrictions: ['gold'],
+          },
+          target: 'player',
+        },
+      },
+    },
+  ],
+};
+
+const PHILOSOPHERS_STONE: Artifact = {
+  id: 'artifact-48',
+  title: "Philosopher's Stone",
+  type: 'artifact',
+  cost: {
+    red: 2,
+    green: 2,
+    blue: 2,
+    black: 2,
+  },
+  actions: [
+    {
+      cost: { tap: ['self'], discard: { resources: { wild: 1 } } },
+      reward: {
+        gain: {
+          resources: { wild: 2, wildRestrictions: ['gold'] },
+          target: 'player',
+        },
+      },
+    },
+    {
+      cost: {
+        tap: ['self'],
+        discard: { resources: { wild: 2 } },
+        equalDiscard: 'wild',
+      },
+      reward: {
+        gain: {
+          sameResourceNumberAsEqualDiscard: {
+            gold: 1000,
+          },
+          target: 'player',
+        },
+      },
+    },
+  ],
+  points: 1,
+};
+
+const ATHANOR: Artifact = {
+  id: 'artifact-49',
+  title: 'Athanor',
+  type: 'artifact',
+  cost: {
+    gold: 1,
+    red: 1,
+  },
+  actions: [
+    {
+      cost: { tap: ['self'], discard: { resources: { red: 1 } } },
+      reward: {
+        gain: {
+          resources: { red: 2 },
+          target: 'self',
+        },
+      },
+    },
+    {
+      cost: {
+        tap: ['self'],
+        discard: { resources: { red: 6 }, targetSelf: true },
+        equalDiscard: 'wild',
+      },
+      reward: {
+        gain: {
+          sameResourceNumberAsEqualDiscard: {
+            gold: 1000,
+          },
+          target: 'player',
+        },
+      },
+    },
+  ],
+};
+
+const INFERNAL_ENGINE: Artifact = {
+  id: 'artifact-50',
+  title: 'Infernal Engine',
+  type: 'artifact',
+  cost: {
+    black: 1,
+  },
+  collect: {
+    red: 1,
+  },
+  actions: [
+    {
+      cost: { tap: ['self'], discard: { anyResources: true } },
+      reward: {
+        gain: {
+          sameResourcesAsCost: true,
+          target: 'self',
+        },
+      },
+    },
+    {
+      cost: { tap: ['self'] },
+      reward: {
+        gain: {
+          target: 'player',
+          allResourcesFromAnyItem: true,
+        },
+      },
+    },
+  ],
+};
+
+const WINDUP_MAN: Artifact = {
+  id: 'artifact-51',
+  title: 'Windup Man',
+  type: 'artifact',
+  cost: {
+    red: 1,
+    green: 1,
+    blue: 1,
+    gold: 1,
+  },
+  collectSpecial: 'windup-man',
+  actions: [
+    {
+      cost: { tap: ['self'], discard: { resources: { wild: 1 } } },
+      reward: {
+        gain: {
+          sameResourcesAsCost: true,
+          target: 'self',
+        },
+      },
+    },
+  ],
+};
+
+const VAULT: Artifact = {
+  id: 'artifact-52',
+  title: 'Vault',
+  type: 'artifact',
+  cost: {
+    gold: 1,
+    wild: 1,
+  },
+  collectSpecial: 'vault',
+  actions: [
+    {
+      cost: { tap: ['self'] },
+      reward: {
+        gain: {
+          resources: {
+            gold: 1,
+          },
+          target: 'self',
         },
       },
     },
@@ -1402,4 +1601,10 @@ export const ARTIFACTS = [
   CORRUPT_ALTAR,
   GUARD_DOG,
   SACRIFICIAL_DAGGER,
+  PRISM,
+  PHILOSOPHERS_STONE,
+  ATHANOR,
+  INFERNAL_ENGINE,
+  WINDUP_MAN,
+  VAULT,
 ];

@@ -1,6 +1,6 @@
-import { ItemInfo } from '../types';
+import { Mage } from '../types';
 
-const DRUID: ItemInfo = {
+const DRUID: Mage = {
   id: 'mage-1',
   title: 'Druid',
   type: 'mage',
@@ -13,7 +13,7 @@ const DRUID: ItemInfo = {
   ],
 };
 
-const SEER: ItemInfo = {
+const SEER: Mage = {
   id: 'mage-2',
   title: 'Seer',
   type: 'mage',
@@ -31,7 +31,7 @@ const SEER: ItemInfo = {
   ],
 };
 
-const WITCH: ItemInfo = {
+const WITCH: Mage = {
   id: 'mage-3',
   title: 'Witch',
   type: 'mage',
@@ -51,7 +51,7 @@ const WITCH: ItemInfo = {
   ],
 };
 
-const BEAST_MASTER: ItemInfo = {
+const BEAST_MASTER: Mage = {
   id: 'mage-4',
   title: 'Beastmaster',
   type: 'mage',
@@ -91,7 +91,7 @@ const BEAST_MASTER: ItemInfo = {
   ],
 };
 
-const SCHOLAR: ItemInfo = {
+const SCHOLAR: Mage = {
   id: 'mage-5',
   title: 'Scholar',
   type: 'mage',
@@ -110,7 +110,7 @@ const SCHOLAR: ItemInfo = {
   ],
 };
 
-const DUELIST: ItemInfo = {
+const DUELIST: Mage = {
   id: 'mage-6',
   title: 'Duelist',
   type: 'mage',
@@ -137,7 +137,7 @@ const DUELIST: ItemInfo = {
   ],
 };
 
-const TRANSMUTER: ItemInfo = {
+const TRANSMUTER: Mage = {
   id: 'mage-7',
   title: 'Transmuter',
   type: 'mage',
@@ -164,7 +164,7 @@ const TRANSMUTER: ItemInfo = {
   ],
 };
 
-const NECROMANCER: ItemInfo = {
+const NECROMANCER: Mage = {
   id: 'mage-8',
   title: 'Necromancer',
   type: 'mage',
@@ -191,7 +191,7 @@ const NECROMANCER: ItemInfo = {
   ],
 };
 
-const ALCHEMIST: ItemInfo = {
+const ALCHEMIST: Mage = {
   id: 'mage-9',
   title: 'Alchemist',
   type: 'mage',
@@ -231,7 +231,7 @@ const ALCHEMIST: ItemInfo = {
   ],
 };
 
-const DIVINER: ItemInfo = {
+const DIVINER: Mage = {
   id: 'mage-10',
   title: 'Diviner',
   type: 'mage',
@@ -248,7 +248,7 @@ const DIVINER: ItemInfo = {
   ],
 };
 
-const DEMONOLOGIST: ItemInfo = {
+const DEMONOLOGIST: Mage = {
   id: 'mage-11',
   title: 'Demonologist',
   type: 'mage',
@@ -275,7 +275,7 @@ const DEMONOLOGIST: ItemInfo = {
   ],
 };
 
-const HEALER: ItemInfo = {
+const HEALER: Mage = {
   id: 'mage-12',
   title: 'Healer',
   type: 'mage',
@@ -291,7 +291,7 @@ const HEALER: ItemInfo = {
   ],
 };
 
-const BARD: ItemInfo = {
+const BARD: Mage = {
   id: 'mage-13',
   title: 'bard',
   type: 'mage',
@@ -329,7 +329,7 @@ const BARD: ItemInfo = {
   ],
 };
 
-const ARTIFICER: ItemInfo = {
+const ARTIFICER: Mage = {
   id: 'mage-14',
   title: 'Artificer',
   type: 'mage',

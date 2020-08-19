@@ -1,20 +1,20 @@
-import { ItemInfo } from '../types';
+import { MagicItem } from '../types';
 
-const CALM_OR_ELAN: ItemInfo = {
+const CALM_OR_ELAN: MagicItem = {
   id: 'magic-item-1',
   title: 'Calm / Elan',
   type: 'magic-item',
   collect: [{ blue: 1 }, { red: 1 }],
 };
 
-const DEATH_OR_LIFE: ItemInfo = {
+const DEATH_OR_LIFE: MagicItem = {
   id: 'magic-item-2',
   title: 'Death / Life',
   type: 'magic-item',
   collect: [{ black: 1 }, { green: 1 }],
 };
 
-const DIVINATION: ItemInfo = {
+const DIVINATION: MagicItem = {
   id: 'magic-item-3',
   title: 'Divination',
   type: 'magic-item',
@@ -26,7 +26,7 @@ const DIVINATION: ItemInfo = {
   ],
 };
 
-const ALCHEMY: ItemInfo = {
+const ALCHEMY: MagicItem = {
   id: 'magic-item-4',
   title: 'Alchemy',
   type: 'magic-item',
@@ -43,7 +43,7 @@ const ALCHEMY: ItemInfo = {
   ],
 };
 
-const TRANSMUTATION: ItemInfo = {
+const TRANSMUTATION: MagicItem = {
   id: 'magic-item-5',
   title: 'Transmutation',
   type: 'magic-item',
@@ -63,7 +63,7 @@ const TRANSMUTATION: ItemInfo = {
   ],
 };
 
-const RESEARCH: ItemInfo = {
+const RESEARCH: MagicItem = {
   id: 'magic-item-6',
   title: 'Research',
   type: 'magic-item',
@@ -75,7 +75,7 @@ const RESEARCH: ItemInfo = {
   ],
 };
 
-const PROTECTION: ItemInfo = {
+const PROTECTION: MagicItem = {
   id: 'magic-item-7',
   title: 'Protection',
   type: 'magic-item',
@@ -88,7 +88,7 @@ const PROTECTION: ItemInfo = {
   ],
 };
 
-const REANIMATE: ItemInfo = {
+const REANIMATE: MagicItem = {
   id: 'magic-item-8',
   title: 'Reanimate',
   type: 'magic-item',

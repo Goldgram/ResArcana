@@ -26,15 +26,18 @@ interface Action {
 // Cost
 
 interface Discard {
+  anyResources?: true;
   resources?: Resources | OrResources;
   creature?: Creature[];
   card?: number;
+  targetSelf?: boolean;
 }
 
 interface ActionCost {
   tap?: TapType[];
   destroy?: 'self' | 'another-artifact' | 'any-artifact';
   discard?: Discard;
+  equalDiscard?: 'wild';
 }
 
 // Reward
@@ -47,9 +50,12 @@ interface ReorderCards {
 }
 
 interface Gain {
-  sameAsCost?: boolean;
-  resources?: Resources;
   target: 'player' | 'self' | 'any';
+  resources?: Resources;
+  sameResourcesAsCost?: boolean;
+  sameResourceNumberAsEqualDiscard?: Resources;
+  equalToRival?: [GainEqualType, GainEqualType];
+  allResourcesFromAnyItem?: boolean;
 }
 
 interface Attack {
@@ -62,7 +68,6 @@ type GainEqualType = ResourceType | Creature;
 interface ActionReward {
   untap?: TapType;
   gain?: Gain;
-  gainEqualToRival?: [GainEqualType, GainEqualType];
   rivalsGainResources?: Resources;
   reorderTopCards?: ReorderCards;
   drawCards?: number;
@@ -103,21 +108,49 @@ interface Discount {
 
 // Item
 
-export interface ItemInfo {
+interface ItemBase {
   id: string;
   title: string;
-  type: 'mage' | 'artifact' | 'monument' | 'place-of-power' | 'magic-item';
-  creature?: Creature[];
-  cost?: Resources;
+  // version: 'base' | 'expansion-1';
   collect?: Resources | OrResources;
-  points?: number; //| pointsPerResource;
   actions?: Action[];
   reactions?: Reaction[];
-  discount?: Discount;
 }
 
-export interface Item {
-  info: ItemInfo;
-  tapped: boolean;
-  resourcesOnItem: Resources;
+export interface Artifact extends ItemBase {
+  type: 'artifact';
+  cost: Resources;
+  creature?: Creature[];
+  points?: number;
+  discount?: Discount;
+  collectSpecial?: 'windup-man' | 'vault';
+  // startingHand?: number;
 }
+
+export interface Mage extends ItemBase {
+  type: 'mage';
+  discount?: Discount;
+  // startingHand?: number;
+}
+
+export interface MagicItem extends ItemBase {
+  type: 'magic-item';
+}
+
+export interface Monument extends ItemBase {
+  type: 'monument';
+  cost: Resources & { gold: 4 };
+  points?: number;
+}
+
+export interface PlaceOfPower extends ItemBase {
+  type: 'place-of-power';
+  side: 'A' | 'B';
+  cost: Resources;
+}
+
+// export interface Item {
+//   info: ItemBase;
+//   tapped: boolean;
+//   resourcesOnItem: Resources;
+// }

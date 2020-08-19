@@ -1,6 +1,6 @@
-import { ItemInfo } from '../types';
+import { Monument } from '../types';
 
-const GREAT_PYRAMID: ItemInfo = {
+const GREAT_PYRAMID: Monument = {
   id: 'monument-1',
   title: 'Great Pyramid',
   type: 'monument',
@@ -8,7 +8,7 @@ const GREAT_PYRAMID: ItemInfo = {
   points: 3,
 };
 
-const SOLOMONS_MUSE: ItemInfo = {
+const SOLOMONS_MUSE: Monument = {
   id: 'monument-2',
   title: "Solomon's Muse",
   type: 'monument',
@@ -31,7 +31,7 @@ const SOLOMONS_MUSE: ItemInfo = {
   ],
 };
 
-const COLOSSUS: ItemInfo = {
+const COLOSSUS: Monument = {
   id: 'monument-3',
   title: 'Colossus',
   type: 'monument',
@@ -59,7 +59,7 @@ const COLOSSUS: ItemInfo = {
   ],
 };
 
-const DEMON_WORKSHOP: ItemInfo = {
+const DEMON_WORKSHOP: Monument = {
   id: 'monument-4',
   title: 'Demon Workshop',
   type: 'monument',
@@ -83,7 +83,7 @@ const DEMON_WORKSHOP: ItemInfo = {
   ],
 };
 
-const ALCHEMICAL_LAB: ItemInfo = {
+const ALCHEMICAL_LAB: Monument = {
   id: 'monument-5',
   title: 'Alchemical Lab',
   type: 'monument',
@@ -101,7 +101,7 @@ const ALCHEMICAL_LAB: ItemInfo = {
       },
       reward: {
         gain: {
-          sameAsCost: true,
+          sameResourcesAsCost: true,
           target: 'any',
         },
       },
@@ -109,7 +109,7 @@ const ALCHEMICAL_LAB: ItemInfo = {
   ],
 };
 
-const MAUSOLEUM: ItemInfo = {
+const MAUSOLEUM: Monument = {
   id: 'monument-6',
   title: 'Mausoleum',
   type: 'monument',
@@ -136,7 +136,7 @@ const MAUSOLEUM: ItemInfo = {
   ],
 };
 
-const HANGING_GARDENS: ItemInfo = {
+const HANGING_GARDENS: Monument = {
   id: 'monument-7',
   title: 'hanging Gardens',
   type: 'monument',
@@ -148,7 +148,7 @@ const HANGING_GARDENS: ItemInfo = {
   },
 };
 
-const LIBRARY: ItemInfo = {
+const LIBRARY: Monument = {
   id: 'monument-8',
   title: 'Library',
   type: 'monument',
@@ -166,7 +166,7 @@ const LIBRARY: ItemInfo = {
   ],
 };
 
-const ORACLE: ItemInfo = {
+const ORACLE: Monument = {
   id: 'monument-9',
   title: 'Oracle',
   type: 'monument',
@@ -187,7 +187,7 @@ const ORACLE: ItemInfo = {
   ],
 };
 
-const TEMPLE: ItemInfo = {
+const TEMPLE: Monument = {
   id: 'monument-10',
   title: 'Temple',
   type: 'monument',
@@ -204,7 +204,7 @@ const TEMPLE: ItemInfo = {
   ],
 };
 
-const OBELISK: ItemInfo = {
+const OBELISK: Monument = {
   id: 'monument-11',
   title: 'Obelisk',
   type: 'monument',
@@ -223,7 +223,7 @@ const OBELISK: ItemInfo = {
   ],
 };
 
-const WARRIORS_HALL: ItemInfo = {
+const WARRIORS_HALL: Monument = {
   id: 'monument-12',
   title: "Warrior's Hall",
   type: 'monument',
@@ -248,7 +248,7 @@ const WARRIORS_HALL: ItemInfo = {
   points: 2,
 };
 
-const DARK_CATHEDRAL: ItemInfo = {
+const DARK_CATHEDRAL: Monument = {
   id: 'monument-13',
   title: 'Dark Cathedral',
   type: 'monument',
@@ -270,7 +270,7 @@ const DARK_CATHEDRAL: ItemInfo = {
   points: 2,
 };
 
-const GOLDEN_STATUE: ItemInfo = {
+const GOLDEN_STATUE: Monument = {
   id: 'monument-14',
   title: 'Golden Statue',
   type: 'monument',
