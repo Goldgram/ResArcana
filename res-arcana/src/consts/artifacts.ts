@@ -1176,7 +1176,8 @@ const CHAOS_IMP: Artifact = {
         }
       }
     }
-  ]
+  ],
+  expansion: 1
 }
 
 const CURSED_DWARVEN_KING: Artifact = {
@@ -1221,7 +1222,8 @@ const CURSED_DWARVEN_KING: Artifact = {
         }
       }
     }
-  ]
+  ],
+  expansion: 1
 }
 
 const FIRE_DEMON: Artifact = {
@@ -1268,7 +1270,8 @@ const FIRE_DEMON: Artifact = {
         }
       }
     }
-  ]
+  ],
+  expansion: 1
 }
 
 const GOLDEN_LION: Artifact = {
@@ -1298,7 +1301,8 @@ const GOLDEN_LION: Artifact = {
       }
     }
   ],
-  points: 1
+  points: 1,
+  expansion: 1
 }
 
 const HOMUNCULUS: Artifact = {
@@ -1328,7 +1332,8 @@ const HOMUNCULUS: Artifact = {
         }
       }
     }
-  ]
+  ],
+  expansion: 1
 }
 
 const HOUND_OF_DEATH: Artifact = {
@@ -1370,7 +1375,8 @@ const HOUND_OF_DEATH: Artifact = {
         }
       }
     }
-  ]
+  ],
+  expansion: 1
 }
 
 const INFERNAL_ENGINE: Artifact = {
@@ -1402,7 +1408,8 @@ const INFERNAL_ENGINE: Artifact = {
         }
       }
     }
-  ]
+  ],
+  expansion: 1
 }
 
 const POSSESSED_DEMON_SLAYER: Artifact = {
@@ -1434,7 +1441,8 @@ const POSSESSED_DEMON_SLAYER: Artifact = {
       reward: { ignore: true }
     }
   ],
-  points: 1
+  points: 1,
+  expansion: 1
 }
 
 const PRISMATIC_DRAGON: Artifact = {
@@ -1472,7 +1480,8 @@ const PRISMATIC_DRAGON: Artifact = {
       }
     }
   ],
-  points: 1
+  points: 1,
+  expansion: 1
 }
 
 const SHADOWY_FIGURE: Artifact = {
@@ -1519,7 +1528,8 @@ const SHADOWY_FIGURE: Artifact = {
         }
       }
     }
-  ]
+  ],
+  expansion: 1
 }
 
 const VIAL_OF_LIGHT: Artifact = {
@@ -1543,7 +1553,8 @@ const VIAL_OF_LIGHT: Artifact = {
         }
       }
     }
-  ]
+  ],
+  expansion: 1
 }
 
 const VORTEX_OF_DESTRUCTION: Artifact = {
@@ -1577,7 +1588,8 @@ const VORTEX_OF_DESTRUCTION: Artifact = {
       cost: { tap: ['self'], discard: { resources: { green: 1 } } },
       reward: { gain: { resources: { black: 3 }, target: 'player' } }
     }
-  ]
+  ],
+  expansion: 1
 }
 
 export const ARTIFACTS = [

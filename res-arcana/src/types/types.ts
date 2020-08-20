@@ -134,12 +134,12 @@ interface PointsPer {
 interface ItemBase {
   id: string
   title: string
-  expansion?: number
   collect?: Resources | Or<Resources>
   discount?: Discount
   actions?: Action[]
   reactions?: Reaction[]
   points?: number
+  expansion?: number
 }
 
 export interface Artifact extends ItemBase {

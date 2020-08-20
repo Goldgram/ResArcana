@@ -111,7 +111,8 @@ const INSCRIPTION: MagicItem = {
       cost: { tap: ['self'], discard: { resources: { wild: 1 } } },
       reward: { claimScroll: 1 }
     }
-  ]
+  ],
+  expansion: 1
 }
 
 const ILLUSION: MagicItem = {
@@ -129,7 +130,8 @@ const ILLUSION: MagicItem = {
       cost: { tap: ['self'], discard: { resources: { wild: 2 } } },
       reward: { thisTurnActAs: ['dragon'] }
     }
-  ]
+  ],
+  expansion: 1
 }
 
 export const MAGIC_ITEMS = [
