@@ -49,7 +49,7 @@ interface ActionCost {
   tap?: TapType | And<TapType>
   destroy?: DestroyType | Or<DestroyType>
   discard?: Discard
-  equalDiscard?: 'wild'
+  wildDiscard?: boolean
 }
 
 type TapType = Creature | 'self' | 'any' | 'all-player-demons'
@@ -86,6 +86,22 @@ interface ActionReward {
   placeFreeCreatureFromAnyPlayer?: Creature
 }
 
+interface Gain {
+  target: 'player' | 'self' | 'any'
+  resources?: Resources
+  equalToRival?: [ResourceType, ResourceType | Creature]
+  sameResourcesAsCost?: boolean
+  allResourcesFromAnyItem?: boolean
+  resourceNumberAsWildDiscard?: GainWildDiscard
+}
+
+interface GainWildDiscard {
+  resource: 'gold' | 'wild-with-gold-restriction'
+  divide?: number
+}
+
+// TODO
+
 type ReorderCardsScope = 'player' | 'monuments'
 
 interface ReorderCards {
@@ -93,32 +109,16 @@ interface ReorderCards {
   options: ReorderCardsScope[]
 }
 
-interface Gain {
-  target: 'player' | 'self' | 'any'
-  resources?: Resources
-  sameResourcesAsCost?: boolean
-  sameResourceNumberAsEqualDiscard?: Resources
-  thirdResourceNumberAsEqualDiscard?: Resources
-  equalToRival?: [GainEqualType, GainEqualType]
-  allResourcesFromAnyItem?: boolean
-}
-
 interface Attack {
   value: number
   discardToIgnore?: Resources | 'artifact' | 'card'
 }
-
-type GainEqualType = ResourceType | Creature
-
-// Discount
 
 interface Discount {
   type: Creature | 'artifact' | 'discarded-card'
   resources?: Resources
   free?: boolean
 }
-
-// points
 
 interface PointsPer {
   type: Creature | ResourceType | 'artifact'
@@ -127,7 +127,7 @@ interface PointsPer {
   divide?: number
 }
 
-// Item
+// Items
 
 interface ItemBase {
   id: string

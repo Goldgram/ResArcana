@@ -386,14 +386,14 @@ const ATHANOR: Artifact = {
       cost: {
         tap: 'self',
         discard: { resources: { red: 6 }, targetSelf: true },
-        equalDiscard: 'wild'
+        wildDiscard: true
       },
       reward: {
         gain: {
-          sameResourceNumberAsEqualDiscard: {
-            gold: 1000
-          },
-          target: 'player'
+          target: 'player',
+          resourceNumberAsWildDiscard: {
+            resource: 'gold'
+          }
         }
       }
     }
@@ -898,14 +898,14 @@ const PHILOSOPHERS_STONE: Artifact = {
       cost: {
         tap: 'self',
         discard: { resources: { wild: 2 } },
-        equalDiscard: 'wild'
+        wildDiscard: true
       },
       reward: {
         gain: {
-          sameResourceNumberAsEqualDiscard: {
-            gold: 1000
-          },
-          target: 'player'
+          target: 'player',
+          resourceNumberAsWildDiscard: {
+            resource: 'gold'
+          }
         }
       }
     }
@@ -929,14 +929,13 @@ const PRISM: Artifact = {
       }
     },
     {
-      cost: { tap: 'self', equalDiscard: 'wild' },
+      cost: { tap: 'self', wildDiscard: true },
       reward: {
         gain: {
-          sameResourceNumberAsEqualDiscard: {
-            wild: 1000,
-            wildRestrictions: 'gold'
-          },
-          target: 'player'
+          target: 'player',
+          resourceNumberAsWildDiscard: {
+            resource: 'wild-with-gold-restriction'
+          }
         }
       }
     }

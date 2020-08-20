@@ -55,13 +55,14 @@ const PROJECTION: Scroll = {
   type: 'scroll',
   actions: [
     {
-      cost: { equalDiscard: 'wild' },
+      cost: { wildDiscard: true },
       reward: {
         gain: {
-          thirdResourceNumberAsEqualDiscard: {
-            gold: 1000
-          },
-          target: 'player'
+          target: 'player',
+          resourceNumberAsWildDiscard: {
+            resource: 'gold',
+            divide: 3
+          }
         }
       }
     }
@@ -102,15 +103,14 @@ const TRANSFORM: Scroll = {
   actions: [
     {
       cost: {
-        equalDiscard: 'wild'
+        wildDiscard: true
       },
       reward: {
         gain: {
-          sameResourceNumberAsEqualDiscard: {
-            wild: 1000,
-            wildRestrictions: 'gold'
-          },
-          target: 'player'
+          target: 'player',
+          resourceNumberAsWildDiscard: {
+            resource: 'wild-with-gold-restriction'
+          }
         }
       }
     }
