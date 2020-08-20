@@ -4,14 +4,14 @@ const CALM_OR_ELAN: MagicItem = {
   id: 'magic-item-1',
   title: 'Calm / Elan',
   type: 'magic-item',
-  collect: [{ blue: 1 }, { red: 1 }]
+  collect: { or: [{ blue: 1 }, { red: 1 }] }
 }
 
 const DEATH_OR_LIFE: MagicItem = {
   id: 'magic-item-2',
   title: 'Death / Life',
   type: 'magic-item',
-  collect: [{ black: 1 }, { green: 1 }]
+  collect: { or: [{ black: 1 }, { green: 1 }] }
 }
 
 const ALCHEMY: MagicItem = {

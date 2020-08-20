@@ -6,7 +6,7 @@ const DUELIST: Mage = {
   id: 'mage-1',
   title: 'Duelist',
   type: 'mage',
-  collect: [{ red: 1 }],
+  collect: { red: 1 },
   actions: [
     {
       cost: {
@@ -150,7 +150,7 @@ const HEALER: Mage = {
   id: 'mage-7',
   title: 'Healer',
   type: 'mage',
-  collect: [{ blue: 1 }, { green: 1 }],
+  collect: { or: [{ blue: 1 }, { green: 1 }] },
   reactions: [
     {
       type: 'any-life-loss',
@@ -166,7 +166,7 @@ const NECROMANCER: Mage = {
   id: 'mage-8',
   title: 'Necromancer',
   type: 'mage',
-  collect: [{ black: 1 }],
+  collect: { black: 1 },
   actions: [
     {
       cost: {
@@ -212,7 +212,7 @@ const WITCH: Mage = {
   id: 'mage-10',
   title: 'Witch',
   type: 'mage',
-  collect: [{ green: 1 }, { black: 1 }],
+  collect: { or: [{ green: 1 }, { black: 1 }] },
   actions: [
     {
       cost: {
@@ -342,7 +342,7 @@ const DIVINER: Mage = {
   id: 'mage-14',
   title: 'Diviner',
   type: 'mage',
-  collect: [{ red: 1 }],
+  collect: { red: 1 },
   actions: [
     {
       cost: {

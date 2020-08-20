@@ -9,9 +9,9 @@ type ResourceType = 'red' | 'green' | 'blue' | 'black' | 'gold'
 // interface And<T> {
 //   and: T[]
 // }
-// interface Or<T> {
-//   or: T[]
-// }
+interface Or<T> {
+  or: T[]
+}
 
 interface Resources {
   red?: number
@@ -134,7 +134,7 @@ interface ItemBase {
   id: string
   title: string
   expansion?: number
-  collect?: Resources | OrResources
+  collect?: Resources | Or<Resources>
   actions?: Action[]
   reactions?: Reaction[]
   discount?: Discount

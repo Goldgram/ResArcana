@@ -255,7 +255,7 @@ const DEMON_WORKSHOP: Monument = {
   type: 'monument',
   cost: { gold: 4 },
   points: 1,
-  collect: [{ red: 1 }, { black: 1 }],
+  collect: { or: [{ red: 1 }, { black: 1 }] },
   actions: [
     {
       cost: {
