@@ -1,4 +1,4 @@
-import { Monument } from '../types'
+import { Monument } from '../types/types'
 
 const COLOSSUS: Monument = {
   id: 'monument-1',

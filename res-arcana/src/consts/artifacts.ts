@@ -1,4 +1,4 @@
-import { Artifact } from '../types'
+import { Artifact } from '../types/types'
 
 /* Starting Hand */
 

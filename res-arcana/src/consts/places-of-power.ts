@@ -1,4 +1,4 @@
-import { PlaceOfPower, PlaceOfPowerSet } from '../types'
+import { PlaceOfPower, PlaceOfPowerSet } from '../types/types'
 
 const SACRED_GROVE: PlaceOfPower = {
   id: 'place-of-power-1A',

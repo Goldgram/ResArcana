@@ -136,9 +136,9 @@ interface ItemBase {
   title: string
   expansion?: number
   collect?: Resources | Or<Resources>
+  discount?: Discount
   actions?: Action[]
   reactions?: Reaction[]
-  discount?: Discount
   points?: number
 }
 

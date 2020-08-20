@@ -1,4 +1,4 @@
-import { MagicItem } from '../types'
+import { MagicItem } from '../types/types'
 
 const CALM_OR_ELAN: MagicItem = {
   id: 'magic-item-1',

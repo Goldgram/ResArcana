@@ -1,14 +1,14 @@
-import React from "react";
+import React from 'react'
 // import logo from "./logo.svg";
-import "./App.css";
-import { POC } from "./poc";
+import './App.css'
+import { ItemTables } from './ItemTables/index'
 
 function App() {
   return (
-    <div className="App">
-      <POC />
+    <div className='App'>
+      <ItemTables />
     </div>
-  );
+  )
 }
 
-export default App;
+export default App

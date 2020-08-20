@@ -1,4 +1,4 @@
-import { Scroll } from '../types'
+import { Scroll } from '../types/types'
 
 const AUGURY: Scroll = {
   id: 'scroll-1',

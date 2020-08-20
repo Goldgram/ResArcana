@@ -1,4 +1,4 @@
-import { Mage } from '../types'
+import { Mage } from '../types/types'
 
 /* Starting Hand */
 
