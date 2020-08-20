@@ -1,4 +1,4 @@
-import { Monument } from '../types';
+import { Monument } from '../types'
 
 const COLOSSUS: Monument = {
   id: 'monument-1',
@@ -12,21 +12,21 @@ const COLOSSUS: Monument = {
         tap: ['self'],
         discard: {
           resources: {
-            wild: 1,
-          },
-        },
+            wild: 1
+          }
+        }
       },
       reward: {
         gain: {
           resources: {
-            gold: 1,
+            gold: 1
           },
-          target: 'self',
-        },
-      },
-    },
-  ],
-};
+          target: 'self'
+        }
+      }
+    }
+  ]
+}
 
 const GOLDEN_STATUE: Monument = {
   id: 'monument-2',
@@ -40,25 +40,25 @@ const GOLDEN_STATUE: Monument = {
         tap: ['self'],
         discard: {
           resources: {
-            gold: 3,
-          },
-        },
+            gold: 3
+          }
+        }
       },
       reward: {
-        thisCheckVictoryBonus: 3,
-      },
-    },
+        thisCheckVictoryBonus: 3
+      }
+    }
   ],
-  points: 1,
-};
+  points: 1
+}
 
 const GREAT_PYRAMID: Monument = {
   id: 'monument-3',
   title: 'Great Pyramid',
   type: 'monument',
   cost: { gold: 4 },
-  points: 3,
-};
+  points: 3
+}
 
 const HANGING_GARDENS: Monument = {
   id: 'monument-4',
@@ -68,9 +68,9 @@ const HANGING_GARDENS: Monument = {
   points: 1,
   collect: {
     wild: 3,
-    wildRestrictions: ['gold'],
-  },
-};
+    wildRestrictions: ['gold']
+  }
+}
 
 const LIBRARY: Monument = {
   id: 'monument-5',
@@ -81,14 +81,14 @@ const LIBRARY: Monument = {
   actions: [
     {
       cost: {
-        tap: ['self'],
+        tap: ['self']
       },
       reward: {
-        drawCards: 1,
-      },
-    },
-  ],
-};
+        drawCards: 1
+      }
+    }
+  ]
+}
 
 const MAUSOLEUM: Monument = {
   id: 'monument-6',
@@ -101,21 +101,21 @@ const MAUSOLEUM: Monument = {
       cost: {
         discard: {
           resources: {
-            wild: 1,
-          },
-        },
+            wild: 1
+          }
+        }
       },
       reward: {
         gain: {
           resources: {
-            black: 1,
+            black: 1
           },
-          target: 'self',
-        },
-      },
-    },
-  ],
-};
+          target: 'self'
+        }
+      }
+    }
+  ]
+}
 
 const OBELISK: Monument = {
   id: 'monument-7',
@@ -129,12 +129,12 @@ const OBELISK: Monument = {
       reward: {
         gain: {
           resources: { wild: 6, wildRestrictions: ['gold'] },
-          target: 'player',
-        },
-      },
-    },
-  ],
-};
+          target: 'player'
+        }
+      }
+    }
+  ]
+}
 
 const ORACLE: Monument = {
   id: 'monument-8',
@@ -145,17 +145,17 @@ const ORACLE: Monument = {
   actions: [
     {
       cost: {
-        tap: ['self'],
+        tap: ['self']
       },
       reward: {
         reorderTopCards: {
           numberOfCards: 3,
-          options: ['player', 'monuments'],
-        },
-      },
-    },
-  ],
-};
+          options: ['player', 'monuments']
+        }
+      }
+    }
+  ]
+}
 
 const SOLOMONS_MUSE: Monument = {
   id: 'monument-9',
@@ -166,19 +166,19 @@ const SOLOMONS_MUSE: Monument = {
   actions: [
     {
       cost: {
-        tap: ['self'],
+        tap: ['self']
       },
       reward: {
         gain: {
           resources: {
-            gold: 1,
+            gold: 1
           },
-          target: 'player',
-        },
-      },
-    },
-  ],
-};
+          target: 'player'
+        }
+      }
+    }
+  ]
+}
 
 const TEMPLE: Monument = {
   id: 'monument-10',
@@ -190,12 +190,12 @@ const TEMPLE: Monument = {
     {
       type: 'any-life-loss',
       cost: {
-        tap: ['self'],
+        tap: ['self']
       },
-      reward: { ignore: true },
-    },
-  ],
-};
+      reward: { ignore: true }
+    }
+  ]
+}
 
 /* Expansion 1 */
 
@@ -211,20 +211,20 @@ const ALCHEMICAL_LAB: Monument = {
         tap: ['self'],
         discard: {
           resources: {
-            wild: 1,
-          },
-        },
+            wild: 1
+          }
+        }
       },
       reward: {
         gain: {
           sameResourcesAsCost: true,
-          target: 'any',
-        },
-      },
-    },
+          target: 'any'
+        }
+      }
+    }
   ],
-  expansion: 1,
-};
+  expansion: 1
+}
 
 const DARK_CATHEDRAL: Monument = {
   id: 'monument-12',
@@ -232,22 +232,22 @@ const DARK_CATHEDRAL: Monument = {
   type: 'monument',
   cost: { gold: 4 },
   collect: {
-    black: 1,
+    black: 1
   },
   reactions: [
     {
       type: 'victory-check',
       cost: {
-        tap: ['self', 'demon'],
+        tap: ['self', 'demon']
       },
       reward: {
-        thisCheckVictoryBonus: 1,
-      },
-    },
+        thisCheckVictoryBonus: 1
+      }
+    }
   ],
   points: 2,
-  expansion: 1,
-};
+  expansion: 1
+}
 
 const DEMON_WORKSHOP: Monument = {
   id: 'monument-13',
@@ -262,17 +262,17 @@ const DEMON_WORKSHOP: Monument = {
         tap: ['self'],
         discard: {
           resources: {
-            gold: 1,
-          },
-        },
+            gold: 1
+          }
+        }
       },
       reward: {
-        untap: 'any',
-      },
-    },
+        untap: 'any'
+      }
+    }
   ],
-  expansion: 1,
-};
+  expansion: 1
+}
 
 const WARRIORS_HALL: Monument = {
   id: 'monument-14',
@@ -280,25 +280,25 @@ const WARRIORS_HALL: Monument = {
   type: 'monument',
   cost: { gold: 4 },
   collect: {
-    red: 1,
+    red: 1
   },
   actions: [
     {
       cost: {
-        tap: ['self'],
+        tap: ['self']
       },
       reward: {
         gain: {
           resources: { red: 1 },
-          target: 'player',
+          target: 'player'
         },
-        rivalsGainResources: { red: 1 },
-      },
-    },
+        rivalsGainResources: { red: 1 }
+      }
+    }
   ],
   points: 2,
-  expansion: 1,
-};
+  expansion: 1
+}
 
 export const MONUMENTS = [
   COLOSSUS,
@@ -315,5 +315,5 @@ export const MONUMENTS = [
   ALCHEMICAL_LAB,
   DARK_CATHEDRAL,
   DEMON_WORKSHOP,
-  WARRIORS_HALL,
-];
+  WARRIORS_HALL
+]

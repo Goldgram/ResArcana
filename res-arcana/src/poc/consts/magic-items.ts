@@ -1,21 +1,21 @@
-import { MagicItem } from '../types';
+import { MagicItem } from '../types'
 
 const CALM_OR_ELAN: MagicItem = {
   id: 'magic-item-1',
   title: 'Calm / Elan',
   type: 'magic-item',
-  collect: [{ blue: 1 }, { red: 1 }],
-};
+  collect: [{ blue: 1 }, { red: 1 }]
+}
 
 const DEATH_OR_LIFE: MagicItem = {
   id: 'magic-item-2',
   title: 'Death / Life',
   type: 'magic-item',
-  collect: [{ black: 1 }, { green: 1 }],
-};
+  collect: [{ black: 1 }, { green: 1 }]
+}
 
 const ALCHEMY: MagicItem = {
-  id: 'magic-item-4',
+  id: 'magic-item-3',
   title: 'Alchemy',
   type: 'magic-item',
   actions: [
@@ -24,64 +24,64 @@ const ALCHEMY: MagicItem = {
       reward: {
         gain: {
           resources: { gold: 2 },
-          target: 'player',
-        },
-      },
-    },
-  ],
-};
+          target: 'player'
+        }
+      }
+    }
+  ]
+}
 
 const DIVINATION: MagicItem = {
-  id: 'magic-item-3',
+  id: 'magic-item-4',
   title: 'Divination',
   type: 'magic-item',
   actions: [
     {
       cost: { tap: ['self'] },
-      reward: { drawAndDiscard: [3, 3] },
-    },
-  ],
-};
+      reward: { drawAndDiscard: [3, 3] }
+    }
+  ]
+}
 
 const PROTECTION: MagicItem = {
-  id: 'magic-item-7',
+  id: 'magic-item-5',
   title: 'Protection',
   type: 'magic-item',
   reactions: [
     {
       type: 'any-life-loss',
       cost: { tap: ['self'] },
-      reward: { ignore: true },
-    },
-  ],
-};
+      reward: { ignore: true }
+    }
+  ]
+}
 
 const REANIMATE: MagicItem = {
-  id: 'magic-item-8',
+  id: 'magic-item-6',
   title: 'Reanimate',
   type: 'magic-item',
   actions: [
     {
       cost: { tap: ['self'], discard: { resources: { wild: 1 } } },
-      reward: { untap: 'any' },
-    },
-  ],
-};
+      reward: { untap: 'any' }
+    }
+  ]
+}
 
 const RESEARCH: MagicItem = {
-  id: 'magic-item-6',
+  id: 'magic-item-7',
   title: 'Research',
   type: 'magic-item',
   actions: [
     {
       cost: { tap: ['self'], discard: { resources: { wild: 1 } } },
-      reward: { drawCards: 1 },
-    },
-  ],
-};
+      reward: { drawCards: 1 }
+    }
+  ]
+}
 
 const TRANSMUTATION: MagicItem = {
-  id: 'magic-item-5',
+  id: 'magic-item-8',
   title: 'Transmutation',
   type: 'magic-item',
   actions: [
@@ -91,19 +91,46 @@ const TRANSMUTATION: MagicItem = {
         gain: {
           resources: {
             wild: 3,
-            wildRestrictions: ['gold'],
+            wildRestrictions: ['gold']
           },
-          target: 'player',
-        },
-      },
-    },
-  ],
-};
+          target: 'player'
+        }
+      }
+    }
+  ]
+}
 
 /* Expansion 1 */
 
-// ILLUSION,
-// INSCRIPTION,
+const INSCRIPTION: MagicItem = {
+  id: 'magic-item-9',
+  title: 'Inscription',
+  type: 'magic-item',
+  actions: [
+    {
+      cost: { tap: ['self'], discard: { resources: { wild: 1 } } },
+      reward: { claimScroll: 1 }
+    }
+  ]
+}
+
+const ILLUSION: MagicItem = {
+  id: 'magic-item-10',
+  title: 'Illusion',
+  type: 'magic-item',
+  reactions: [
+    {
+      type: 'player-using-power',
+      cost: { tap: ['self'] },
+      reward: { thisTurnActAs: ['creature', 'demon'] }
+    },
+    {
+      type: 'player-using-power',
+      cost: { tap: ['self'], discard: { resources: { wild: 2 } } },
+      reward: { thisTurnActAs: ['dragon'] }
+    }
+  ]
+}
 
 export const MAGIC_ITEMS = [
   CALM_OR_ELAN,
@@ -115,6 +142,6 @@ export const MAGIC_ITEMS = [
   RESEARCH,
   TRANSMUTATION,
   /* Expansion 1 */
-  // ILLUSION,
-  // INSCRIPTION,
-];
+  INSCRIPTION,
+  ILLUSION
+]
