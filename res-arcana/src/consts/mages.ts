@@ -10,7 +10,7 @@ const DUELIST: Mage = {
   actions: [
     {
       cost: {
-        tap: ['self'],
+        tap: 'self',
         discard: {
           resources: {
             black: 1
@@ -37,7 +37,7 @@ const SEER: Mage = {
   collect: { blue: 1 },
   actions: [
     {
-      cost: { tap: ['self'] },
+      cost: { tap: 'self' },
       reward: {
         reorderTopCards: {
           numberOfCards: 3,
@@ -56,7 +56,7 @@ const ALCHEMIST: Mage = {
   actions: [
     {
       cost: {
-        tap: ['self'],
+        tap: 'self',
         discard: {
           resources: {
             wild: 4
@@ -74,13 +74,13 @@ const ALCHEMIST: Mage = {
     },
     {
       cost: {
-        tap: ['self']
+        tap: 'self'
       },
       reward: {
         gain: {
           resources: {
             wild: 1,
-            wildRestrictions: ['gold']
+            wildRestrictions: 'gold'
           },
           target: 'player'
         }
@@ -97,7 +97,7 @@ const TRANSMUTER: Mage = {
   actions: [
     {
       cost: {
-        tap: ['self'],
+        tap: 'self',
         discard: {
           resources: {
             wild: 2
@@ -108,7 +108,7 @@ const TRANSMUTER: Mage = {
         gain: {
           resources: {
             wild: 3,
-            wildRestrictions: ['gold']
+            wildRestrictions: 'gold'
           },
           target: 'player'
         }
@@ -128,7 +128,7 @@ const ARTIFICER: Mage = {
     type: 'artifact',
     resources: {
       wild: 1,
-      wildRestrictions: ['gold']
+      wildRestrictions: 'gold'
     }
   }
 }
@@ -140,7 +140,7 @@ const DRUID: Mage = {
   collect: { green: 1 },
   actions: [
     {
-      cost: { tap: ['self'] },
+      cost: { tap: 'self' },
       reward: { untap: 'creature' }
     }
   ]
@@ -155,7 +155,7 @@ const HEALER: Mage = {
     {
       type: 'any-life-loss',
       cost: {
-        tap: ['self']
+        tap: 'self'
       },
       reward: { ignore: true }
     }
@@ -170,7 +170,7 @@ const NECROMANCER: Mage = {
   actions: [
     {
       cost: {
-        tap: ['self'],
+        tap: 'self',
         discard: {
           resources: {
             green: 2
@@ -196,7 +196,7 @@ const SCHOLAR: Mage = {
   actions: [
     {
       cost: {
-        tap: ['self'],
+        tap: 'self',
         discard: {
           resources: {
             wild: 1
@@ -216,7 +216,7 @@ const WITCH: Mage = {
   actions: [
     {
       cost: {
-        tap: ['self'],
+        tap: 'self',
         discard: {
           resources: {
             wild: 2
@@ -237,9 +237,9 @@ const BARD: Mage = {
   actions: [
     {
       cost: {
-        tap: ['self'],
+        tap: 'self',
         discard: {
-          creature: ['dragon', 'creature', 'demon']
+          creature: { or: ['dragon', 'creature', 'demon'] }
         }
       },
       reward: {
@@ -253,13 +253,13 @@ const BARD: Mage = {
     },
     {
       cost: {
-        tap: ['self']
+        tap: 'self'
       },
       reward: {
         gain: {
           resources: {
             wild: 1,
-            wildRestrictions: ['gold']
+            wildRestrictions: 'gold'
           },
           target: 'player'
         }
@@ -276,7 +276,7 @@ const BEAST_MASTER: Mage = {
   actions: [
     {
       cost: {
-        tap: ['self'],
+        tap: 'self',
         discard: {
           resources: {
             green: 1
@@ -294,13 +294,13 @@ const BEAST_MASTER: Mage = {
     },
     {
       cost: {
-        tap: ['self', 'creature']
+        tap: { and: ['self', 'creature'] }
       },
       reward: {
         gain: {
           resources: {
             wild: 2,
-            wildRestrictions: ['gold']
+            wildRestrictions: 'gold'
           },
           target: 'player'
         }
@@ -317,7 +317,7 @@ const DEMONOLOGIST: Mage = {
   actions: [
     {
       cost: {
-        tap: ['self'],
+        tap: 'self',
         discard: {
           resources: {
             green: 1
@@ -328,7 +328,7 @@ const DEMONOLOGIST: Mage = {
     },
     {
       cost: {
-        tap: ['self']
+        tap: 'self'
       },
       reward: {
         untap: 'demon'
@@ -346,7 +346,7 @@ const DIVINER: Mage = {
   actions: [
     {
       cost: {
-        tap: ['self']
+        tap: 'self'
       },
       reward: {
         drawAndDiscard: [3, 3]

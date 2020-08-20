@@ -16,7 +16,7 @@ const DRAGON_TEETH: Artifact = {
       reward: { gain: { resources: { red: 3 }, target: 'self' } }
     },
     {
-      cost: { tap: ['self'], discard: { resources: { red: 3 } } },
+      cost: { tap: 'self', discard: { resources: { red: 3 } } },
       reward: { discount: { type: 'dragon', free: true } }
     }
   ],
@@ -63,7 +63,7 @@ const HAND_OF_GLORY: Artifact = {
   },
   actions: [
     {
-      cost: { tap: ['self'] },
+      cost: { tap: 'self' },
       reward: {
         gain: {
           resources: { black: 2 },
@@ -112,7 +112,7 @@ const CHALICE_OF_LIFE: Artifact = {
   reactions: [
     {
       type: 'any-life-loss',
-      cost: { tap: ['self'] },
+      cost: { tap: 'self' },
       reward: { ignore: true }
     }
   ],
@@ -132,7 +132,7 @@ const FLAMING_PIT: Artifact = {
   actions: [
     {
       cost: {
-        tap: ['self'],
+        tap: 'self',
         discard: {
           resources: {
             green: 1
@@ -164,7 +164,7 @@ const VAULT: Artifact = {
   collectSpecial: 'vault',
   actions: [
     {
-      cost: { tap: ['self'] },
+      cost: { tap: 'self' },
       reward: {
         gain: {
           resources: {
@@ -189,7 +189,7 @@ const CELESTIAL_HORSE: Artifact = {
   },
   collect: {
     wild: 2,
-    wildRestrictions: ['gold', 'black']
+    wildRestrictions: { and: ['gold', 'black'] }
   },
   startingHand: 3
 }
@@ -201,12 +201,12 @@ const MAGICAL_SHARD: Artifact = {
   cost: {},
   actions: [
     {
-      cost: { tap: ['self'] },
+      cost: { tap: 'self' },
       reward: {
         gain: {
           resources: {
             wild: 1,
-            wildRestrictions: ['gold']
+            wildRestrictions: 'gold'
           },
           target: 'player'
         }
@@ -226,7 +226,7 @@ const TREE_OF_LIFE: Artifact = {
   },
   actions: [
     {
-      cost: { tap: ['self'] },
+      cost: { tap: 'self' },
       reward: {
         gain: {
           resources: { green: 3 },
@@ -338,7 +338,7 @@ const HAWK: Artifact = {
   },
   actions: [
     {
-      cost: { tap: ['self'] },
+      cost: { tap: 'self' },
       reward: {
         reorderTopCards: {
           numberOfCards: 3,
@@ -348,7 +348,7 @@ const HAWK: Artifact = {
     },
     {
       cost: {
-        tap: ['self'],
+        tap: 'self',
         discard: {
           resources: {
             blue: 2
@@ -374,7 +374,7 @@ const ATHANOR: Artifact = {
   },
   actions: [
     {
-      cost: { tap: ['self'], discard: { resources: { red: 1 } } },
+      cost: { tap: 'self', discard: { resources: { red: 1 } } },
       reward: {
         gain: {
           resources: { red: 2 },
@@ -384,7 +384,7 @@ const ATHANOR: Artifact = {
     },
     {
       cost: {
-        tap: ['self'],
+        tap: 'self',
         discard: { resources: { red: 6 }, targetSelf: true },
         equalDiscard: 'wild'
       },
@@ -411,7 +411,7 @@ const BONE_DRAGON: Artifact = {
   },
   actions: [
     {
-      cost: { tap: ['self'] },
+      cost: { tap: 'self' },
       reward: {
         attack: {
           value: 2,
@@ -437,7 +437,7 @@ const CHALICE_OF_FIRE: Artifact = {
   actions: [
     {
       cost: {
-        tap: ['self'],
+        tap: 'self',
         discard: {
           resources: {
             red: 1
@@ -477,11 +477,11 @@ const CORRUPT_ALTAR: Artifact = {
       }
     },
     {
-      cost: { tap: ['self'], destroy: ['any-artifact'] },
+      cost: { tap: 'self', destroy: 'any-artifact' },
       reward: {
         destroyedArtifactBonus: {
           wild: 2,
-          wildRestrictions: ['gold']
+          wildRestrictions: 'gold'
         }
       }
     }
@@ -498,15 +498,15 @@ const CRYPT: Artifact = {
   },
   actions: [
     {
-      cost: { tap: ['self'] },
+      cost: { tap: 'self' },
       reward: { gain: { resources: { black: 2 }, target: 'player' } }
     },
     {
-      cost: { tap: ['self'], discard: { resources: { black: 1 } } },
+      cost: { tap: 'self', discard: { resources: { black: 1 } } },
       reward: {
         discount: {
           type: 'discarded-card',
-          resources: { wild: 2, wildRestrictions: ['gold'] }
+          resources: { wild: 2, wildRestrictions: 'gold' }
         }
       }
     }
@@ -523,7 +523,7 @@ const CURSED_SKULL: Artifact = {
   actions: [
     {
       cost: {
-        tap: ['self'],
+        tap: 'self',
         discard: {
           resources: {
             green: 1
@@ -534,7 +534,7 @@ const CURSED_SKULL: Artifact = {
         gain: {
           resources: {
             wild: 3,
-            wildRestrictions: ['gold', 'green']
+            wildRestrictions: { and: ['gold', 'green'] }
           },
           target: 'self'
         }
@@ -562,7 +562,7 @@ const DRAGON_BRIDLE: Artifact = {
   reactions: [
     {
       type: 'dragon',
-      cost: { tap: ['self'] },
+      cost: { tap: 'self' },
       reward: { ignore: true }
     }
   ],
@@ -578,7 +578,7 @@ const DRAGON_EGG: Artifact = {
   },
   actions: [
     {
-      cost: { destroy: ['self'] },
+      cost: { destroy: 'self' },
       reward: { discount: { type: 'dragon', resources: { wild: 4 } } }
     }
   ],
@@ -595,7 +595,7 @@ const DWARVEN_PICKAXE: Artifact = {
   actions: [
     {
       cost: {
-        tap: ['self'],
+        tap: 'self',
         discard: {
           resources: {
             red: 1
@@ -625,7 +625,7 @@ const EARTH_DRAGON: Artifact = {
   },
   actions: [
     {
-      cost: { tap: ['self'] },
+      cost: { tap: 'self' },
       reward: {
         attack: {
           value: 2,
@@ -647,7 +647,7 @@ const ELVISH_BOW: Artifact = {
   },
   actions: [
     {
-      cost: { tap: ['self'] },
+      cost: { tap: 'self' },
       reward: {
         attack: {
           value: 1
@@ -655,7 +655,7 @@ const ELVISH_BOW: Artifact = {
       }
     },
     {
-      cost: { tap: ['self'] },
+      cost: { tap: 'self' },
       reward: {
         drawCards: 1
       }
@@ -673,7 +673,7 @@ const FIRE_DRAGON: Artifact = {
   },
   actions: [
     {
-      cost: { tap: ['self'] },
+      cost: { tap: 'self' },
       reward: {
         attack: {
           value: 2,
@@ -695,7 +695,7 @@ const FIERY_WHIP: Artifact = {
   },
   actions: [
     {
-      cost: { tap: ['self'] },
+      cost: { tap: 'self' },
       reward: {
         gain: { resources: { red: 3 }, target: 'player' },
         rivalsGainResources: { red: 1 }
@@ -703,13 +703,13 @@ const FIERY_WHIP: Artifact = {
     },
     {
       cost: {
-        tap: ['self'],
-        destroy: ['another-artifact']
+        tap: 'self',
+        destroy: 'another-artifact'
       },
       reward: {
         destroyedArtifactBonus: {
           wild: 2,
-          wildRestrictions: ['gold']
+          wildRestrictions: 'gold'
         }
       }
     }
@@ -735,7 +735,7 @@ const GUARD_DOG: Artifact = {
   reactions: [
     {
       type: 'any-life-loss',
-      cost: { tap: ['self'] },
+      cost: { tap: 'self' },
       reward: { ignore: true }
     }
   ]
@@ -750,19 +750,19 @@ const HORN_OF_PLENTY: Artifact = {
   },
   actions: [
     {
-      cost: { tap: ['self'] },
+      cost: { tap: 'self' },
       reward: {
         gain: {
           resources: {
             wild: 3,
-            wildRestrictions: ['gold']
+            wildRestrictions: 'gold'
           },
           target: 'player'
         }
       }
     },
     {
-      cost: { tap: ['self'] },
+      cost: { tap: 'self' },
       reward: {
         gain: {
           resources: {
@@ -789,7 +789,7 @@ const HYPNOTIC_BASIN: Artifact = {
   },
   actions: [
     {
-      cost: { tap: ['self'] },
+      cost: { tap: 'self' },
       reward: {
         gain: {
           equalToRival: ['blue', 'red'],
@@ -810,7 +810,7 @@ const JEWELED_STATUETTE: Artifact = {
   },
   actions: [
     {
-      cost: { tap: ['self'] },
+      cost: { tap: 'self' },
       reward: {
         gain: {
           resources: { black: 3 },
@@ -820,7 +820,7 @@ const JEWELED_STATUETTE: Artifact = {
       }
     },
     {
-      cost: { destroy: ['self'] },
+      cost: { destroy: 'self' },
       reward: {
         gain: {
           resources: { gold: 2, red: 1 },
@@ -847,9 +847,9 @@ const MERMAID: Artifact = {
   actions: [
     {
       cost: {
-        tap: ['self'],
+        tap: 'self',
         discard: {
-          resources: [{ blue: 1 }, { green: 1 }, { gold: 1 }]
+          resources: { or: [{ blue: 1 }, { green: 1 }, { gold: 1 }] }
         }
       },
       reward: {
@@ -886,17 +886,17 @@ const PHILOSOPHERS_STONE: Artifact = {
   },
   actions: [
     {
-      cost: { tap: ['self'], discard: { resources: { wild: 1 } } },
+      cost: { tap: 'self', discard: { resources: { wild: 1 } } },
       reward: {
         gain: {
-          resources: { wild: 2, wildRestrictions: ['gold'] },
+          resources: { wild: 2, wildRestrictions: 'gold' },
           target: 'player'
         }
       }
     },
     {
       cost: {
-        tap: ['self'],
+        tap: 'self',
         discard: { resources: { wild: 2 } },
         equalDiscard: 'wild'
       },
@@ -920,21 +920,21 @@ const PRISM: Artifact = {
   cost: {},
   actions: [
     {
-      cost: { tap: ['self'], discard: { resources: { wild: 1 } } },
+      cost: { tap: 'self', discard: { resources: { wild: 1 } } },
       reward: {
         gain: {
-          resources: { wild: 2, wildRestrictions: ['gold'] },
+          resources: { wild: 2, wildRestrictions: 'gold' },
           target: 'player'
         }
       }
     },
     {
-      cost: { tap: ['self'], equalDiscard: 'wild' },
+      cost: { tap: 'self', equalDiscard: 'wild' },
       reward: {
         gain: {
           sameResourceNumberAsEqualDiscard: {
             wild: 1000,
-            wildRestrictions: ['gold']
+            wildRestrictions: 'gold'
           },
           target: 'player'
         }
@@ -971,7 +971,7 @@ const RING_OF_MIDAS: Artifact = {
     },
     {
       cost: {
-        tap: ['self']
+        tap: 'self'
       },
       reward: {
         gain: {
@@ -996,20 +996,20 @@ const SACRIFICIAL_DAGGER: Artifact = {
   },
   actions: [
     {
-      cost: { tap: ['self'], discard: { resources: { green: 1 } } },
+      cost: { tap: 'self', discard: { resources: { green: 1 } } },
       reward: {
         gain: { resources: { black: 3 }, target: 'self' }
       }
     },
     {
       cost: {
-        destroy: ['self'],
+        destroy: 'self',
         discard: { card: 1 }
       },
       reward: {
         destroyedArtifactBonus: {
           wild: 1,
-          wildRestrictions: ['gold']
+          wildRestrictions: 'gold'
         }
       }
     }
@@ -1027,7 +1027,7 @@ const SEA_SERPENT: Artifact = {
   },
   actions: [
     {
-      cost: { tap: ['self'] },
+      cost: { tap: 'self' },
       reward: {
         attack: {
           value: 2,
@@ -1053,7 +1053,7 @@ const TREANT: Artifact = {
   },
   actions: [
     {
-      cost: { tap: ['self'] },
+      cost: { tap: 'self' },
       reward: {
         gain: {
           equalToRival: ['red', 'black'],
@@ -1074,7 +1074,7 @@ const WATER_DRAGON: Artifact = {
   },
   actions: [
     {
-      cost: { tap: ['self'] },
+      cost: { tap: 'self' },
       reward: {
         attack: {
           value: 2,
@@ -1097,7 +1097,7 @@ const WIND_DRAGON: Artifact = {
   },
   actions: [
     {
-      cost: { tap: ['self'] },
+      cost: { tap: 'self' },
       reward: {
         attack: {
           value: 2,
@@ -1122,7 +1122,7 @@ const WINDUP_MAN: Artifact = {
   collectSpecial: 'windup-man',
   actions: [
     {
-      cost: { tap: ['self'], discard: { resources: { wild: 1 } } },
+      cost: { tap: 'self', discard: { resources: { wild: 1 } } },
       reward: {
         gain: {
           sameResourcesAsCost: true,
@@ -1147,7 +1147,7 @@ const CHAOS_IMP: Artifact = {
   actions: [
     {
       cost: {
-        tap: ['self'],
+        tap: 'self',
         discard: {
           resources: {
             green: 1
@@ -1211,7 +1211,7 @@ const CURSED_DWARVEN_KING: Artifact = {
     },
     {
       cost: {
-        tap: ['self', 'dragon']
+        tap: { and: ['self', 'dragon'] }
       },
       reward: {
         gain: {
@@ -1241,7 +1241,7 @@ const FIRE_DEMON: Artifact = {
   actions: [
     {
       cost: {
-        tap: ['self'],
+        tap: 'self',
         discard: {
           resources: {
             red: 1
@@ -1256,7 +1256,7 @@ const FIRE_DEMON: Artifact = {
     },
     {
       cost: {
-        tap: ['self'],
+        tap: 'self',
         discard: {
           resources: {
             green: 1
@@ -1294,7 +1294,7 @@ const GOLDEN_LION: Artifact = {
     {
       type: 'any-life-loss',
       cost: {
-        tap: ['self']
+        tap: 'self'
       },
       reward: {
         ignore: true
@@ -1321,12 +1321,12 @@ const HOMUNCULUS: Artifact = {
   },
   actions: [
     {
-      cost: { tap: ['self'] },
+      cost: { tap: 'self' },
       reward: {
         gain: {
           resources: {
             wild: 2,
-            wildRestrictions: ['gold']
+            wildRestrictions: 'gold'
           },
           target: 'self'
         }
@@ -1351,7 +1351,7 @@ const HOUND_OF_DEATH: Artifact = {
   actions: [
     {
       cost: {
-        tap: ['self'],
+        tap: 'self',
         discard: {
           resources: {
             green: 1
@@ -1366,7 +1366,7 @@ const HOUND_OF_DEATH: Artifact = {
     },
     {
       cost: {
-        tap: ['self']
+        tap: 'self'
       },
       reward: {
         gain: {
@@ -1391,7 +1391,7 @@ const INFERNAL_ENGINE: Artifact = {
   },
   actions: [
     {
-      cost: { tap: ['self'], discard: { anyResources: true } },
+      cost: { tap: 'self', discard: { anyResources: true } },
       reward: {
         gain: {
           sameResourcesAsCost: true,
@@ -1400,7 +1400,7 @@ const INFERNAL_ENGINE: Artifact = {
       }
     },
     {
-      cost: { tap: ['self'] },
+      cost: { tap: 'self' },
       reward: {
         gain: {
           target: 'player',
@@ -1425,7 +1425,7 @@ const POSSESSED_DEMON_SLAYER: Artifact = {
   actions: [
     {
       cost: {
-        tap: ['self']
+        tap: 'self'
       },
       reward: {
         gain: {
@@ -1457,12 +1457,12 @@ const PRISMATIC_DRAGON: Artifact = {
   },
   collect: {
     wild: 1,
-    wildRestrictions: ['gold', 'black']
+    wildRestrictions: { and: ['gold', 'black'] }
   },
   actions: [
     {
       cost: {
-        tap: ['self'],
+        tap: 'self',
         discard: {
           resources: {
             gold: 1
@@ -1473,7 +1473,7 @@ const PRISMATIC_DRAGON: Artifact = {
         gain: {
           resources: {
             wild: 4,
-            wildRestrictions: ['gold']
+            wildRestrictions: 'gold'
           },
           target: 'self'
         }
@@ -1499,7 +1499,7 @@ const SHADOWY_FIGURE: Artifact = {
   actions: [
     {
       cost: {
-        tap: ['self'],
+        tap: 'self',
         discard: {
           resources: {
             blue: 1
@@ -1512,7 +1512,7 @@ const SHADOWY_FIGURE: Artifact = {
     },
     {
       cost: {
-        tap: ['self'],
+        tap: 'self',
         discard: {
           resources: {
             green: 1
@@ -1539,7 +1539,7 @@ const VIAL_OF_LIGHT: Artifact = {
   cost: {},
   actions: [
     {
-      cost: { tap: ['self'], discard: { resources: { black: 1 } } },
+      cost: { tap: 'self', discard: { resources: { black: 1 } } },
       reward: { gain: { resources: { green: 1, red: 1 }, target: 'player' } }
     }
   ],
@@ -1548,7 +1548,7 @@ const VIAL_OF_LIGHT: Artifact = {
       type: 'artifact-destroyed',
       reward: {
         gain: {
-          resources: { wild: 1, wildRestrictions: ['gold', 'black'] },
+          resources: { wild: 1, wildRestrictions: { and: ['gold', 'black'] } },
           target: 'player'
         }
       }
@@ -1574,18 +1574,18 @@ const VORTEX_OF_DESTRUCTION: Artifact = {
   actions: [
     {
       cost: {
-        tap: ['self'],
-        destroy: ['another-artifact']
+        tap: 'self',
+        destroy: 'another-artifact'
       },
       reward: {
         destroyedArtifactBonus: {
           wild: 2,
-          wildRestrictions: ['gold']
+          wildRestrictions: 'gold'
         }
       }
     },
     {
-      cost: { tap: ['self'], discard: { resources: { green: 1 } } },
+      cost: { tap: 'self', discard: { resources: { green: 1 } } },
       reward: { gain: { resources: { black: 3 }, target: 'player' } }
     }
   ],

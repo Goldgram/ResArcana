@@ -11,7 +11,7 @@ const SACRED_GROVE: PlaceOfPower = {
   actions: [
     {
       cost: {
-        tap: ['self'],
+        tap: 'self',
         discard: { resources: { blue: 1 } }
       },
       reward: {
@@ -25,7 +25,7 @@ const SACRED_GROVE: PlaceOfPower = {
     },
     {
       cost: {
-        tap: ['self', 'creature']
+        tap: { and: ['self', 'creature'] }
       },
       reward: {
         gain: {
@@ -50,7 +50,7 @@ const ALCHEMISTS_TOWER: PlaceOfPower = {
   },
   collect: {
     wild: 3,
-    wildRestrictions: ['gold']
+    wildRestrictions: 'gold'
   },
   actions: [
     {
@@ -68,7 +68,7 @@ const ALCHEMISTS_TOWER: PlaceOfPower = {
   reactions: [
     {
       type: 'any-life-loss',
-      cost: { tap: ['self'] },
+      cost: { tap: 'self' },
       reward: { ignore: true }
     }
   ],
@@ -121,7 +121,7 @@ const DWARVEN_MINES: PlaceOfPower = {
   actions: [
     {
       cost: {
-        tap: ['self'],
+        tap: 'self',
         discard: { resources: { red: 5 } }
       },
       reward: {
@@ -135,7 +135,7 @@ const DWARVEN_MINES: PlaceOfPower = {
     },
     {
       cost: {
-        tap: ['self'],
+        tap: 'self',
         discard: { resources: { black: 3, red: 3 } }
       },
       reward: {
@@ -168,14 +168,14 @@ const CORAL_CASTLE: PlaceOfPower = {
   },
   actions: [
     {
-      cost: { tap: ['self'] },
+      cost: { tap: 'self' },
       reward: { checkVictoryNow: true }
     }
   ],
   reactions: [
     {
       type: 'any-life-loss',
-      cost: { tap: ['self'] },
+      cost: { tap: 'self' },
       reward: { ignore: true }
     }
   ],
@@ -233,7 +233,7 @@ const CATACOMBS_OF_THE_DEAD: PlaceOfPower = {
       }
     },
     {
-      cost: { tap: ['self'] },
+      cost: { tap: 'self' },
       reward: {
         gain: {
           target: 'self',
@@ -255,7 +255,7 @@ const SACRIFICIAL_PIT: PlaceOfPower = {
   actions: [
     {
       cost: {
-        tap: ['self'],
+        tap: 'self',
         discard: { resources: { green: 3 } }
       },
       reward: {
@@ -269,9 +269,9 @@ const SACRIFICIAL_PIT: PlaceOfPower = {
     },
     {
       cost: {
-        tap: ['self'],
+        tap: 'self',
         discard: { resources: { black: 1 } },
-        destroy: ['dragon', 'creature']
+        destroy: { or: ['dragon', 'creature'] }
       },
       reward: {
         destroyedArtifactInGold: true
@@ -306,7 +306,7 @@ const DRAGON_LAIR: PlaceOfPower = {
   },
   actions: [
     {
-      cost: { tap: ['self'] },
+      cost: { tap: 'self' },
       reward: {
         gain: {
           target: 'player',
@@ -315,7 +315,7 @@ const DRAGON_LAIR: PlaceOfPower = {
       }
     },
     {
-      cost: { tap: ['self', 'dragon'] },
+      cost: { tap: { and: ['self', 'dragon'] } },
       reward: {
         gain: {
           target: 'self',
@@ -339,12 +339,12 @@ const SORCERERS_BESTIARY: PlaceOfPower = {
   },
   actions: [
     {
-      cost: { tap: ['self'] },
+      cost: { tap: 'self' },
       reward: { checkVictoryNow: true }
     },
     {
       cost: {
-        tap: ['self'],
+        tap: 'self',
         discard: { resources: { wild: 4 } }
       },
       reward: {
@@ -385,7 +385,7 @@ const DRAGON_AERIE: PlaceOfPower = {
       reward: { gain: { resources: { green: 1 }, target: 'self' } }
     },
     {
-      cost: { tap: ['dragon'] },
+      cost: { tap: 'dragon' },
       reward: { gain: { resources: { green: 1 }, target: 'self' } }
     }
   ],
@@ -406,7 +406,7 @@ const CRYSTAL_KEEP: PlaceOfPower = {
   },
   actions: [
     {
-      cost: { tap: ['self'] },
+      cost: { tap: 'self' },
       reward: { checkVictoryNow: true }
     }
   ],
@@ -432,7 +432,7 @@ const TEMPLE_OF_THE_ABYSS: PlaceOfPower = {
   },
   actions: [
     {
-      cost: { tap: ['self'], discard: { resources: { green: 2 } } },
+      cost: { tap: 'self', discard: { resources: { green: 2 } } },
       reward: { untap: 'all-player-demons' }
     },
     {
@@ -440,7 +440,7 @@ const TEMPLE_OF_THE_ABYSS: PlaceOfPower = {
       reward: { gain: { resources: { blue: 1 }, target: 'self' } }
     },
     {
-      cost: { tap: ['demon'] },
+      cost: { tap: 'demon' },
       reward: { gain: { resources: { blue: 1 }, target: 'self' } }
     }
   ],
@@ -458,11 +458,11 @@ const GATE_OF_HELL: PlaceOfPower = {
   },
   actions: [
     {
-      cost: { tap: ['self', 'demon'] },
+      cost: { tap: { and: ['self', 'demon'] } },
       reward: { gain: { resources: { black: 1 }, target: 'self' } }
     },
     {
-      cost: { destroy: ['creature'] },
+      cost: { destroy: 'creature' },
       reward: { gain: { resources: { black: 1 }, target: 'self' } }
     },
     {

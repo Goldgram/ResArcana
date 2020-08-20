@@ -19,11 +19,11 @@ const DESTRUCTION: Scroll = {
   type: 'scroll',
   actions: [
     {
-      cost: { destroy: ['any-artifact'] },
+      cost: { destroy: 'any-artifact' },
       reward: {
         destroyedArtifactBonus: {
           wild: 1,
-          wildRestrictions: ['gold']
+          wildRestrictions: 'gold'
         }
       }
     }
@@ -108,7 +108,7 @@ const TRANSFORM: Scroll = {
         gain: {
           sameResourceNumberAsEqualDiscard: {
             wild: 1000,
-            wildRestrictions: ['gold']
+            wildRestrictions: 'gold'
           },
           target: 'player'
         }

@@ -9,7 +9,7 @@ const COLOSSUS: Monument = {
   actions: [
     {
       cost: {
-        tap: ['self'],
+        tap: 'self',
         discard: {
           resources: {
             wild: 1
@@ -37,7 +37,7 @@ const GOLDEN_STATUE: Monument = {
     {
       type: 'victory-check',
       cost: {
-        tap: ['self'],
+        tap: 'self',
         discard: {
           resources: {
             gold: 3
@@ -68,7 +68,7 @@ const HANGING_GARDENS: Monument = {
   points: 1,
   collect: {
     wild: 3,
-    wildRestrictions: ['gold']
+    wildRestrictions: 'gold'
   }
 }
 
@@ -81,7 +81,7 @@ const LIBRARY: Monument = {
   actions: [
     {
       cost: {
-        tap: ['self']
+        tap: 'self'
       },
       reward: {
         drawCards: 1
@@ -128,7 +128,7 @@ const OBELISK: Monument = {
       type: 'self-bought',
       reward: {
         gain: {
-          resources: { wild: 6, wildRestrictions: ['gold'] },
+          resources: { wild: 6, wildRestrictions: 'gold' },
           target: 'player'
         }
       }
@@ -145,7 +145,7 @@ const ORACLE: Monument = {
   actions: [
     {
       cost: {
-        tap: ['self']
+        tap: 'self'
       },
       reward: {
         reorderTopCards: {
@@ -166,7 +166,7 @@ const SOLOMONS_MUSE: Monument = {
   actions: [
     {
       cost: {
-        tap: ['self']
+        tap: 'self'
       },
       reward: {
         gain: {
@@ -190,7 +190,7 @@ const TEMPLE: Monument = {
     {
       type: 'any-life-loss',
       cost: {
-        tap: ['self']
+        tap: 'self'
       },
       reward: { ignore: true }
     }
@@ -208,7 +208,7 @@ const ALCHEMICAL_LAB: Monument = {
   actions: [
     {
       cost: {
-        tap: ['self'],
+        tap: 'self',
         discard: {
           resources: {
             wild: 1
@@ -238,7 +238,7 @@ const DARK_CATHEDRAL: Monument = {
     {
       type: 'victory-check',
       cost: {
-        tap: ['self', 'demon']
+        tap: { and: ['self', 'demon'] }
       },
       reward: {
         thisCheckVictoryBonus: 1
@@ -259,7 +259,7 @@ const DEMON_WORKSHOP: Monument = {
   actions: [
     {
       cost: {
-        tap: ['self'],
+        tap: 'self',
         discard: {
           resources: {
             gold: 1
@@ -285,7 +285,7 @@ const WARRIORS_HALL: Monument = {
   actions: [
     {
       cost: {
-        tap: ['self']
+        tap: 'self'
       },
       reward: {
         gain: {

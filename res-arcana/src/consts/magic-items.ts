@@ -20,7 +20,7 @@ const ALCHEMY: MagicItem = {
   type: 'magic-item',
   actions: [
     {
-      cost: { tap: ['self'], discard: { resources: { wild: 4 } } },
+      cost: { tap: 'self', discard: { resources: { wild: 4 } } },
       reward: {
         gain: {
           resources: { gold: 2 },
@@ -37,7 +37,7 @@ const DIVINATION: MagicItem = {
   type: 'magic-item',
   actions: [
     {
-      cost: { tap: ['self'] },
+      cost: { tap: 'self' },
       reward: { drawAndDiscard: [3, 3] }
     }
   ]
@@ -50,7 +50,7 @@ const PROTECTION: MagicItem = {
   reactions: [
     {
       type: 'any-life-loss',
-      cost: { tap: ['self'] },
+      cost: { tap: 'self' },
       reward: { ignore: true }
     }
   ]
@@ -62,7 +62,7 @@ const REANIMATE: MagicItem = {
   type: 'magic-item',
   actions: [
     {
-      cost: { tap: ['self'], discard: { resources: { wild: 1 } } },
+      cost: { tap: 'self', discard: { resources: { wild: 1 } } },
       reward: { untap: 'any' }
     }
   ]
@@ -74,7 +74,7 @@ const RESEARCH: MagicItem = {
   type: 'magic-item',
   actions: [
     {
-      cost: { tap: ['self'], discard: { resources: { wild: 1 } } },
+      cost: { tap: 'self', discard: { resources: { wild: 1 } } },
       reward: { drawCards: 1 }
     }
   ]
@@ -86,12 +86,12 @@ const TRANSMUTATION: MagicItem = {
   type: 'magic-item',
   actions: [
     {
-      cost: { tap: ['self'], discard: { resources: { wild: 3 } } },
+      cost: { tap: 'self', discard: { resources: { wild: 3 } } },
       reward: {
         gain: {
           resources: {
             wild: 3,
-            wildRestrictions: ['gold']
+            wildRestrictions: 'gold'
           },
           target: 'player'
         }
@@ -108,7 +108,7 @@ const INSCRIPTION: MagicItem = {
   type: 'magic-item',
   actions: [
     {
-      cost: { tap: ['self'], discard: { resources: { wild: 1 } } },
+      cost: { tap: 'self', discard: { resources: { wild: 1 } } },
       reward: { claimScroll: 1 }
     }
   ],
@@ -122,12 +122,12 @@ const ILLUSION: MagicItem = {
   reactions: [
     {
       type: 'player-using-power',
-      cost: { tap: ['self'] },
+      cost: { tap: 'self' },
       reward: { thisTurnActAs: ['creature', 'demon'] }
     },
     {
       type: 'player-using-power',
-      cost: { tap: ['self'], discard: { resources: { wild: 2 } } },
+      cost: { tap: 'self', discard: { resources: { wild: 2 } } },
       reward: { thisTurnActAs: ['dragon'] }
     }
   ],

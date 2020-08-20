@@ -2,8 +2,6 @@
 
 type Creature = 'dragon' | 'creature' | 'demon'
 
-type TapType = Creature | 'self' | 'any' | 'all-player-demons'
-
 type ResourceType = 'red' | 'green' | 'blue' | 'black' | 'gold'
 
 interface And<T> {
@@ -21,36 +19,72 @@ interface Resources {
   black?: number
   gold?: number
   wild?: number
-  wildRestrictions?: ResourceType[]
+  wildRestrictions?: ResourceType | And<ResourceType>
 }
 
-type OrResources = Resources[]
+// Action / Reactions
 
 interface Action {
   cost: ActionCost
   reward: ActionReward
 }
 
-// Cost
+type ReactionType =
+  | 'self-bought'
+  | 'victory-check'
+  | 'artifact-destroyed'
+  | 'player-using-power'
+  | 'any-life-loss'
+  | Creature
 
-interface Discard {
-  anyResources?: true
-  resources?: Resources | OrResources
-  creature?: Creature[]
-  card?: number
-  targetSelf?: boolean
+interface Reaction {
+  type: ReactionType
+  cost?: ActionCost
+  reward: ActionReward
 }
 
-type DestroyType = Creature | 'self' | 'another-artifact' | 'any-artifact'
+// Action Cost
 
 interface ActionCost {
-  tap?: TapType[]
-  destroy?: DestroyType[]
+  tap?: TapType | And<TapType>
+  destroy?: DestroyType | Or<DestroyType>
   discard?: Discard
   equalDiscard?: 'wild'
 }
 
-// Reward
+type TapType = Creature | 'self' | 'any' | 'all-player-demons'
+
+type DestroyType = Creature | 'self' | 'another-artifact' | 'any-artifact'
+
+interface Discard {
+  resources?: Resources | Or<Resources>
+  anyResources?: true
+  creature?: Creature | Or<Creature>
+  card?: number
+  targetSelf?: boolean
+}
+
+// Action Reward
+
+interface ActionReward {
+  untap?: TapType
+  gain?: Gain
+  rivalsGainResources?: Resources
+  reorderTopCards?: ReorderCards
+  drawCards?: number
+  drawAndDiscard?: [number, number]
+  retrieveDiscardedCard?: number
+  ignore?: boolean
+  attack?: Attack
+  discount?: Discount
+  thisCheckVictoryBonus?: number
+  destroyedArtifactBonus?: Resources
+  destroyedArtifactInGold?: true
+  claimScroll?: number
+  thisTurnActAs?: Creature[]
+  checkVictoryNow?: boolean
+  placeFreeCreatureFromAnyPlayer?: Creature
+}
 
 type ReorderCardsScope = 'player' | 'monuments'
 
@@ -75,42 +109,6 @@ interface Attack {
 }
 
 type GainEqualType = ResourceType | Creature
-
-interface ActionReward {
-  untap?: TapType
-  gain?: Gain
-  rivalsGainResources?: Resources
-  reorderTopCards?: ReorderCards
-  drawCards?: number
-  drawAndDiscard?: [number, number]
-  retrieveDiscardedCard?: number
-  ignore?: boolean
-  attack?: Attack
-  discount?: Discount
-  thisCheckVictoryBonus?: number
-  destroyedArtifactBonus?: Resources
-  destroyedArtifactInGold?: true
-  claimScroll?: number
-  thisTurnActAs?: Creature[]
-  checkVictoryNow?: boolean
-  placeFreeCreatureFromAnyPlayer?: Creature
-}
-
-// Reaction
-
-type ReactionType =
-  | 'self-bought'
-  | 'victory-check'
-  | 'artifact-destroyed'
-  | 'player-using-power'
-  | 'any-life-loss'
-  | Creature
-
-interface Reaction {
-  type: ReactionType
-  cost?: ActionCost
-  reward: ActionReward
-}
 
 // Discount
 
