@@ -182,7 +182,7 @@ const CELESTIAL_HORSE: Artifact = {
   id: 'artifact-7',
   title: 'Celestial Horse',
   type: 'artifact',
-  creature: ['creature'],
+  creature: 'creature',
   cost: {
     blue: 2,
     red: 1
@@ -328,7 +328,7 @@ const HAWK: Artifact = {
   id: 'artifact-12',
   title: 'Hawk',
   type: 'artifact',
-  creature: ['creature'],
+  creature: 'creature',
   cost: {
     green: 1,
     blue: 1
@@ -404,7 +404,7 @@ const BONE_DRAGON: Artifact = {
   id: 'artifact-14',
   title: 'Bone Dragon',
   type: 'artifact',
-  creature: ['dragon'],
+  creature: 'dragon',
   cost: {
     black: 4,
     green: 1
@@ -618,7 +618,7 @@ const EARTH_DRAGON: Artifact = {
   id: 'artifact-22',
   title: 'Earth Dragon',
   type: 'artifact',
-  creature: ['dragon'],
+  creature: 'dragon',
   cost: {
     red: 4,
     green: 3
@@ -667,7 +667,7 @@ const FIRE_DRAGON: Artifact = {
   id: 'artifact-24',
   title: 'Fire Dragon',
   type: 'artifact',
-  creature: ['dragon'],
+  creature: 'dragon',
   cost: {
     red: 6
   },
@@ -720,7 +720,7 @@ const GUARD_DOG: Artifact = {
   id: 'artifact-26',
   title: 'Guard Dog',
   type: 'artifact',
-  creature: ['creature'],
+  creature: 'creature',
   cost: {
     red: 1
   },
@@ -836,7 +836,7 @@ const MERMAID: Artifact = {
   id: 'artifact-30',
   title: 'Mermaid',
   type: 'artifact',
-  creature: ['creature'],
+  creature: 'creature',
   cost: {
     green: 2,
     blue: 2
@@ -866,7 +866,7 @@ const NIGHTINGALE: Artifact = {
   id: 'artifact-31',
   title: 'Nightingale',
   type: 'artifact',
-  creature: ['creature'],
+  creature: 'creature',
   cost: {
     green: 1,
     blue: 1
@@ -1020,7 +1020,7 @@ const SEA_SERPENT: Artifact = {
   id: 'artifact-36',
   title: 'Sea Serpent',
   type: 'artifact',
-  creature: ['dragon', 'creature'],
+  creature: { and: ['dragon', 'creature'] },
   cost: {
     blue: 6,
     green: 3
@@ -1043,7 +1043,7 @@ const TREANT: Artifact = {
   id: 'artifact-37',
   title: 'Treant',
   type: 'artifact',
-  creature: ['creature'],
+  creature: 'creature',
   cost: {
     green: 3,
     red: 2
@@ -1068,7 +1068,7 @@ const WATER_DRAGON: Artifact = {
   id: 'artifact-38',
   title: 'Water Dragon',
   type: 'artifact',
-  creature: ['dragon'],
+  creature: 'dragon',
   cost: {
     blue: 6
   },
@@ -1090,7 +1090,7 @@ const WIND_DRAGON: Artifact = {
   id: 'artifact-39',
   title: 'Wind Dragon',
   type: 'artifact',
-  creature: ['dragon'],
+  creature: 'dragon',
   cost: {
     blue: 4,
     wild: 4
@@ -1139,7 +1139,7 @@ const CHAOS_IMP: Artifact = {
   id: 'artifact-41',
   title: 'Chaos Imp',
   type: 'artifact',
-  creature: ['demon'],
+  creature: 'demon',
   cost: {
     red: 1,
     black: 1
@@ -1183,7 +1183,7 @@ const CURSED_DWARVEN_KING: Artifact = {
   id: 'artifact-42',
   title: 'Cursed Dwarven King',
   type: 'artifact',
-  creature: ['demon'],
+  creature: 'demon',
   cost: {
     green: 1,
     black: 1
@@ -1228,7 +1228,7 @@ const FIRE_DEMON: Artifact = {
   id: 'artifact-43',
   title: 'Fire Demon',
   type: 'artifact',
-  creature: ['demon'],
+  creature: 'demon',
   cost: {
     red: 2,
     black: 2
@@ -1275,7 +1275,7 @@ const GOLDEN_LION: Artifact = {
   id: 'artifact-44',
   title: 'Golden Lion',
   type: 'artifact',
-  creature: ['creature'],
+  creature: 'creature',
   cost: {
     red: 2,
     green: 1,
@@ -1305,7 +1305,7 @@ const HOMUNCULUS: Artifact = {
   id: 'artifact-45',
   title: 'Homunculus',
   type: 'artifact',
-  creature: ['demon'],
+  creature: 'demon',
   cost: {
     green: 1
   },
@@ -1335,7 +1335,7 @@ const HOUND_OF_DEATH: Artifact = {
   id: 'artifact-46',
   title: 'Hound of Death',
   type: 'artifact',
-  creature: ['demon', 'creature'],
+  creature: { and: ['demon', 'creature'] },
   cost: {
     green: 3,
     black: 2
@@ -1409,7 +1409,7 @@ const POSSESSED_DEMON_SLAYER: Artifact = {
   id: 'artifact-48',
   title: 'Possessed Demon Slayer',
   type: 'artifact',
-  creature: ['demon'],
+  creature: 'demon',
   cost: {
     gold: 1,
     red: 1,
@@ -1441,7 +1441,7 @@ const PRISMATIC_DRAGON: Artifact = {
   id: 'artifact-49',
   title: 'Prismatic Dragon',
   type: 'artifact',
-  creature: ['dragon'],
+  creature: 'dragon',
   cost: {
     red: 2,
     green: 2,
@@ -1479,7 +1479,7 @@ const SHADOWY_FIGURE: Artifact = {
   id: 'artifact-50',
   title: 'Shadowy Figure',
   type: 'artifact',
-  creature: ['demon'],
+  creature: 'demon',
   cost: {
     blue: 2,
     black: 2
@@ -1550,7 +1550,7 @@ const VORTEX_OF_DESTRUCTION: Artifact = {
   id: 'artifact-52',
   title: 'Vortex of Destruction',
   type: 'artifact',
-  creature: ['demon'],
+  creature: 'demon',
   cost: {
     red: 2,
     green: 2,

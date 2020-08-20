@@ -6,9 +6,10 @@ type TapType = Creature | 'self' | 'any' | 'all-player-demons'
 
 type ResourceType = 'red' | 'green' | 'blue' | 'black' | 'gold'
 
-// interface And<T> {
-//   and: T[]
-// }
+interface And<T> {
+  and: T[]
+}
+
 interface Or<T> {
   or: T[]
 }
@@ -144,7 +145,7 @@ interface ItemBase {
 export interface Artifact extends ItemBase {
   type: 'artifact'
   cost: Resources
-  creature?: Creature[]
+  creature?: Creature | And<Creature>
   collectSpecial?: 'windup-man' | 'vault' | 'cursed-forge'
   startingHand?: number
 }
@@ -172,7 +173,7 @@ export interface PlaceOfPower extends ItemBase {
   type: 'place-of-power'
   cost: Resources
   collectSpecial?: 'cursed-forge'
-  pointsPer?: PointsPer[]
+  pointsPer?: PointsPer | And<PointsPer>
 }
 
 export interface PlaceOfPowerSet {

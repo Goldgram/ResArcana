@@ -38,7 +38,7 @@ const SACRED_GROVE: PlaceOfPower = {
     }
   ],
   points: 2,
-  pointsPer: [{ type: 'green', points: 1, target: 'self' }]
+  pointsPer: { type: 'green', points: 1, target: 'self' }
 }
 
 const ALCHEMISTS_TOWER: PlaceOfPower = {
@@ -72,7 +72,7 @@ const ALCHEMISTS_TOWER: PlaceOfPower = {
       reward: { ignore: true }
     }
   ],
-  pointsPer: [{ type: 'gold', points: 1, target: 'self' }]
+  pointsPer: { type: 'gold', points: 1, target: 'self' }
 }
 
 const one: PlaceOfPowerSet = {
@@ -106,7 +106,7 @@ const CURSED_FORGE: PlaceOfPower = {
     }
   ],
   points: 1,
-  pointsPer: [{ type: 'gold', points: 1, target: 'self' }]
+  pointsPer: { type: 'gold', points: 1, target: 'self' }
 }
 const DWARVEN_MINES: PlaceOfPower = {
   id: 'place-of-power-2B',
@@ -148,7 +148,7 @@ const DWARVEN_MINES: PlaceOfPower = {
       }
     }
   ],
-  pointsPer: [{ type: 'gold', points: 1, target: 'self' }]
+  pointsPer: { type: 'gold', points: 1, target: 'self' }
 }
 
 const two: PlaceOfPowerSet = {
@@ -206,7 +206,7 @@ const SUNKEN_REEF: PlaceOfPower = {
       }
     }
   ],
-  pointsPer: [{ type: 'blue', points: 1, target: 'self' }]
+  pointsPer: { type: 'blue', points: 1, target: 'self' }
 }
 
 const three: PlaceOfPowerSet = {
@@ -242,7 +242,7 @@ const CATACOMBS_OF_THE_DEAD: PlaceOfPower = {
       }
     }
   ],
-  pointsPer: [{ type: 'black', points: 1, target: 'self' }]
+  pointsPer: { type: 'black', points: 1, target: 'self' }
 }
 const SACRIFICIAL_PIT: PlaceOfPower = {
   id: 'place-of-power-4B',
@@ -279,7 +279,7 @@ const SACRIFICIAL_PIT: PlaceOfPower = {
     }
   ],
   points: 2,
-  pointsPer: [{ type: 'black', points: 1, target: 'self' }]
+  pointsPer: { type: 'black', points: 1, target: 'self' }
 }
 
 const four: PlaceOfPowerSet = {
@@ -324,7 +324,7 @@ const DRAGON_LAIR: PlaceOfPower = {
       }
     }
   ],
-  pointsPer: [{ type: 'gold', points: 1, target: 'self' }]
+  pointsPer: { type: 'gold', points: 1, target: 'self' }
 }
 
 const SORCERERS_BESTIARY: PlaceOfPower = {
@@ -352,10 +352,12 @@ const SORCERERS_BESTIARY: PlaceOfPower = {
       }
     }
   ],
-  pointsPer: [
-    { type: 'creature', points: 1, target: 'player' },
-    { type: 'dragon', points: 2, target: 'player' }
-  ]
+  pointsPer: {
+    and: [
+      { type: 'creature', points: 1, target: 'player' },
+      { type: 'dragon', points: 2, target: 'player' }
+    ]
+  }
 }
 
 const five: PlaceOfPowerSet = {
@@ -387,7 +389,7 @@ const DRAGON_AERIE: PlaceOfPower = {
       reward: { gain: { resources: { green: 1 }, target: 'self' } }
     }
   ],
-  pointsPer: [{ type: 'green', points: 1, target: 'self' }],
+  pointsPer: { type: 'green', points: 1, target: 'self' },
   expansion: 1
 }
 
@@ -409,7 +411,7 @@ const CRYSTAL_KEEP: PlaceOfPower = {
     }
   ],
   points: 5,
-  pointsPer: [{ type: 'artifact', divide: 2, points: 1, target: 'player' }],
+  pointsPer: { type: 'artifact', divide: 2, points: 1, target: 'player' },
   expansion: 1
 }
 
@@ -442,7 +444,7 @@ const TEMPLE_OF_THE_ABYSS: PlaceOfPower = {
       reward: { gain: { resources: { blue: 1 }, target: 'self' } }
     }
   ],
-  pointsPer: [{ type: 'blue', points: 1, target: 'self' }],
+  pointsPer: { type: 'blue', points: 1, target: 'self' },
   expansion: 1
 }
 
@@ -468,10 +470,12 @@ const GATE_OF_HELL: PlaceOfPower = {
       reward: { gain: { resources: { black: 1 }, target: 'self' } }
     }
   ],
-  pointsPer: [
-    { type: 'demon', points: 1, target: 'player' },
-    { type: 'black', points: 1, target: 'self' }
-  ],
+  pointsPer: {
+    and: [
+      { type: 'demon', points: 1, target: 'player' },
+      { type: 'black', points: 1, target: 'self' }
+    ]
+  },
   expansion: 1
 }
 
