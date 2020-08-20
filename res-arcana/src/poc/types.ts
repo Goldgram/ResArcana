@@ -127,7 +127,7 @@ export interface Artifact extends ItemBase {
   creature?: Creature[]
   points?: number
   discount?: Discount
-  collectSpecial?: 'windup-man' | 'vault'
+  collectSpecial?: 'windup-man' | 'vault' | 'cursed-forge'
   startingHand?: number
 }
 
@@ -147,15 +147,23 @@ export interface Monument extends ItemBase {
   points?: number
 }
 
-export interface PlaceOfPower extends ItemBase {
-  type: 'place-of-power'
-  side: 'A' | 'B'
-  cost: Resources
-}
-
 export interface Scroll extends ItemBase {
   type: 'scroll'
   expansion: 1
+}
+
+export interface PlaceOfPower extends ItemBase {
+  type: 'place-of-power'
+  cost: Resources
+  collectSpecial?: 'cursed-forge'
+  points?: number
+  pointPerResourceOnSelf?: ResourceType
+}
+
+export interface PlaceOfPowerSet {
+  id: string
+  sideA: PlaceOfPower
+  sideB: PlaceOfPower
 }
 
 // export interface Item {

@@ -4,6 +4,7 @@ import { MONUMENTS } from './consts/monuments'
 import { ARTIFACTS } from './consts/artifacts'
 import { MAGIC_ITEMS } from './consts/magic-items'
 import { SCROLLS } from './consts/scrolls'
+import { PLACES_OF_POWER } from './consts/places-of-power'
 
 export const POC = () => {
   return (
@@ -12,7 +13,7 @@ export const POC = () => {
       {MAGES.map((m) => {
         return (
           <div>
-            {m.id} - {m.title}
+            {m.id} | {m.title}
           </div>
         )
       })}
@@ -23,7 +24,7 @@ export const POC = () => {
       {MONUMENTS.map((m) => {
         return (
           <div>
-            {m.id} - {m.title}
+            {m.id} | {m.title}
           </div>
         )
       })}
@@ -34,7 +35,7 @@ export const POC = () => {
       {ARTIFACTS.map((m) => {
         return (
           <div>
-            {m.id} - {m.title}
+            {m.id} | {m.title}
           </div>
         )
       })}
@@ -45,7 +46,7 @@ export const POC = () => {
       {MAGIC_ITEMS.map((m) => {
         return (
           <div>
-            {m.id} - {m.title}
+            {m.id} | {m.title}
           </div>
         )
       })}
@@ -56,7 +57,18 @@ export const POC = () => {
       {SCROLLS.map((m) => {
         return (
           <div>
-            {m.id} - {m.title}
+            {m.id} | {m.title}
+          </div>
+        )
+      })}
+
+      <br />
+
+      <b>Places of Power: {PLACES_OF_POWER.length}</b>
+      {PLACES_OF_POWER.map((m) => {
+        return (
+          <div>
+            {m.id} | {m.sideA.title} | {m.sideB.title}
           </div>
         )
       })}
