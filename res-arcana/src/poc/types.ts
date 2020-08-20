@@ -2,9 +2,16 @@
 
 type Creature = 'dragon' | 'creature' | 'demon'
 
-type TapType = 'self' | 'any' | Creature
+type TapType = Creature | 'self' | 'any' | 'all-player-demons'
 
 type ResourceType = 'red' | 'green' | 'blue' | 'black' | 'gold'
+
+// interface And<T> {
+//   and: T[]
+// }
+// interface Or<T> {
+//   or: T[]
+// }
 
 interface Resources {
   red?: number
@@ -33,9 +40,11 @@ interface Discard {
   targetSelf?: boolean
 }
 
+type DestroyType = Creature | 'self' | 'another-artifact' | 'any-artifact'
+
 interface ActionCost {
   tap?: TapType[]
-  destroy?: 'self' | 'another-artifact' | 'any-artifact'
+  destroy?: DestroyType[]
   discard?: Discard
   equalDiscard?: 'wild'
 }
@@ -61,7 +70,7 @@ interface Gain {
 
 interface Attack {
   value: number
-  discardToIgnore?: 'artifact' | 'card' | Resources
+  discardToIgnore?: Resources | 'artifact' | 'card'
 }
 
 type GainEqualType = ResourceType | Creature
@@ -79,11 +88,15 @@ interface ActionReward {
   discount?: Discount
   thisCheckVictoryBonus?: number
   destroyedArtifactBonus?: Resources
+  destroyedArtifactInGold?: true
   claimScroll?: number
   thisTurnActAs?: Creature[]
+  checkVictoryNow?: boolean
+  placeFreeCreatureFromAnyPlayer?: Creature
 }
 
 // Reaction
+
 type ReactionType =
   | 'self-bought'
   | 'victory-check'
@@ -101,14 +114,19 @@ interface Reaction {
 // Discount
 
 interface Discount {
-  type: 'artifact' | 'discarded-card' | Creature
+  type: Creature | 'artifact' | 'discarded-card'
   resources?: Resources
   free?: boolean
 }
 
 // points
 
-// type pointsPerResource = (resourcesOnCard: Resources) => number;
+interface PointsPer {
+  type: Creature | ResourceType | 'artifact'
+  points: number
+  target: 'self' | 'player'
+  divide?: number
+}
 
 // Item
 
@@ -119,21 +137,20 @@ interface ItemBase {
   collect?: Resources | OrResources
   actions?: Action[]
   reactions?: Reaction[]
+  discount?: Discount
+  points?: number
 }
 
 export interface Artifact extends ItemBase {
   type: 'artifact'
   cost: Resources
   creature?: Creature[]
-  points?: number
-  discount?: Discount
   collectSpecial?: 'windup-man' | 'vault' | 'cursed-forge'
   startingHand?: number
 }
 
 export interface Mage extends ItemBase {
   type: 'mage'
-  discount?: Discount
   startingHand?: number
 }
 
@@ -144,7 +161,6 @@ export interface MagicItem extends ItemBase {
 export interface Monument extends ItemBase {
   type: 'monument'
   cost: Resources & { gold: 4 }
-  points?: number
 }
 
 export interface Scroll extends ItemBase {
@@ -156,14 +172,14 @@ export interface PlaceOfPower extends ItemBase {
   type: 'place-of-power'
   cost: Resources
   collectSpecial?: 'cursed-forge'
-  points?: number
-  pointPerResourceOnSelf?: ResourceType
+  pointsPer?: PointsPer[]
 }
 
 export interface PlaceOfPowerSet {
   id: string
   sideA: PlaceOfPower
   sideB: PlaceOfPower
+  expansion?: number
 }
 
 // export interface Item {

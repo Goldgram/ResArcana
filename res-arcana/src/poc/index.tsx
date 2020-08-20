@@ -8,7 +8,7 @@ import { PLACES_OF_POWER } from './consts/places-of-power'
 
 export const POC = () => {
   return (
-    <>
+    <div style={{ padding: 32 }}>
       <b>Mages: {MAGES.length}</b>
       {MAGES.map((m) => {
         return (
@@ -72,8 +72,6 @@ export const POC = () => {
           </div>
         )
       })}
-
-      <br />
-    </>
+    </div>
   )
 }

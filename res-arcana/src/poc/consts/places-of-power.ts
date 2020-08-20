@@ -38,7 +38,7 @@ const SACRED_GROVE: PlaceOfPower = {
     }
   ],
   points: 2,
-  pointPerResourceOnSelf: 'green'
+  pointsPer: [{ type: 'green', points: 1, target: 'self' }]
 }
 
 const ALCHEMISTS_TOWER: PlaceOfPower = {
@@ -72,7 +72,7 @@ const ALCHEMISTS_TOWER: PlaceOfPower = {
       reward: { ignore: true }
     }
   ],
-  pointPerResourceOnSelf: 'gold'
+  pointsPer: [{ type: 'gold', points: 1, target: 'self' }]
 }
 
 const one: PlaceOfPowerSet = {
@@ -106,7 +106,7 @@ const CURSED_FORGE: PlaceOfPower = {
     }
   ],
   points: 1,
-  pointPerResourceOnSelf: 'gold'
+  pointsPer: [{ type: 'gold', points: 1, target: 'self' }]
 }
 const DWARVEN_MINES: PlaceOfPower = {
   id: 'place-of-power-2B',
@@ -148,7 +148,7 @@ const DWARVEN_MINES: PlaceOfPower = {
       }
     }
   ],
-  pointPerResourceOnSelf: 'gold'
+  pointsPer: [{ type: 'gold', points: 1, target: 'self' }]
 }
 
 const two: PlaceOfPowerSet = {
@@ -157,4 +157,338 @@ const two: PlaceOfPowerSet = {
   sideB: DWARVEN_MINES
 }
 
-export const PLACES_OF_POWER: PlaceOfPowerSet[] = [one, two]
+const CORAL_CASTLE: PlaceOfPower = {
+  id: 'place-of-power-3A',
+  title: 'Coral Castle',
+  type: 'place-of-power',
+  cost: {
+    red: 5,
+    green: 5,
+    blue: 5
+  },
+  actions: [
+    {
+      cost: { tap: ['self'] },
+      reward: { checkVictoryNow: true }
+    }
+  ],
+  reactions: [
+    {
+      type: 'any-life-loss',
+      cost: { tap: ['self'] },
+      reward: { ignore: true }
+    }
+  ],
+  points: 3
+}
+const SUNKEN_REEF: PlaceOfPower = {
+  id: 'place-of-power-3B',
+  title: 'Sunken Reef',
+  type: 'place-of-power',
+  cost: {
+    blue: 5,
+    red: 2,
+    green: 2
+  },
+  collect: { gold: 1 },
+  actions: [
+    {
+      cost: {
+        discard: { resources: { blue: 2, green: 1 } }
+      },
+      reward: {
+        gain: {
+          resources: {
+            blue: 1
+          },
+          target: 'self'
+        }
+      }
+    }
+  ],
+  pointsPer: [{ type: 'blue', points: 1, target: 'self' }]
+}
+
+const three: PlaceOfPowerSet = {
+  id: 'place-of-power-3',
+  sideA: CORAL_CASTLE,
+  sideB: SUNKEN_REEF
+}
+
+const CATACOMBS_OF_THE_DEAD: PlaceOfPower = {
+  id: 'place-of-power-4A',
+  title: 'Catacombs of the Dead',
+  type: 'place-of-power',
+  cost: {
+    black: 9
+  },
+  actions: [
+    {
+      cost: { discard: { resources: { black: 5 } } },
+      reward: {
+        gain: {
+          target: 'self',
+          resources: { black: 1 }
+        }
+      }
+    },
+    {
+      cost: { tap: ['self'] },
+      reward: {
+        gain: {
+          target: 'self',
+          resources: { black: 1 }
+        }
+      }
+    }
+  ],
+  pointsPer: [{ type: 'black', points: 1, target: 'self' }]
+}
+const SACRIFICIAL_PIT: PlaceOfPower = {
+  id: 'place-of-power-4B',
+  title: 'Sacrificial Pit',
+  type: 'place-of-power',
+  cost: {
+    red: 8,
+    black: 4
+  },
+  actions: [
+    {
+      cost: {
+        tap: ['self'],
+        discard: { resources: { green: 3 } }
+      },
+      reward: {
+        gain: {
+          resources: {
+            black: 1
+          },
+          target: 'self'
+        }
+      }
+    },
+    {
+      cost: {
+        tap: ['self'],
+        discard: { resources: { black: 1 } },
+        destroy: ['dragon', 'creature']
+      },
+      reward: {
+        destroyedArtifactInGold: true
+      }
+    }
+  ],
+  points: 2,
+  pointsPer: [{ type: 'black', points: 1, target: 'self' }]
+}
+
+const four: PlaceOfPowerSet = {
+  id: 'place-of-power-4',
+  sideA: CATACOMBS_OF_THE_DEAD,
+  sideB: SACRIFICIAL_PIT
+}
+
+const DRAGON_LAIR: PlaceOfPower = {
+  id: 'place-of-power-5A',
+  title: "Dragon's Lair",
+  type: 'place-of-power',
+  cost: {
+    red: 3,
+    green: 3,
+    blue: 3,
+    black: 3
+  },
+  discount: {
+    type: 'dragon',
+    resources: {
+      wild: 3
+    }
+  },
+  actions: [
+    {
+      cost: { tap: ['self'] },
+      reward: {
+        gain: {
+          target: 'player',
+          resources: { gold: 2 }
+        }
+      }
+    },
+    {
+      cost: { tap: ['self', 'dragon'] },
+      reward: {
+        gain: {
+          target: 'self',
+          resources: { gold: 2 }
+        }
+      }
+    }
+  ],
+  pointsPer: [{ type: 'gold', points: 1, target: 'self' }]
+}
+
+const SORCERERS_BESTIARY: PlaceOfPower = {
+  id: 'place-of-power-5B',
+  title: "Sorcerer's Bestiary",
+  type: 'place-of-power',
+  cost: {
+    green: 4,
+    red: 2,
+    blue: 2,
+    black: 2
+  },
+  actions: [
+    {
+      cost: { tap: ['self'] },
+      reward: { checkVictoryNow: true }
+    },
+    {
+      cost: {
+        tap: ['self'],
+        discard: { resources: { wild: 4 } }
+      },
+      reward: {
+        placeFreeCreatureFromAnyPlayer: 'dragon'
+      }
+    }
+  ],
+  pointsPer: [
+    { type: 'creature', points: 1, target: 'player' },
+    { type: 'dragon', points: 2, target: 'player' }
+  ]
+}
+
+const five: PlaceOfPowerSet = {
+  id: 'place-of-power-5',
+  sideA: DRAGON_LAIR,
+  sideB: SORCERERS_BESTIARY
+}
+
+/* Expansion 1 */
+
+const DRAGON_AERIE: PlaceOfPower = {
+  id: 'place-of-power-6A',
+  title: 'Dragon Aerie',
+  type: 'place-of-power',
+  cost: {
+    red: 8,
+    green: 4
+  },
+  collect: {
+    gold: 1
+  },
+  actions: [
+    {
+      cost: { discard: { resources: { green: 4 } } },
+      reward: { gain: { resources: { green: 1 }, target: 'self' } }
+    },
+    {
+      cost: { tap: ['dragon'] },
+      reward: { gain: { resources: { green: 1 }, target: 'self' } }
+    }
+  ],
+  pointsPer: [{ type: 'green', points: 1, target: 'self' }],
+  expansion: 1
+}
+
+const CRYSTAL_KEEP: PlaceOfPower = {
+  id: 'place-of-power-6B',
+  title: 'Crystal Keep',
+  type: 'place-of-power',
+  cost: {
+    red: 4,
+    green: 4,
+    blue: 4,
+    black: 4,
+    gold: 4
+  },
+  actions: [
+    {
+      cost: { tap: ['self'] },
+      reward: { checkVictoryNow: true }
+    }
+  ],
+  points: 5,
+  pointsPer: [{ type: 'artifact', divide: 2, points: 1, target: 'player' }],
+  expansion: 1
+}
+
+const six: PlaceOfPowerSet = {
+  id: 'place-of-power-6',
+  sideA: DRAGON_AERIE,
+  sideB: CRYSTAL_KEEP,
+  expansion: 1
+}
+
+const TEMPLE_OF_THE_ABYSS: PlaceOfPower = {
+  id: 'place-of-power-7A',
+  title: 'Temple of the Abyss',
+  type: 'place-of-power',
+  cost: {
+    blue: 6,
+    black: 3
+  },
+  actions: [
+    {
+      cost: { tap: ['self'], discard: { resources: { green: 2 } } },
+      reward: { untap: 'all-player-demons' }
+    },
+    {
+      cost: { discard: { resources: { blue: 2, black: 2 } } },
+      reward: { gain: { resources: { blue: 1 }, target: 'self' } }
+    },
+    {
+      cost: { tap: ['demon'] },
+      reward: { gain: { resources: { blue: 1 }, target: 'self' } }
+    }
+  ],
+  pointsPer: [{ type: 'blue', points: 1, target: 'self' }],
+  expansion: 1
+}
+
+const GATE_OF_HELL: PlaceOfPower = {
+  id: 'place-of-power-7B',
+  title: 'Gate of Hell',
+  type: 'place-of-power',
+  cost: {
+    red: 6,
+    black: 3
+  },
+  actions: [
+    {
+      cost: { tap: ['self', 'demon'] },
+      reward: { gain: { resources: { black: 1 }, target: 'self' } }
+    },
+    {
+      cost: { destroy: ['creature'] },
+      reward: { gain: { resources: { black: 1 }, target: 'self' } }
+    },
+    {
+      cost: { discard: { resources: { red: 4 } } },
+      reward: { gain: { resources: { black: 1 }, target: 'self' } }
+    }
+  ],
+  pointsPer: [
+    { type: 'demon', points: 1, target: 'player' },
+    { type: 'black', points: 1, target: 'self' }
+  ],
+  expansion: 1
+}
+
+const seven: PlaceOfPowerSet = {
+  id: 'place-of-power-7',
+  sideA: TEMPLE_OF_THE_ABYSS,
+  sideB: GATE_OF_HELL,
+  expansion: 1
+}
+
+export const PLACES_OF_POWER: PlaceOfPowerSet[] = [
+  one,
+  two,
+  three,
+  four,
+  five,
+  /* Expansion 1 */
+  six,
+  seven
+]

@@ -477,7 +477,7 @@ const CORRUPT_ALTAR: Artifact = {
       }
     },
     {
-      cost: { tap: ['self'], destroy: 'any-artifact' },
+      cost: { tap: ['self'], destroy: ['any-artifact'] },
       reward: {
         destroyedArtifactBonus: {
           wild: 2,
@@ -578,7 +578,7 @@ const DRAGON_EGG: Artifact = {
   },
   actions: [
     {
-      cost: { destroy: 'self' },
+      cost: { destroy: ['self'] },
       reward: { discount: { type: 'dragon', resources: { wild: 4 } } }
     }
   ],
@@ -702,7 +702,10 @@ const FIERY_WHIP: Artifact = {
       }
     },
     {
-      cost: { tap: ['self'], destroy: 'another-artifact' },
+      cost: {
+        tap: ['self'],
+        destroy: ['another-artifact']
+      },
       reward: {
         destroyedArtifactBonus: {
           wild: 2,
@@ -817,7 +820,7 @@ const JEWELED_STATUETTE: Artifact = {
       }
     },
     {
-      cost: { destroy: 'self' },
+      cost: { destroy: ['self'] },
       reward: {
         gain: {
           resources: { gold: 2, red: 1 },
@@ -999,7 +1002,10 @@ const SACRIFICIAL_DAGGER: Artifact = {
       }
     },
     {
-      cost: { destroy: 'self', discard: { card: 1 } },
+      cost: {
+        destroy: ['self'],
+        discard: { card: 1 }
+      },
       reward: {
         destroyedArtifactBonus: {
           wild: 1,
@@ -1556,7 +1562,10 @@ const VORTEX_OF_DESTRUCTION: Artifact = {
   },
   actions: [
     {
-      cost: { tap: ['self'], destroy: 'another-artifact' },
+      cost: {
+        tap: ['self'],
+        destroy: ['another-artifact']
+      },
       reward: {
         destroyedArtifactBonus: {
           wild: 2,
