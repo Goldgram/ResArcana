@@ -70,20 +70,20 @@ interface ActionReward {
   untap?: TapType
   gain?: Gain
   rivalsGainResources?: Resources
-  reorderTopCards?: ReorderCards
+  reorderTopCards?: number
   drawCards?: number
   drawAndDiscard?: [number, number]
   retrieveDiscardedCard?: number
   ignore?: boolean
-  attack?: Attack
-  discount?: Discount
   thisCheckVictoryBonus?: number
   destroyedArtifactBonus?: Resources
   destroyedArtifactInGold?: true
-  claimScroll?: number
-  thisTurnActAs?: Creature[]
+  claimScroll?: boolean
   checkVictoryNow?: boolean
-  placeFreeCreatureFromAnyPlayer?: Creature
+  thisTurnActAs?: Creature | Or<Creature>
+  placeFreeCreatureFromAnyPlayerDiscard?: Creature
+  discount?: Discount
+  attack?: Attack
 }
 
 interface Gain {
@@ -100,31 +100,15 @@ interface GainWildDiscard {
   divide?: number
 }
 
-// TODO
-
-type ReorderCardsScope = 'player' | 'monuments'
-
-interface ReorderCards {
-  numberOfCards: number
-  options: ReorderCardsScope[]
-}
-
-interface Attack {
-  value: number
-  discardToIgnore?: Resources | 'artifact' | 'card'
-}
-
 interface Discount {
   type: Creature | 'artifact' | 'discarded-card'
   resources?: Resources
   free?: boolean
 }
 
-interface PointsPer {
-  type: Creature | ResourceType | 'artifact'
-  points: number
-  target: 'self' | 'player'
-  divide?: number
+interface Attack {
+  value: number
+  discardToIgnore?: Resources | 'artifact' | 'card'
 }
 
 // Items
@@ -167,6 +151,13 @@ export interface Scroll extends ItemBase {
   expansion: 1
 }
 
+export interface PlaceOfPowerSet {
+  id: string
+  sideA: PlaceOfPower
+  sideB: PlaceOfPower
+  expansion?: number
+}
+
 export interface PlaceOfPower extends ItemBase {
   type: 'place-of-power'
   cost: Resources
@@ -174,11 +165,11 @@ export interface PlaceOfPower extends ItemBase {
   pointsPer?: PointsPer | And<PointsPer>
 }
 
-export interface PlaceOfPowerSet {
-  id: string
-  sideA: PlaceOfPower
-  sideB: PlaceOfPower
-  expansion?: number
+interface PointsPer {
+  type: Creature | ResourceType | 'artifact'
+  points: number
+  target: 'self' | 'player'
+  divide?: number
 }
 
 // export interface Item {

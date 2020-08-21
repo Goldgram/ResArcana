@@ -109,7 +109,7 @@ const INSCRIPTION: MagicItem = {
   actions: [
     {
       cost: { tap: 'self', discard: { resources: { wild: 1 } } },
-      reward: { claimScroll: 1 }
+      reward: { claimScroll: true }
     }
   ],
   expansion: 1
@@ -123,12 +123,12 @@ const ILLUSION: MagicItem = {
     {
       type: 'player-using-power',
       cost: { tap: 'self' },
-      reward: { thisTurnActAs: ['creature', 'demon'] }
+      reward: { thisTurnActAs: { or: ['creature', 'demon'] } }
     },
     {
       type: 'player-using-power',
       cost: { tap: 'self', discard: { resources: { wild: 2 } } },
-      reward: { thisTurnActAs: ['dragon'] }
+      reward: { thisTurnActAs: 'dragon' }
     }
   ],
   expansion: 1

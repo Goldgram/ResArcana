@@ -340,10 +340,7 @@ const HAWK: Artifact = {
     {
       cost: { tap: 'self' },
       reward: {
-        reorderTopCards: {
-          numberOfCards: 3,
-          options: ['player', 'monuments']
-        }
+        reorderTopCards: 3
       }
     },
     {

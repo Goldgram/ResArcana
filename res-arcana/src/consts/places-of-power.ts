@@ -348,7 +348,7 @@ const SORCERERS_BESTIARY: PlaceOfPower = {
         discard: { resources: { wild: 4 } }
       },
       reward: {
-        placeFreeCreatureFromAnyPlayer: 'dragon'
+        placeFreeCreatureFromAnyPlayerDiscard: 'dragon'
       }
     }
   ],

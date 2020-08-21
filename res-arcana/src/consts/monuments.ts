@@ -148,10 +148,7 @@ const ORACLE: Monument = {
         tap: 'self'
       },
       reward: {
-        reorderTopCards: {
-          numberOfCards: 3,
-          options: ['player', 'monuments']
-        }
+        reorderTopCards: 3
       }
     }
   ]
