@@ -12,7 +12,8 @@
   min-height: 20px;
   border-radius: 12px;
   border: 1px solid gray;
-  padding-bottom: 22px;
+  /* background-color: #fbf7f2; */
+  background-color: red;
 }
 
 .item .title {
@@ -117,10 +118,11 @@
   border-bottom: 1px solid lightgray;
 }
 
-.item .points {
-  height: 10px;
+.item .footer {
+  min-height: 22px;
 }
-.item .points .circle {
+
+.item .points {
   background-color: red;
   width: 32px;
   height: 32px;
@@ -135,48 +137,42 @@
 
 .item .moon {
   position: absolute;
-  bottom: 6px;
-  left: 6px;
-  background-color: lightyellow;
-  height: 8px;
-  width: 8px;
-  border-radius: 4px;
-  border: 1px solid black;
-}
-
-.item .moon {
-  position: absolute;
-  bottom: 6px;
-  left: 6px;
+  bottom: 8px;
+  left: 8px;
   background-color: lightyellow;
   height: 10px;
   width: 10px;
-  border-radius: 6px;
-  border: 1px solid black;
+  border-radius: 7px;
+  box-shadow: 0 2px 0 2px rgba(0, 0, 0, 0.6);
 }
 
 .item .startingHand {
   position: absolute;
-  bottom: 6px;
-  right: 6px;
-  font-size: 10px;
-  line-height: 8px;
+  bottom: 4px;
+  right: 4px;
+  font-size: 11px;
+  line-height: 10px;
   width: 14px;
   height: 14px;
   border-radius: 7px;
   display: flex;
   justify-content: center;
   align-items: center;
+  font-weight: bold;
 }
 .item .startingHand.color1 {
-  background-color: blue;
+  color: #550000;
+  background-color: #ffe1e1;
 }
 .item .startingHand.color2 {
-  background-color: green;
+  color: #000055;
+  background-color: #ddeeff;
 }
 .item .startingHand.color3 {
-  background-color: orange;
+  color: #005500;
+  background-color: #deffde;
 }
 .item .startingHand.color4 {
-  background-color: purple;
+  color: #550055;
+  background-color: #f5ddff;
 }

@@ -53,19 +53,17 @@ export const Item = ({ value }: ItemProps) => {
         reactions.map((r) => (
           <div className='reaction'>{JSON.stringify(r)}</div>
         ))}
+      <div className='footer'>
+        {points && <div className='points glowWhiteText'>{points}</div>}
 
-      {points && (
-        <div className='points'>
-          <div className='circle glowWhiteText'>{points}</div>
-        </div>
-      )}
+        {expansion && <div className='moon'></div>}
 
-      {expansion && <div className='moon'></div>}
-      {startingHand && (
-        <div className={'startingHand glowWhiteText color' + startingHand}>
-          {startingHand}
-        </div>
-      )}
+        {startingHand && (
+          <div className={'startingHand color' + startingHand}>
+            {startingHand}
+          </div>
+        )}
+      </div>
     </div>
   )
 }
