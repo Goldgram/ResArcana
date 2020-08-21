@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { ARTIFACTS } from '../consts/artifacts'
-import { Artifact } from '../components/Artifact/Artifact'
+import { Item } from '../components/Item/Item'
 
 import './Game.css'
 
@@ -16,7 +16,7 @@ export const Game = () => {
         Prev
       </button>
 
-      <Artifact value={ARTIFACTS[artifactIndex]} />
+      <Item value={ARTIFACTS[artifactIndex]} />
 
       <button
         onClick={() => SetArtifactIndex(artifactIndex + 1)}
