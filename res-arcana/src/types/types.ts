@@ -12,7 +12,7 @@ interface Or<T> {
   or: T[]
 }
 
-interface Resources {
+export interface Resources {
   red?: number
   green?: number
   blue?: number
@@ -124,7 +124,7 @@ interface ItemBase {
   expansion?: number
 }
 
-export interface Artifact extends ItemBase {
+export interface ArtifactType extends ItemBase {
   type: 'artifact'
   cost: Resources
   creature?: Creature | And<Creature>
@@ -132,33 +132,33 @@ export interface Artifact extends ItemBase {
   startingHand?: number
 }
 
-export interface Mage extends ItemBase {
+export interface MageType extends ItemBase {
   type: 'mage'
   startingHand?: number
 }
 
-export interface MagicItem extends ItemBase {
+export interface MagicItemType extends ItemBase {
   type: 'magic-item'
 }
 
-export interface Monument extends ItemBase {
+export interface MonumentType extends ItemBase {
   type: 'monument'
   cost: Resources & { gold: 4 }
 }
 
-export interface Scroll extends ItemBase {
+export interface ScrollType extends ItemBase {
   type: 'scroll'
   expansion: 1
 }
 
 export interface PlaceOfPowerSet {
   id: string
-  sideA: PlaceOfPower
-  sideB: PlaceOfPower
+  sideA: PlaceOfPowerType
+  sideB: PlaceOfPowerType
   expansion?: number
 }
 
-export interface PlaceOfPower extends ItemBase {
+export interface PlaceOfPowerType extends ItemBase {
   type: 'place-of-power'
   cost: Resources
   collectSpecial?: 'cursed-forge'

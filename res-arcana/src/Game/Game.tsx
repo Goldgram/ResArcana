@@ -1,13 +1,29 @@
-import React from 'react'
-// import { MAGES } from '../consts/mages'
-// import { MONUMENTS } from '../consts/monuments'
-// import { ARTIFACTS } from '../consts/artifacts'
-// import { MAGIC_ITEMS } from '../consts/magic-items'
-// import { SCROLLS } from '../consts/scrolls'
-// import { PLACES_OF_POWER } from '../consts/places-of-power'
+import React, { useState } from 'react'
+import { ARTIFACTS } from '../consts/artifacts'
+import { Artifact } from '../components/Artifact/Artifact'
 
 import './Game.css'
 
 export const Game = () => {
-  return <div>stuff goes here</div>
+  const [artifactIndex, SetArtifactIndex] = useState(0)
+
+  return (
+    <div className='card-display'>
+      <button
+        onClick={() => SetArtifactIndex(artifactIndex - 1)}
+        disabled={artifactIndex < 1}
+      >
+        Prev
+      </button>
+
+      <Artifact value={ARTIFACTS[artifactIndex]} />
+
+      <button
+        onClick={() => SetArtifactIndex(artifactIndex + 1)}
+        disabled={artifactIndex >= ARTIFACTS.length - 1}
+      >
+        Next
+      </button>
+    </div>
+  )
 }

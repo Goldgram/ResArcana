@@ -1,20 +1,20 @@
-import { MagicItem } from '../types/types'
+import { MagicItemType } from '../types/types'
 
-const CALM_OR_ELAN: MagicItem = {
+const CALM_OR_ELAN: MagicItemType = {
   id: 'magic-item-1',
   title: 'Calm / Elan',
   type: 'magic-item',
   collect: { or: [{ blue: 1 }, { red: 1 }] }
 }
 
-const DEATH_OR_LIFE: MagicItem = {
+const DEATH_OR_LIFE: MagicItemType = {
   id: 'magic-item-2',
   title: 'Death / Life',
   type: 'magic-item',
   collect: { or: [{ black: 1 }, { green: 1 }] }
 }
 
-const ALCHEMY: MagicItem = {
+const ALCHEMY: MagicItemType = {
   id: 'magic-item-3',
   title: 'Alchemy',
   type: 'magic-item',
@@ -31,7 +31,7 @@ const ALCHEMY: MagicItem = {
   ]
 }
 
-const DIVINATION: MagicItem = {
+const DIVINATION: MagicItemType = {
   id: 'magic-item-4',
   title: 'Divination',
   type: 'magic-item',
@@ -43,7 +43,7 @@ const DIVINATION: MagicItem = {
   ]
 }
 
-const PROTECTION: MagicItem = {
+const PROTECTION: MagicItemType = {
   id: 'magic-item-5',
   title: 'Protection',
   type: 'magic-item',
@@ -56,7 +56,7 @@ const PROTECTION: MagicItem = {
   ]
 }
 
-const REANIMATE: MagicItem = {
+const REANIMATE: MagicItemType = {
   id: 'magic-item-6',
   title: 'Reanimate',
   type: 'magic-item',
@@ -68,7 +68,7 @@ const REANIMATE: MagicItem = {
   ]
 }
 
-const RESEARCH: MagicItem = {
+const RESEARCH: MagicItemType = {
   id: 'magic-item-7',
   title: 'Research',
   type: 'magic-item',
@@ -80,7 +80,7 @@ const RESEARCH: MagicItem = {
   ]
 }
 
-const TRANSMUTATION: MagicItem = {
+const TRANSMUTATION: MagicItemType = {
   id: 'magic-item-8',
   title: 'Transmutation',
   type: 'magic-item',
@@ -102,7 +102,7 @@ const TRANSMUTATION: MagicItem = {
 
 /* Expansion 1 */
 
-const INSCRIPTION: MagicItem = {
+const INSCRIPTION: MagicItemType = {
   id: 'magic-item-9',
   title: 'Inscription',
   type: 'magic-item',
@@ -115,7 +115,7 @@ const INSCRIPTION: MagicItem = {
   expansion: 1
 }
 
-const ILLUSION: MagicItem = {
+const ILLUSION: MagicItemType = {
   id: 'magic-item-10',
   title: 'Illusion',
   type: 'magic-item',

@@ -1,6 +1,6 @@
-import { Scroll } from '../types/types'
+import { ScrollType } from '../types/types'
 
-const AUGURY: Scroll = {
+const AUGURY: ScrollType = {
   id: 'scroll-1',
   title: 'Augury',
   type: 'scroll',
@@ -13,7 +13,7 @@ const AUGURY: Scroll = {
   expansion: 1
 }
 
-const DESTRUCTION: Scroll = {
+const DESTRUCTION: ScrollType = {
   id: 'scroll-2',
   title: 'Destruction',
   type: 'scroll',
@@ -31,7 +31,7 @@ const DESTRUCTION: Scroll = {
   expansion: 1
 }
 
-const DISJUNCTION: Scroll = {
+const DISJUNCTION: ScrollType = {
   id: 'scroll-3',
   title: 'Disjunction',
   type: 'scroll',
@@ -49,7 +49,7 @@ const DISJUNCTION: Scroll = {
   expansion: 1
 }
 
-const PROJECTION: Scroll = {
+const PROJECTION: ScrollType = {
   id: 'scroll-4',
   title: 'Projection',
   type: 'scroll',
@@ -70,7 +70,7 @@ const PROJECTION: Scroll = {
   expansion: 1
 }
 
-const REVIVIFY: Scroll = {
+const REVIVIFY: ScrollType = {
   id: 'scroll-5',
   title: 'Revivify',
   type: 'scroll',
@@ -83,7 +83,7 @@ const REVIVIFY: Scroll = {
   expansion: 1
 }
 
-const SHIELD: Scroll = {
+const SHIELD: ScrollType = {
   id: 'scroll-6',
   title: 'Shield',
   type: 'scroll',
@@ -96,7 +96,7 @@ const SHIELD: Scroll = {
   expansion: 1
 }
 
-const TRANSFORM: Scroll = {
+const TRANSFORM: ScrollType = {
   id: 'scroll-7',
   title: 'Transform',
   type: 'scroll',
@@ -118,7 +118,7 @@ const TRANSFORM: Scroll = {
   expansion: 1
 }
 
-const VITALITY: Scroll = {
+const VITALITY: ScrollType = {
   id: 'scroll-8',
   title: 'Vitality',
   type: 'scroll',

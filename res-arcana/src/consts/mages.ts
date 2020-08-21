@@ -1,8 +1,8 @@
-import { Mage } from '../types/types'
+import { MageType } from '../types/types'
 
 /* Starting Hand */
 
-const DUELIST: Mage = {
+const DUELIST: MageType = {
   id: 'mage-1',
   title: 'Duelist',
   type: 'mage',
@@ -30,7 +30,7 @@ const DUELIST: Mage = {
   startingHand: 1
 }
 
-const SEER: Mage = {
+const SEER: MageType = {
   id: 'mage-2',
   title: 'Seer',
   type: 'mage',
@@ -46,7 +46,7 @@ const SEER: Mage = {
   startingHand: 2
 }
 
-const ALCHEMIST: Mage = {
+const ALCHEMIST: MageType = {
   id: 'mage-3',
   title: 'Alchemist',
   type: 'mage',
@@ -87,7 +87,7 @@ const ALCHEMIST: Mage = {
   startingHand: 3
 }
 
-const TRANSMUTER: Mage = {
+const TRANSMUTER: MageType = {
   id: 'mage-4',
   title: 'Transmuter',
   type: 'mage',
@@ -117,7 +117,7 @@ const TRANSMUTER: Mage = {
 
 /* Base */
 
-const ARTIFICER: Mage = {
+const ARTIFICER: MageType = {
   id: 'mage-5',
   title: 'Artificer',
   type: 'mage',
@@ -130,7 +130,7 @@ const ARTIFICER: Mage = {
   }
 }
 
-const DRUID: Mage = {
+const DRUID: MageType = {
   id: 'mage-6',
   title: 'Druid',
   type: 'mage',
@@ -143,7 +143,7 @@ const DRUID: Mage = {
   ]
 }
 
-const HEALER: Mage = {
+const HEALER: MageType = {
   id: 'mage-7',
   title: 'Healer',
   type: 'mage',
@@ -159,7 +159,7 @@ const HEALER: Mage = {
   ]
 }
 
-const NECROMANCER: Mage = {
+const NECROMANCER: MageType = {
   id: 'mage-8',
   title: 'Necromancer',
   type: 'mage',
@@ -186,7 +186,7 @@ const NECROMANCER: Mage = {
   ]
 }
 
-const SCHOLAR: Mage = {
+const SCHOLAR: MageType = {
   id: 'mage-9',
   title: 'Scholar',
   type: 'mage',
@@ -205,7 +205,7 @@ const SCHOLAR: Mage = {
   ]
 }
 
-const WITCH: Mage = {
+const WITCH: MageType = {
   id: 'mage-10',
   title: 'Witch',
   type: 'mage',
@@ -227,7 +227,7 @@ const WITCH: Mage = {
 
 /* Expansion 1 */
 
-const BARD: Mage = {
+const BARD: MageType = {
   id: 'mage-11',
   title: 'bard',
   type: 'mage',
@@ -266,7 +266,7 @@ const BARD: Mage = {
   expansion: 1
 }
 
-const BEAST_MASTER: Mage = {
+const BEAST_MASTER: MageType = {
   id: 'mage-12',
   title: 'Beastmaster',
   type: 'mage',
@@ -307,7 +307,7 @@ const BEAST_MASTER: Mage = {
   expansion: 1
 }
 
-const DEMONOLOGIST: Mage = {
+const DEMONOLOGIST: MageType = {
   id: 'mage-13',
   title: 'Demonologist',
   type: 'mage',
@@ -335,7 +335,7 @@ const DEMONOLOGIST: Mage = {
   expansion: 1
 }
 
-const DIVINER: Mage = {
+const DIVINER: MageType = {
   id: 'mage-14',
   title: 'Diviner',
   type: 'mage',

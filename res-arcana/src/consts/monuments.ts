@@ -1,6 +1,6 @@
-import { Monument } from '../types/types'
+import { MonumentType } from '../types/types'
 
-const COLOSSUS: Monument = {
+const COLOSSUS: MonumentType = {
   id: 'monument-1',
   title: 'Colossus',
   type: 'monument',
@@ -28,7 +28,7 @@ const COLOSSUS: Monument = {
   ]
 }
 
-const GOLDEN_STATUE: Monument = {
+const GOLDEN_STATUE: MonumentType = {
   id: 'monument-2',
   title: 'Golden Statue',
   type: 'monument',
@@ -52,7 +52,7 @@ const GOLDEN_STATUE: Monument = {
   points: 1
 }
 
-const GREAT_PYRAMID: Monument = {
+const GREAT_PYRAMID: MonumentType = {
   id: 'monument-3',
   title: 'Great Pyramid',
   type: 'monument',
@@ -60,7 +60,7 @@ const GREAT_PYRAMID: Monument = {
   points: 3
 }
 
-const HANGING_GARDENS: Monument = {
+const HANGING_GARDENS: MonumentType = {
   id: 'monument-4',
   title: 'hanging Gardens',
   type: 'monument',
@@ -72,7 +72,7 @@ const HANGING_GARDENS: Monument = {
   }
 }
 
-const LIBRARY: Monument = {
+const LIBRARY: MonumentType = {
   id: 'monument-5',
   title: 'Library',
   type: 'monument',
@@ -90,7 +90,7 @@ const LIBRARY: Monument = {
   ]
 }
 
-const MAUSOLEUM: Monument = {
+const MAUSOLEUM: MonumentType = {
   id: 'monument-6',
   title: 'Mausoleum',
   type: 'monument',
@@ -117,7 +117,7 @@ const MAUSOLEUM: Monument = {
   ]
 }
 
-const OBELISK: Monument = {
+const OBELISK: MonumentType = {
   id: 'monument-7',
   title: 'Obelisk',
   type: 'monument',
@@ -136,7 +136,7 @@ const OBELISK: Monument = {
   ]
 }
 
-const ORACLE: Monument = {
+const ORACLE: MonumentType = {
   id: 'monument-8',
   title: 'Oracle',
   type: 'monument',
@@ -154,7 +154,7 @@ const ORACLE: Monument = {
   ]
 }
 
-const SOLOMONS_MUSE: Monument = {
+const SOLOMONS_MUSE: MonumentType = {
   id: 'monument-9',
   title: "Solomon's Muse",
   type: 'monument',
@@ -177,7 +177,7 @@ const SOLOMONS_MUSE: Monument = {
   ]
 }
 
-const TEMPLE: Monument = {
+const TEMPLE: MonumentType = {
   id: 'monument-10',
   title: 'Temple',
   type: 'monument',
@@ -196,7 +196,7 @@ const TEMPLE: Monument = {
 
 /* Expansion 1 */
 
-const ALCHEMICAL_LAB: Monument = {
+const ALCHEMICAL_LAB: MonumentType = {
   id: 'monument-11',
   title: 'Alchemical Lab',
   type: 'monument',
@@ -223,7 +223,7 @@ const ALCHEMICAL_LAB: Monument = {
   expansion: 1
 }
 
-const DARK_CATHEDRAL: Monument = {
+const DARK_CATHEDRAL: MonumentType = {
   id: 'monument-12',
   title: 'Dark Cathedral',
   type: 'monument',
@@ -246,7 +246,7 @@ const DARK_CATHEDRAL: Monument = {
   expansion: 1
 }
 
-const DEMON_WORKSHOP: Monument = {
+const DEMON_WORKSHOP: MonumentType = {
   id: 'monument-13',
   title: 'Demon Workshop',
   type: 'monument',
@@ -271,7 +271,7 @@ const DEMON_WORKSHOP: Monument = {
   expansion: 1
 }
 
-const WARRIORS_HALL: Monument = {
+const WARRIORS_HALL: MonumentType = {
   id: 'monument-14',
   title: "Warrior's Hall",
   type: 'monument',

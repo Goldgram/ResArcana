@@ -1,6 +1,6 @@
-import { PlaceOfPower, PlaceOfPowerSet } from '../types/types'
+import { PlaceOfPowerType, PlaceOfPowerSet } from '../types/types'
 
-const SACRED_GROVE: PlaceOfPower = {
+const SACRED_GROVE: PlaceOfPowerType = {
   id: 'place-of-power-1A',
   title: 'Sacred Grove',
   type: 'place-of-power',
@@ -41,7 +41,7 @@ const SACRED_GROVE: PlaceOfPower = {
   pointsPer: { type: 'green', points: 1, target: 'self' }
 }
 
-const ALCHEMISTS_TOWER: PlaceOfPower = {
+const ALCHEMISTS_TOWER: PlaceOfPowerType = {
   id: 'place-of-power-1B',
   title: "Alchemist's Tower",
   type: 'place-of-power',
@@ -81,7 +81,7 @@ const one: PlaceOfPowerSet = {
   sideB: ALCHEMISTS_TOWER
 }
 
-const CURSED_FORGE: PlaceOfPower = {
+const CURSED_FORGE: PlaceOfPowerType = {
   id: 'place-of-power-2A',
   title: 'Cursed Forge',
   type: 'place-of-power',
@@ -108,7 +108,7 @@ const CURSED_FORGE: PlaceOfPower = {
   points: 1,
   pointsPer: { type: 'gold', points: 1, target: 'self' }
 }
-const DWARVEN_MINES: PlaceOfPower = {
+const DWARVEN_MINES: PlaceOfPowerType = {
   id: 'place-of-power-2B',
   title: 'Dwarven Mines',
   type: 'place-of-power',
@@ -157,7 +157,7 @@ const two: PlaceOfPowerSet = {
   sideB: DWARVEN_MINES
 }
 
-const CORAL_CASTLE: PlaceOfPower = {
+const CORAL_CASTLE: PlaceOfPowerType = {
   id: 'place-of-power-3A',
   title: 'Coral Castle',
   type: 'place-of-power',
@@ -181,7 +181,7 @@ const CORAL_CASTLE: PlaceOfPower = {
   ],
   points: 3
 }
-const SUNKEN_REEF: PlaceOfPower = {
+const SUNKEN_REEF: PlaceOfPowerType = {
   id: 'place-of-power-3B',
   title: 'Sunken Reef',
   type: 'place-of-power',
@@ -215,7 +215,7 @@ const three: PlaceOfPowerSet = {
   sideB: SUNKEN_REEF
 }
 
-const CATACOMBS_OF_THE_DEAD: PlaceOfPower = {
+const CATACOMBS_OF_THE_DEAD: PlaceOfPowerType = {
   id: 'place-of-power-4A',
   title: 'Catacombs of the Dead',
   type: 'place-of-power',
@@ -244,7 +244,7 @@ const CATACOMBS_OF_THE_DEAD: PlaceOfPower = {
   ],
   pointsPer: { type: 'black', points: 1, target: 'self' }
 }
-const SACRIFICIAL_PIT: PlaceOfPower = {
+const SACRIFICIAL_PIT: PlaceOfPowerType = {
   id: 'place-of-power-4B',
   title: 'Sacrificial Pit',
   type: 'place-of-power',
@@ -288,7 +288,7 @@ const four: PlaceOfPowerSet = {
   sideB: SACRIFICIAL_PIT
 }
 
-const DRAGON_LAIR: PlaceOfPower = {
+const DRAGON_LAIR: PlaceOfPowerType = {
   id: 'place-of-power-5A',
   title: "Dragon's Lair",
   type: 'place-of-power',
@@ -327,7 +327,7 @@ const DRAGON_LAIR: PlaceOfPower = {
   pointsPer: { type: 'gold', points: 1, target: 'self' }
 }
 
-const SORCERERS_BESTIARY: PlaceOfPower = {
+const SORCERERS_BESTIARY: PlaceOfPowerType = {
   id: 'place-of-power-5B',
   title: "Sorcerer's Bestiary",
   type: 'place-of-power',
@@ -368,7 +368,7 @@ const five: PlaceOfPowerSet = {
 
 /* Expansion 1 */
 
-const DRAGON_AERIE: PlaceOfPower = {
+const DRAGON_AERIE: PlaceOfPowerType = {
   id: 'place-of-power-6A',
   title: 'Dragon Aerie',
   type: 'place-of-power',
@@ -393,7 +393,7 @@ const DRAGON_AERIE: PlaceOfPower = {
   expansion: 1
 }
 
-const CRYSTAL_KEEP: PlaceOfPower = {
+const CRYSTAL_KEEP: PlaceOfPowerType = {
   id: 'place-of-power-6B',
   title: 'Crystal Keep',
   type: 'place-of-power',
@@ -422,7 +422,7 @@ const six: PlaceOfPowerSet = {
   expansion: 1
 }
 
-const TEMPLE_OF_THE_ABYSS: PlaceOfPower = {
+const TEMPLE_OF_THE_ABYSS: PlaceOfPowerType = {
   id: 'place-of-power-7A',
   title: 'Temple of the Abyss',
   type: 'place-of-power',
@@ -448,7 +448,7 @@ const TEMPLE_OF_THE_ABYSS: PlaceOfPower = {
   expansion: 1
 }
 
-const GATE_OF_HELL: PlaceOfPower = {
+const GATE_OF_HELL: PlaceOfPowerType = {
   id: 'place-of-power-7B',
   title: 'Gate of Hell',
   type: 'place-of-power',

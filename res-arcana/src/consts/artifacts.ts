@@ -1,8 +1,8 @@
-import { Artifact } from '../types/types'
+import { ArtifactType } from '../types/types'
 
 /* Starting Hand */
 
-const DRAGON_TEETH: Artifact = {
+const DRAGON_TEETH: ArtifactType = {
   id: 'artifact-1',
   title: 'Dragon Teeth',
   type: 'artifact',
@@ -23,7 +23,7 @@ const DRAGON_TEETH: Artifact = {
   startingHand: 1
 }
 
-const ELEMENTAL_SPRING: Artifact = {
+const ELEMENTAL_SPRING: ArtifactType = {
   id: 'artifact-2',
   title: 'Elemental Spring',
   type: 'artifact',
@@ -53,7 +53,7 @@ const ELEMENTAL_SPRING: Artifact = {
   startingHand: 1
 }
 
-const HAND_OF_GLORY: Artifact = {
+const HAND_OF_GLORY: ArtifactType = {
   id: 'artifact-3',
   title: 'Hand of Glory',
   type: 'artifact',
@@ -76,7 +76,7 @@ const HAND_OF_GLORY: Artifact = {
   startingHand: 1
 }
 
-const CHALICE_OF_LIFE: Artifact = {
+const CHALICE_OF_LIFE: ArtifactType = {
   id: 'artifact-4',
   title: 'Chalice of Life',
   type: 'artifact',
@@ -119,7 +119,7 @@ const CHALICE_OF_LIFE: Artifact = {
   startingHand: 2
 }
 
-const FLAMING_PIT: Artifact = {
+const FLAMING_PIT: ArtifactType = {
   id: 'artifact-5',
   title: 'Flaming Pit',
   type: 'artifact',
@@ -153,7 +153,7 @@ const FLAMING_PIT: Artifact = {
   startingHand: 2
 }
 
-const VAULT: Artifact = {
+const VAULT: ArtifactType = {
   id: 'artifact-6',
   title: 'Vault',
   type: 'artifact',
@@ -178,7 +178,7 @@ const VAULT: Artifact = {
   startingHand: 2
 }
 
-const CELESTIAL_HORSE: Artifact = {
+const CELESTIAL_HORSE: ArtifactType = {
   id: 'artifact-7',
   title: 'Celestial Horse',
   type: 'artifact',
@@ -194,7 +194,7 @@ const CELESTIAL_HORSE: Artifact = {
   startingHand: 3
 }
 
-const MAGICAL_SHARD: Artifact = {
+const MAGICAL_SHARD: ArtifactType = {
   id: 'artifact-8',
   title: 'Magical Shard',
   type: 'artifact',
@@ -216,7 +216,7 @@ const MAGICAL_SHARD: Artifact = {
   startingHand: 3
 }
 
-const TREE_OF_LIFE: Artifact = {
+const TREE_OF_LIFE: ArtifactType = {
   id: 'artifact-9',
   title: 'Tree of Life',
   type: 'artifact',
@@ -254,7 +254,7 @@ const TREE_OF_LIFE: Artifact = {
   startingHand: 3
 }
 
-const DANCING_SWORD: Artifact = {
+const DANCING_SWORD: ArtifactType = {
   id: 'artifact-10',
   title: 'Dancing Sword',
   type: 'artifact',
@@ -290,7 +290,7 @@ const DANCING_SWORD: Artifact = {
   startingHand: 4
 }
 
-const FOUNTAIN_OF_YOUTH: Artifact = {
+const FOUNTAIN_OF_YOUTH: ArtifactType = {
   id: 'artifact-11',
   title: 'Fountain of Youth',
   type: 'artifact',
@@ -324,7 +324,7 @@ const FOUNTAIN_OF_YOUTH: Artifact = {
   startingHand: 4
 }
 
-const HAWK: Artifact = {
+const HAWK: ArtifactType = {
   id: 'artifact-12',
   title: 'Hawk',
   type: 'artifact',
@@ -361,7 +361,7 @@ const HAWK: Artifact = {
 }
 
 /* Base */
-const ATHANOR: Artifact = {
+const ATHANOR: ArtifactType = {
   id: 'artifact-13',
   title: 'Athanor',
   type: 'artifact',
@@ -397,7 +397,7 @@ const ATHANOR: Artifact = {
   ]
 }
 
-const BONE_DRAGON: Artifact = {
+const BONE_DRAGON: ArtifactType = {
   id: 'artifact-14',
   title: 'Bone Dragon',
   type: 'artifact',
@@ -420,7 +420,7 @@ const BONE_DRAGON: Artifact = {
   points: 1
 }
 
-const CHALICE_OF_FIRE: Artifact = {
+const CHALICE_OF_FIRE: ArtifactType = {
   id: 'artifact-15',
   title: 'Chalice of Fire',
   type: 'artifact',
@@ -448,7 +448,7 @@ const CHALICE_OF_FIRE: Artifact = {
   ]
 }
 
-const CORRUPT_ALTAR: Artifact = {
+const CORRUPT_ALTAR: ArtifactType = {
   id: 'artifact-16',
   title: 'Corrupt Altar',
   type: 'artifact',
@@ -485,7 +485,7 @@ const CORRUPT_ALTAR: Artifact = {
   ]
 }
 
-const CRYPT: Artifact = {
+const CRYPT: ArtifactType = {
   id: 'artifact-17',
   title: 'Crypt',
   type: 'artifact',
@@ -510,7 +510,7 @@ const CRYPT: Artifact = {
   ]
 }
 
-const CURSED_SKULL: Artifact = {
+const CURSED_SKULL: ArtifactType = {
   id: 'artifact-18',
   title: 'Cursed Skull',
   type: 'artifact',
@@ -540,7 +540,7 @@ const CURSED_SKULL: Artifact = {
   ]
 }
 
-const DRAGON_BRIDLE: Artifact = {
+const DRAGON_BRIDLE: ArtifactType = {
   id: 'artifact-19',
   title: 'Dragon Bridle',
   type: 'artifact',
@@ -566,7 +566,7 @@ const DRAGON_BRIDLE: Artifact = {
   points: 1
 }
 
-const DRAGON_EGG: Artifact = {
+const DRAGON_EGG: ArtifactType = {
   id: 'artifact-20',
   title: 'Dragon Egg',
   type: 'artifact',
@@ -582,7 +582,7 @@ const DRAGON_EGG: Artifact = {
   points: 1
 }
 
-const DWARVEN_PICKAXE: Artifact = {
+const DWARVEN_PICKAXE: ArtifactType = {
   id: 'artifact-21',
   title: 'Dwarven Pickaxe',
   type: 'artifact',
@@ -611,7 +611,7 @@ const DWARVEN_PICKAXE: Artifact = {
   ]
 }
 
-const EARTH_DRAGON: Artifact = {
+const EARTH_DRAGON: ArtifactType = {
   id: 'artifact-22',
   title: 'Earth Dragon',
   type: 'artifact',
@@ -634,7 +634,7 @@ const EARTH_DRAGON: Artifact = {
   points: 1
 }
 
-const ELVISH_BOW: Artifact = {
+const ELVISH_BOW: ArtifactType = {
   id: 'artifact-23',
   title: 'Elvish Bow',
   type: 'artifact',
@@ -660,7 +660,7 @@ const ELVISH_BOW: Artifact = {
   ]
 }
 
-const FIRE_DRAGON: Artifact = {
+const FIRE_DRAGON: ArtifactType = {
   id: 'artifact-24',
   title: 'Fire Dragon',
   type: 'artifact',
@@ -682,7 +682,7 @@ const FIRE_DRAGON: Artifact = {
   points: 1
 }
 
-const FIERY_WHIP: Artifact = {
+const FIERY_WHIP: ArtifactType = {
   id: 'artifact-25',
   title: 'Fiery Whip',
   type: 'artifact',
@@ -713,7 +713,7 @@ const FIERY_WHIP: Artifact = {
   ]
 }
 
-const GUARD_DOG: Artifact = {
+const GUARD_DOG: ArtifactType = {
   id: 'artifact-26',
   title: 'Guard Dog',
   type: 'artifact',
@@ -738,7 +738,7 @@ const GUARD_DOG: Artifact = {
   ]
 }
 
-const HORN_OF_PLENTY: Artifact = {
+const HORN_OF_PLENTY: ArtifactType = {
   id: 'artifact-27',
   title: 'Horn of Plenty',
   type: 'artifact',
@@ -772,7 +772,7 @@ const HORN_OF_PLENTY: Artifact = {
   ]
 }
 
-const HYPNOTIC_BASIN: Artifact = {
+const HYPNOTIC_BASIN: ArtifactType = {
   id: 'artifact-28',
   title: 'Hypnotic Basin',
   type: 'artifact',
@@ -797,7 +797,7 @@ const HYPNOTIC_BASIN: Artifact = {
   ]
 }
 
-const JEWELED_STATUETTE: Artifact = {
+const JEWELED_STATUETTE: ArtifactType = {
   id: 'artifact-29',
   title: 'Jeweled Statuette',
   type: 'artifact',
@@ -829,7 +829,7 @@ const JEWELED_STATUETTE: Artifact = {
   points: 1
 }
 
-const MERMAID: Artifact = {
+const MERMAID: ArtifactType = {
   id: 'artifact-30',
   title: 'Mermaid',
   type: 'artifact',
@@ -859,7 +859,7 @@ const MERMAID: Artifact = {
   ]
 }
 
-const NIGHTINGALE: Artifact = {
+const NIGHTINGALE: ArtifactType = {
   id: 'artifact-31',
   title: 'Nightingale',
   type: 'artifact',
@@ -871,7 +871,7 @@ const NIGHTINGALE: Artifact = {
   points: 1
 }
 
-const PHILOSOPHERS_STONE: Artifact = {
+const PHILOSOPHERS_STONE: ArtifactType = {
   id: 'artifact-32',
   title: "Philosopher's Stone",
   type: 'artifact',
@@ -910,7 +910,7 @@ const PHILOSOPHERS_STONE: Artifact = {
   points: 1
 }
 
-const PRISM: Artifact = {
+const PRISM: ArtifactType = {
   id: 'artifact-33',
   title: 'Prism',
   type: 'artifact',
@@ -939,7 +939,7 @@ const PRISM: Artifact = {
   ]
 }
 
-const RING_OF_MIDAS: Artifact = {
+const RING_OF_MIDAS: ArtifactType = {
   id: 'artifact-34',
   title: 'Ring of Midas',
   type: 'artifact',
@@ -982,7 +982,7 @@ const RING_OF_MIDAS: Artifact = {
   points: 1
 }
 
-const SACRIFICIAL_DAGGER: Artifact = {
+const SACRIFICIAL_DAGGER: ArtifactType = {
   id: 'artifact-35',
   title: 'Sacrificial Dagger',
   type: 'artifact',
@@ -1012,7 +1012,7 @@ const SACRIFICIAL_DAGGER: Artifact = {
   ]
 }
 
-const SEA_SERPENT: Artifact = {
+const SEA_SERPENT: ArtifactType = {
   id: 'artifact-36',
   title: 'Sea Serpent',
   type: 'artifact',
@@ -1035,7 +1035,7 @@ const SEA_SERPENT: Artifact = {
   points: 1
 }
 
-const TREANT: Artifact = {
+const TREANT: ArtifactType = {
   id: 'artifact-37',
   title: 'Treant',
   type: 'artifact',
@@ -1060,7 +1060,7 @@ const TREANT: Artifact = {
   ]
 }
 
-const WATER_DRAGON: Artifact = {
+const WATER_DRAGON: ArtifactType = {
   id: 'artifact-38',
   title: 'Water Dragon',
   type: 'artifact',
@@ -1082,7 +1082,7 @@ const WATER_DRAGON: Artifact = {
   points: 1
 }
 
-const WIND_DRAGON: Artifact = {
+const WIND_DRAGON: ArtifactType = {
   id: 'artifact-39',
   title: 'Wind Dragon',
   type: 'artifact',
@@ -1105,7 +1105,7 @@ const WIND_DRAGON: Artifact = {
   points: 1
 }
 
-const WINDUP_MAN: Artifact = {
+const WINDUP_MAN: ArtifactType = {
   id: 'artifact-40',
   title: 'Windup Man',
   type: 'artifact',
@@ -1131,7 +1131,7 @@ const WINDUP_MAN: Artifact = {
 
 /* Expansion 1 */
 
-const CHAOS_IMP: Artifact = {
+const CHAOS_IMP: ArtifactType = {
   id: 'artifact-41',
   title: 'Chaos Imp',
   type: 'artifact',
@@ -1176,7 +1176,7 @@ const CHAOS_IMP: Artifact = {
   expansion: 1
 }
 
-const CURSED_DWARVEN_KING: Artifact = {
+const CURSED_DWARVEN_KING: ArtifactType = {
   id: 'artifact-42',
   title: 'Cursed Dwarven King',
   type: 'artifact',
@@ -1222,7 +1222,7 @@ const CURSED_DWARVEN_KING: Artifact = {
   expansion: 1
 }
 
-const FIRE_DEMON: Artifact = {
+const FIRE_DEMON: ArtifactType = {
   id: 'artifact-43',
   title: 'Fire Demon',
   type: 'artifact',
@@ -1270,7 +1270,7 @@ const FIRE_DEMON: Artifact = {
   expansion: 1
 }
 
-const GOLDEN_LION: Artifact = {
+const GOLDEN_LION: ArtifactType = {
   id: 'artifact-44',
   title: 'Golden Lion',
   type: 'artifact',
@@ -1301,7 +1301,7 @@ const GOLDEN_LION: Artifact = {
   expansion: 1
 }
 
-const HOMUNCULUS: Artifact = {
+const HOMUNCULUS: ArtifactType = {
   id: 'artifact-45',
   title: 'Homunculus',
   type: 'artifact',
@@ -1332,7 +1332,7 @@ const HOMUNCULUS: Artifact = {
   expansion: 1
 }
 
-const HOUND_OF_DEATH: Artifact = {
+const HOUND_OF_DEATH: ArtifactType = {
   id: 'artifact-46',
   title: 'Hound of Death',
   type: 'artifact',
@@ -1375,7 +1375,7 @@ const HOUND_OF_DEATH: Artifact = {
   expansion: 1
 }
 
-const INFERNAL_ENGINE: Artifact = {
+const INFERNAL_ENGINE: ArtifactType = {
   id: 'artifact-47',
   title: 'Infernal Engine',
   type: 'artifact',
@@ -1408,7 +1408,7 @@ const INFERNAL_ENGINE: Artifact = {
   expansion: 1
 }
 
-const POSSESSED_DEMON_SLAYER: Artifact = {
+const POSSESSED_DEMON_SLAYER: ArtifactType = {
   id: 'artifact-48',
   title: 'Possessed Demon Slayer',
   type: 'artifact',
@@ -1441,7 +1441,7 @@ const POSSESSED_DEMON_SLAYER: Artifact = {
   expansion: 1
 }
 
-const PRISMATIC_DRAGON: Artifact = {
+const PRISMATIC_DRAGON: ArtifactType = {
   id: 'artifact-49',
   title: 'Prismatic Dragon',
   type: 'artifact',
@@ -1480,7 +1480,7 @@ const PRISMATIC_DRAGON: Artifact = {
   expansion: 1
 }
 
-const SHADOWY_FIGURE: Artifact = {
+const SHADOWY_FIGURE: ArtifactType = {
   id: 'artifact-50',
   title: 'Shadowy Figure',
   type: 'artifact',
@@ -1528,7 +1528,7 @@ const SHADOWY_FIGURE: Artifact = {
   expansion: 1
 }
 
-const VIAL_OF_LIGHT: Artifact = {
+const VIAL_OF_LIGHT: ArtifactType = {
   id: 'artifact-51',
   title: 'Vial of Light',
   type: 'artifact',
@@ -1553,7 +1553,7 @@ const VIAL_OF_LIGHT: Artifact = {
   expansion: 1
 }
 
-const VORTEX_OF_DESTRUCTION: Artifact = {
+const VORTEX_OF_DESTRUCTION: ArtifactType = {
   id: 'artifact-52',
   title: 'Vortex of Destruction',
   type: 'artifact',
