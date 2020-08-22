@@ -25,7 +25,7 @@ export const Item = ({ value }: ItemProps) => {
     title,
     creature,
     collect,
-    collectSpecial,
+    // collectSpecial,
     discount,
     actions,
     reactions,
@@ -47,11 +47,17 @@ export const Item = ({ value }: ItemProps) => {
       {discount && <div className='discount'>{JSON.stringify(discount)}</div>}
 
       {actions &&
-        actions.map((a) => <div className='action'>{JSON.stringify(a)}</div>)}
+        actions.map((a, index) => (
+          <div key={index} className='action'>
+            {JSON.stringify(a)}
+          </div>
+        ))}
 
       {reactions &&
-        reactions.map((r) => (
-          <div className='reaction'>{JSON.stringify(r)}</div>
+        reactions.map((r, index) => (
+          <div key={index} className='reaction'>
+            {JSON.stringify(r)}
+          </div>
         ))}
       <div className='footer'>
         {points && <div className='points glowWhiteText'>{points}</div>}
@@ -104,9 +110,13 @@ const creaturesUi = (value: And<Creature>) => {
   return <div className='creatures'>{creatures.map(creatureUi)}</div>
 }
 
-const creatureUi = (value: Creature) => {
+const creatureUi = (value: Creature, index: number) => {
   const iconSrc = getCreatureIcon(value)
-  return iconSrc && <img className='creature' src={iconSrc} />
+  return (
+    iconSrc && (
+      <img key={index} className='creature' src={iconSrc} alt={value} />
+    )
+  )
 }
 
 const getCreatureIcon = (value: Creature) => {
@@ -138,7 +148,7 @@ const collectUi = (value: Or<Resources>) => {
   })
   return (
     <div className='collect'>
-      <img className='collectIcon' src={collectIconSrc} />
+      <img className='collectIcon' src={collectIconSrc} alt='collect' />
       {joinOrUi(resources)}
     </div>
   )
@@ -147,9 +157,14 @@ const collectUi = (value: Or<Resources>) => {
 const joinUi = (divider: JSX.Element) => (array: JSX.Element[]) => {
   return (
     <>
-      {array.reduce((acc: JSX.Element[], ele, index) => {
-        return index === 0 ? [ele] : acc.concat(divider, ele)
-      }, [])}
+      {
+        array.reduce((acc: JSX.Element[], ele, index) => {
+          return index === 0 ? [ele] : acc.concat(divider, ele)
+        }, [])
+        // .map((e, i) => (
+        //   <div key={i}>{e}</div>
+        // ))
+      }
     </>
   )
 }

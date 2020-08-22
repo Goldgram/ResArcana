@@ -11,22 +11,23 @@
   width: 320px;
   min-height: 20px;
   border-radius: 12px;
-  border: 1px solid gray;
-  /* background-color: #fbf7f2; */
-  background-color: red;
+  border: 1px solid #ad7a66;
+  background-image: url('../../assets/pattern.jpg');
+  background-size: cover;
+  color: #4c1c0a;
 }
 
 .item .title {
   font-weight: bold;
   text-align: center;
   padding: 8px;
-  border-bottom: 1px solid lightgray;
+  border-bottom: 1px solid #ad7a66;
 }
 
 .item .imageBox {
   height: 140px;
   position: relative;
-  border-bottom: 1px solid lightgray;
+  border-bottom: 1px solid #ad7a66;
 }
 
 .item .cost {
@@ -34,8 +35,6 @@
   left: 0;
   top: 0;
   width: 28px;
-  border-right: 1px solid lightgray;
-  border-bottom: 1px solid lightgray;
 }
 
 .item .resource {
@@ -74,8 +73,6 @@
   position: absolute;
   right: 0;
   top: 0;
-  border-left: 1px solid lightgray;
-  border-bottom: 1px solid lightgray;
 }
 
 .item .creature {
@@ -115,7 +112,7 @@
 .item .discount,
 .item .action,
 .item .reaction {
-  border-bottom: 1px solid lightgray;
+  border-bottom: 1px solid #ad7a66;
 }
 
 .item .footer {
