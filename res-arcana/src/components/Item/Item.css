@@ -14,7 +14,7 @@
   border: 1px solid #ad7a66;
   background-image: url('../../assets/pattern.jpg');
   background-size: cover;
-  color: #4c1c0a;
+  color: #401708;
 }
 
 .item .title {
@@ -25,7 +25,7 @@
 }
 
 .item .imageBox {
-  height: 140px;
+  height: 200px;
   position: relative;
   border-bottom: 1px solid #ad7a66;
 }
@@ -38,35 +38,54 @@
 }
 
 .item .resource {
-  height: 28px;
-  width: 28px;
+  height: 40px;
+  width: 40px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .item .gold {
-  background-color: gold;
+  background-image: url('../../assets/gold.png');
+  background-size: cover;
+  /* background-color: gold; */
 }
 
 .item .wild {
-  background-color: grey;
+  background-image: url('../../assets/wild.png');
+  background-size: cover;
+  /* background-color: grey; */
 }
 
 .item .red {
-  background-color: red;
+  background-image: url('../../assets/red.png');
+  background-size: cover;
+  /* background-color: red; */
 }
 
 .item .green {
-  background-color: green;
+  background-image: url('../../assets/green.png');
+  background-size: cover;
+  /* background-color: green; */
 }
 
 .item .blue {
-  background-color: blue;
+  background-image: url('../../assets/blue.png');
+  background-size: cover;
+  /* background-color: blue; */
 }
 
 .item .black {
-  background-color: black;
+  background-image: url('../../assets/black.png');
+  background-size: cover;
+  /* background-color: black; */
+}
+
+.item .red .resourceNumber,
+.item .green .resourceNumber,
+.item .blue .resourceNumber,
+.item .black .resourceNumber {
+  padding-top: 5px;
 }
 
 .item .creatures {
@@ -106,7 +125,7 @@
 .item .slash {
   padding: 0 4px;
   line-height: 20px;
-  font-size: 20px;
+  font-size: 40px;
 }
 
 .item .discount,
@@ -172,4 +191,10 @@
 .item .startingHand.color4 {
   color: #550055;
   background-color: #f5ddff;
+}
+
+.item .join {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

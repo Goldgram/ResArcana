@@ -10,6 +10,14 @@ const DRAGON_TEETH: ArtifactType = {
     red: 1,
     black: 1
   },
+  collect: {
+    gold: 2,
+    wild: 2,
+    red: 2,
+    green: 2,
+    blue: 2,
+    black: 2
+  },
   actions: [
     {
       cost: { discard: { resources: { red: 2 } } },

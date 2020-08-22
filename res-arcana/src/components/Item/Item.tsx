@@ -2,12 +2,6 @@ import React, { isValidElement } from 'react'
 import { And, Or, ItemType, Creature, Resources } from '../../types/types'
 import { getAnd, getOr } from '../../types/functions'
 
-// import goldIcon from '../../assets/gold.png'
-// import wildIcon from '../../assets/wild.png'
-// import redIcon from '../../assets/red.png'
-// import greenIcon from '../../assets/green.png'
-// import blueIcon from '../../assets/blue.png'
-// import blackIcon from '../../assets/black.png'
 import demonSrc from '../../assets/demon.png'
 import dragonSrc from '../../assets/dragon.png'
 import creatureSrc from '../../assets/creature.png'
@@ -99,7 +93,7 @@ const colorUi = (
 ) => {
   return (
     <div className={'resource glowWhiteText ' + className}>
-      {value}
+      {value > 0 && <div className='resourceNumber'>{value}</div>}
       {wildRestrictions && ' W'}
     </div>
   )
@@ -156,16 +150,15 @@ const collectUi = (value: Or<Resources>) => {
 
 const joinUi = (divider: JSX.Element) => (array: JSX.Element[]) => {
   return (
-    <>
-      {
-        array.reduce((acc: JSX.Element[], ele, index) => {
+    <div className='join'>
+      {array
+        .reduce((acc: JSX.Element[], ele, index) => {
           return index === 0 ? [ele] : acc.concat(divider, ele)
         }, [])
-        // .map((e, i) => (
-        //   <div key={i}>{e}</div>
-        // ))
-      }
-    </>
+        .map((e, i) => (
+          <div key={i}>{e}</div>
+        ))}
+    </div>
   )
 }
 
