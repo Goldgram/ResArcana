@@ -1,7 +1,9 @@
 /* generic */
+.bold {
+  font-weight: bold;
+}
 .glowWhiteText {
   color: white;
-  font-weight: bold;
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
@@ -36,8 +38,22 @@
   top: 0;
   width: 28px;
 }
+.item .cost .resource {
+  margin: 4px 0 0 4px;
+}
 
 .item .resource {
+  height: 40px;
+  min-width: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-repeat: no-repeat;
+  background-size: 40px 40px;
+  background-position: left top;
+}
+
+.item .resourceNumber {
   height: 40px;
   width: 40px;
   display: flex;
@@ -47,56 +63,52 @@
 
 .item .gold {
   background-image: url('../../assets/gold.png');
-  background-size: cover;
-  /* background-color: gold; */
 }
 
 .item .wild {
   background-image: url('../../assets/wild.png');
-  background-size: cover;
-  /* background-color: grey; */
 }
 
 .item .red {
   background-image: url('../../assets/red.png');
-  background-size: cover;
-  /* background-color: red; */
 }
 
 .item .green {
   background-image: url('../../assets/green.png');
-  background-size: cover;
-  /* background-color: green; */
 }
 
 .item .blue {
   background-image: url('../../assets/blue.png');
-  background-size: cover;
-  /* background-color: blue; */
 }
 
 .item .black {
   background-image: url('../../assets/black.png');
-  background-size: cover;
-  /* background-color: black; */
 }
 
 .item .red .resourceNumber,
 .item .green .resourceNumber,
-.item .blue .resourceNumber,
+.item .blue .resourceNumber {
+  padding-top: 9px;
+}
+
 .item .black .resourceNumber {
-  padding-top: 5px;
+  padding-top: 7px;
+}
+
+.item .gold .resourceNumber,
+.item .wild .resourceNumber {
+  padding-top: 6px;
 }
 
 .item .creatures {
   position: absolute;
   right: 0;
-  top: 0;
+  top: 2px;
 }
 
 .item .creature {
-  height: 40px;
-  width: 40px;
+  height: 46px;
+  width: 46px;
   display: block;
 }
 
@@ -106,24 +118,39 @@
   bottom: 0;
   width: 100%;
   display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 6px;
+}
+
+.item .collectContent {
+  display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  background-color: #ddcdd0;
+  border: 2px solid #bf8d0d;
+  border-radius: 26px;
+  padding: 3px 14px 3px 30px;
+  position: relative;
+  min-width: 60px;
 }
 
 .item .collectIcon {
   width: 40px;
   height: 40px;
-  padding-right: 8px;
+  position: absolute;
+  left: -14px;
+  top: 4px;
 }
 
 .item .plus {
-  padding: 0 4px;
+  /* padding: 0 4px; */
   line-height: 20px;
   font-size: 20px;
 }
 .item .slash {
-  padding: 0 4px;
+  /* padding: 0 4px; */
   line-height: 20px;
   font-size: 40px;
 }
@@ -139,16 +166,17 @@
 }
 
 .item .points {
-  background-color: red;
+  background-color: #cc0e2a;
   width: 32px;
   height: 32px;
-  border-radius: 16px;
+  border-radius: 18px;
   font-size: 28px;
   line-height: 28px;
   margin: 0 auto;
   display: flex;
   justify-content: center;
   align-items: center;
+  border: 2px solid #82221e;
 }
 
 .item .moon {

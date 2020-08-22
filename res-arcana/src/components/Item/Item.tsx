@@ -54,7 +54,7 @@ export const Item = ({ value }: ItemProps) => {
           </div>
         ))}
       <div className='footer'>
-        {points && <div className='points glowWhiteText'>{points}</div>}
+        {points && <div className='points bold glowWhiteText'>{points}</div>}
 
         {expansion && <div className='moon'></div>}
 
@@ -92,8 +92,8 @@ const colorUi = (
   wildRestrictions?: any
 ) => {
   return (
-    <div className={'resource glowWhiteText ' + className}>
-      {value > 0 && <div className='resourceNumber'>{value}</div>}
+    <div className={'resource bold glowWhiteText ' + className}>
+      {value > 1 && <div className='resourceNumber'>{value}</div>}
       {wildRestrictions && ' W'}
     </div>
   )
@@ -132,18 +132,20 @@ const collectUi = (value: Or<Resources>) => {
     return joinAndUi(
       [
         gold && colorUi(gold, 'gold'),
-        red && colorUi(red, 'red'),
-        green && colorUi(green, 'green'),
         blue && colorUi(blue, 'blue'),
+        green && colorUi(green, 'green'),
         black && colorUi(black, 'black'),
+        red && colorUi(red, 'red'),
         wild && colorUi(wild, 'wild', wildRestrictions)
       ].filter(isValidElement)
     )
   })
   return (
     <div className='collect'>
-      <img className='collectIcon' src={collectIconSrc} alt='collect' />
-      {joinOrUi(resources)}
+      <div className='collectContent'>
+        <img className='collectIcon' src={collectIconSrc} alt='collect' />
+        {joinOrUi(resources)}
+      </div>
     </div>
   )
 }

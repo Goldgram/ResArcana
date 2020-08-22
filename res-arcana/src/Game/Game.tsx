@@ -5,7 +5,7 @@ import { Item } from '../components/Item/Item'
 import './Game.css'
 
 export const Game = () => {
-  const [artifactIndex, SetArtifactIndex] = useState(0)
+  const [artifactIndex, SetArtifactIndex] = useState(6)
 
   return (
     <div className='card-display'>
