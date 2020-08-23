@@ -1,11 +1,21 @@
 import React, { isValidElement } from 'react'
-import { And, Or, ItemType, Creature, Resources } from '../../types/types'
+import {
+  And,
+  Or,
+  ItemType,
+  Creature,
+  Resources,
+  Action,
+  ActionCost,
+  ActionReward
+} from '../../types/types'
 import { getAnd, getOr } from '../../types/functions'
 
 import demonSrc from '../../assets/demon.png'
 import dragonSrc from '../../assets/dragon.png'
 import creatureSrc from '../../assets/creature.png'
 import collectIconSrc from '../../assets/collect.png'
+import actionArrowSrc from '../../assets/action-arrow.png'
 
 import './Item.css'
 
@@ -40,12 +50,7 @@ export const Item = ({ value }: ItemProps) => {
 
       {discount && <div className='discount'>{JSON.stringify(discount)}</div>}
 
-      {actions &&
-        actions.map((a, index) => (
-          <div key={index} className='action'>
-            {JSON.stringify(a)}
-          </div>
-        ))}
+      {actions && actionsUi(actions)}
 
       {reactions &&
         reactions.map((r, index) => (
@@ -168,3 +173,26 @@ const plus = <div className='plus'>+</div>
 const slash = <div className='slash'>/</div>
 const joinAndUi = joinUi(plus)
 const joinOrUi = joinUi(slash)
+
+const actionsUi = (actions: Action[]) => {
+  return actions.map((a, index) => {
+    const { cost, reward } = a
+    return (
+      <div key={index} className='action'>
+        {actionCost(cost)}
+        <img className='actionArrow' src={actionArrowSrc} alt='action arrow' />
+        {actionReward(reward)}
+      </div>
+    )
+  })
+}
+
+const actionCost = (cost: ActionCost) => {
+  const costArray = [<div>a</div>, <div>b</div>]
+  return joinAndUi(costArray)
+}
+
+const actionReward = (reward: ActionReward) => {
+  const costArray = [<div>c</div>, <div>d</div>]
+  return joinAndUi(costArray)
+}

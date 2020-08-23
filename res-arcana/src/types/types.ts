@@ -26,7 +26,7 @@ export interface Resources {
 
 // Action / Reactions
 
-interface Action {
+export interface Action {
   cost: ActionCost
   reward: ActionReward
 }
@@ -47,7 +47,7 @@ interface Reaction {
 
 // Action Cost
 
-interface ActionCost {
+export interface ActionCost {
   tap?: And<TapType>
   destroy?: Or<DestroyType>
   discard?: Discard
@@ -68,7 +68,7 @@ interface Discard {
 
 // Action Reward
 
-interface ActionReward {
+export interface ActionReward {
   untap?: TapType
   gain?: Gain
   rivalsGainResources?: Resources
