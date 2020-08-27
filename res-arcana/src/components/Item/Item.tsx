@@ -206,7 +206,7 @@ const tapUi = (value: TapType, index: number) => {
   const imgSrc = getTapSrc(value)
   return (
     <div key={'tap-' + index} className={'tap ' + value}>
-      <img className='tapImage' src={imgSrc} alt={value} />
+      <img className='image' src={imgSrc} alt={value} />
       <img className='tapArrow' src={tapSrc} alt={value} />
     </div>
   )

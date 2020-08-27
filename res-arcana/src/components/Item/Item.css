@@ -231,9 +231,31 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 5px 0;
 }
 
 .item .actionArrow {
   height: 30px;
   padding: 0 4px;
+}
+
+.item .tap {
+  height: 40px;
+  position: relative;
+}
+
+.item .tap.self {
+  width: 35px;
+}
+
+.item .tap.self .image {
+  height: 36px;
+  transform: rotate(15deg);
+}
+
+.item .tap.self .tapArrow {
+  position: absolute;
+  right: 0;
+  top: 6px;
+  height: 30px;
 }
