@@ -54,7 +54,7 @@ export interface ActionCost {
   wildDiscard?: boolean
 }
 
-type TapType = Creature | 'self' | 'any' | 'all-player-demons'
+export type TapType = Creature | 'self' | 'any' | 'allPlayerDemons'
 
 type DestroyType = Creature | 'self' | 'another-artifact' | 'any-artifact'
 

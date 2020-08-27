@@ -7,7 +7,8 @@ import {
   Resources,
   Action,
   ActionCost,
-  ActionReward
+  ActionReward,
+  TapType
 } from '../../types/types'
 import { getAnd, getOr } from '../../types/functions'
 
@@ -16,6 +17,9 @@ import dragonSrc from '../../assets/dragon.png'
 import creatureSrc from '../../assets/creature.png'
 import collectIconSrc from '../../assets/collect.png'
 import actionArrowSrc from '../../assets/action-arrow.png'
+import cardSrc from '../../assets/card.png'
+import anySrc from '../../assets/any-comp.png'
+import tapSrc from '../../assets/tap.png'
 
 import './Item.css'
 
@@ -112,9 +116,12 @@ const creaturesUi = (value: And<Creature>) => {
 const creatureUi = (value: Creature, index: number) => {
   const iconSrc = getCreatureIcon(value)
   return (
-    iconSrc && (
-      <img key={index} className='creature' src={iconSrc} alt={value} />
-    )
+    <img
+      key={'creature-' + index}
+      className='creature'
+      src={iconSrc}
+      alt={value}
+    />
   )
 }
 
@@ -188,8 +195,38 @@ const actionsUi = (actions: Action[]) => {
 }
 
 const actionCost = (cost: ActionCost) => {
-  const costArray = [<div>a</div>, <div>b</div>]
+  const { tap } = cost
+  const taps = tap ? getAnd<TapType>(tap) : []
+
+  const costArray = [...taps.map(tapUi)]
   return joinAndUi(costArray)
+}
+
+const tapUi = (value: TapType, index: number) => {
+  const imgSrc = getTapSrc(value)
+  return (
+    <div key={'tap-' + index} className={'tap ' + value}>
+      <img className='tapImage' src={imgSrc} alt={value} />
+      <img className='tapArrow' src={tapSrc} alt={value} />
+    </div>
+  )
+}
+
+const getTapSrc = (value: TapType) => {
+  switch (value) {
+    case 'creature':
+      return creatureSrc
+    case 'dragon':
+      return dragonSrc
+    case 'demon':
+      return demonSrc
+    case 'self':
+      return cardSrc
+    case 'any':
+      return anySrc
+    case 'allPlayerDemons':
+      return demonSrc // TODO
+  }
 }
 
 const actionReward = (reward: ActionReward) => {
