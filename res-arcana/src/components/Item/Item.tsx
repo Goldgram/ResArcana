@@ -63,7 +63,7 @@ export const Item = ({ value }: ItemProps) => {
           </div>
         ))}
       <div className='footer'>
-        {points && <div className='points bold glowTextWhite'>{points}</div>}
+        {points && <div className='points bold glowTextLight'>{points}</div>}
 
         {expansion && <div className='moon'></div>}
 
@@ -101,7 +101,7 @@ const colorUi = (
   wildRestrictions?: any
 ) => {
   return (
-    <div className={'resource bold glowTextWhite ' + className}>
+    <div className={'resource bold glowTextLight ' + className}>
       {value > 1 && <div className='resourceNumber'>{value}</div>}
       {wildRestrictions && ' W'}
     </div>
@@ -176,8 +176,8 @@ const joinUi = (divider: JSX.Element) => (array: JSX.Element[]) => {
   )
 }
 
-const plus = <div className='plus glowTextBlack'>+</div>
-const slash = <div className='slash glowTextBlack'>/</div>
+const plus = <div className='plus glowTextDark bold'>+</div>
+const slash = <div className='slash glowTextDark'>/</div>
 const joinAndUi = joinUi(plus)
 const joinOrUi = joinUi(slash)
 
@@ -222,10 +222,6 @@ const getTapSrc = (value: TapType) => {
       return demonSrc
     case 'self':
       return cardSrc
-    case 'any':
-      return anySrc
-    case 'allPlayerDemons':
-      return demonSrc // TODO
   }
 }
 

@@ -54,7 +54,7 @@ export interface ActionCost {
   wildDiscard?: boolean
 }
 
-export type TapType = Creature | 'self' | 'any' | 'allPlayerDemons'
+export type TapType = Creature | 'self'
 
 type DestroyType = Creature | 'self' | 'another-artifact' | 'any-artifact'
 
@@ -69,7 +69,7 @@ interface Discard {
 // Action Reward
 
 export interface ActionReward {
-  untap?: TapType
+  untap?: UnTapType
   gain?: Gain
   rivalsGainResources?: Resources
   reorderTopCards?: number
@@ -87,6 +87,8 @@ export interface ActionReward {
   discount?: Discount
   attack?: Attack
 }
+
+export type UnTapType = Creature | 'self' | 'any' | 'allDemons'
 
 interface Gain {
   target: 'player' | 'self' | 'any'

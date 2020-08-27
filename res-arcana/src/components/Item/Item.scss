@@ -1,10 +1,18 @@
+$border: #ad7a66;
+$text: #401708;
+
 /* generic */
 .bold {
   font-weight: bold;
 }
-.glowWhiteText {
+.glowTextLight {
   color: white;
-  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  text-shadow: -1px 0 $text, 0 1px $text, 1px 0 $text, 0 -1px $text;
+}
+
+.glowTextDark {
+  color: $text;
+  text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
 }
 
 /* item */
@@ -13,22 +21,22 @@
   width: 320px;
   min-height: 20px;
   border-radius: 12px;
-  border: 1px solid #ad7a66;
+  border: 1px solid $border;
   background-image: url('../../assets/pattern.jpg');
   background-size: cover;
-  color: #401708;
+  color: $text;
 
   .title {
     font-weight: bold;
     text-align: center;
     padding: 8px;
-    border-bottom: 1px solid #ad7a66;
+    border-bottom: 1px solid $border;
   }
 
   .imageBox {
     height: 200px;
     position: relative;
-    border-bottom: 1px solid #ad7a66;
+    border-bottom: 1px solid $border;
   }
 
   .cost {
@@ -142,20 +150,19 @@
   }
 
   .plus {
-    /* padding: 0 4px; */
     line-height: 20px;
     font-size: 20px;
   }
   .slash {
-    /* padding: 0 4px; */
-    line-height: 20px;
+    line-height: 10px;
     font-size: 40px;
+    margin-top: -6px;
   }
 
   .discount,
   .action,
   .reaction {
-    border-bottom: 1px solid #ad7a66;
+    border-bottom: 1px solid $border;
   }
 
   .footer {
@@ -240,13 +247,9 @@
   .tap {
     height: 40px;
     position: relative;
-  }
-
-  .tap.self {
-    width: 35px;
 
     .image {
-      height: 36px;
+      // height: 36px;
       transform: rotate(15deg);
     }
 
@@ -255,6 +258,29 @@
       right: 0;
       top: 6px;
       height: 30px;
+    }
+  }
+
+  .tap.self {
+    width: 35px;
+    .image {
+      height: 36px;
+    }
+  }
+  .tap.any {
+    width: 48px;
+    .image {
+      height: 36px;
+    }
+  }
+  .tap.creature,
+  .tap.dragon,
+  .tap.demon {
+    width: 54px;
+
+    .image {
+      height: 42px;
+      margin-top: -2px;
     }
   }
 }
