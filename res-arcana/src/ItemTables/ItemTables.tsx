@@ -6,7 +6,7 @@ import { MAGIC_ITEMS } from '../consts/magic-items'
 import { SCROLLS } from '../consts/scrolls'
 import { PLACES_OF_POWER } from '../consts/places-of-power'
 
-import './ItemTables.css'
+import './ItemTables.scss'
 
 export const ItemTables = () => {
   const flattenedPoP = PLACES_OF_POWER.reduce((acc: any[], pop: any) => {

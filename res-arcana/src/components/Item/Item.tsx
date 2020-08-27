@@ -21,7 +21,7 @@ import cardSrc from '../../assets/card.png'
 import anySrc from '../../assets/any-comp.png'
 import tapSrc from '../../assets/tap.png'
 
-import './Item.css'
+import './Item.scss'
 
 interface ItemProps {
   value: ItemType
@@ -63,7 +63,7 @@ export const Item = ({ value }: ItemProps) => {
           </div>
         ))}
       <div className='footer'>
-        {points && <div className='points bold glowWhiteText'>{points}</div>}
+        {points && <div className='points bold glowTextWhite'>{points}</div>}
 
         {expansion && <div className='moon'></div>}
 
@@ -101,7 +101,7 @@ const colorUi = (
   wildRestrictions?: any
 ) => {
   return (
-    <div className={'resource bold glowWhiteText ' + className}>
+    <div className={'resource bold glowTextWhite ' + className}>
       {value > 1 && <div className='resourceNumber'>{value}</div>}
       {wildRestrictions && ' W'}
     </div>
@@ -176,8 +176,8 @@ const joinUi = (divider: JSX.Element) => (array: JSX.Element[]) => {
   )
 }
 
-const plus = <div className='plus'>+</div>
-const slash = <div className='slash'>/</div>
+const plus = <div className='plus glowTextBlack'>+</div>
+const slash = <div className='slash glowTextBlack'>/</div>
 const joinAndUi = joinUi(plus)
 const joinOrUi = joinUi(slash)
 

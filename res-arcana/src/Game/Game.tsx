@@ -8,7 +8,7 @@ import { PLACES_OF_POWER } from '../consts/places-of-power'
 import { Item } from '../components/Item/Item'
 import { ItemType } from '../types/types'
 
-import './Game.css'
+import './Game.scss'
 
 export const Game = () => {
   const flattenedPoP = PLACES_OF_POWER.reduce((acc: any[], pop: any) => {
