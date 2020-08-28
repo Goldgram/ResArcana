@@ -376,4 +376,39 @@ $whiteOpacity: rgba(255, 255, 255, 0.6);
     display: flex;
     align-items: center;
   }
+
+  .wildRestrictions {
+    height: 34px;
+    display: flex;
+    align-items: flex-end;
+    font-size: 18px;
+    font-weight: normal;
+    .wildRestriction {
+      position: relative;
+      display: flex;
+      align-items: flex-end;
+      padding: 0px 1px 0 2px;
+      .image {
+        height: 20px;
+      }
+      .icon {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 8px;
+        height: 8px;
+        border: 1px solid $whiteOpacity;
+        border-radius: 5px;
+        background-color: #ca2934;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        div {
+          background-color: white;
+          height: 1px;
+          width: 4px;
+        }
+      }
+    }
+  }
 }

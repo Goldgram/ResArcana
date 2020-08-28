@@ -26,9 +26,15 @@ import tapSrc from '../../assets/tap.png'
 import thisCompSrc from '../../assets/this-comp.png'
 import discardSrc from '../../assets/discard.png'
 import equalsSrc from '../../assets/equals.png'
+import redSrc from '../../assets/red.png'
+import greenSrc from '../../assets/green.png'
+import blueSrc from '../../assets/blue.png'
+import blackSrc from '../../assets/black.png'
+import goldSrc from '../../assets/gold.png'
 // import anySrc from '../../assets/any-comp.png'
 
 import './Item.scss'
+import { readdirSync } from 'fs'
 
 interface ItemProps {
   value: ItemType
@@ -117,8 +123,21 @@ const colorUi = (discard: boolean) => (
   ].join(' ')
   return (
     <div className={classes}>
-      {value !== 1 && <div className='number'>{value}</div>}
-      {wildRestrictions && ' W'}
+      <div className='number'>{value !== 1 ? value : ''}</div>
+      {wildRestrictions && (
+        <div className='wildRestrictions'>
+          <div className='glowTextDark'>(</div>
+          {getAnd<ResourceType>(wildRestrictions).map((r) => (
+            <div className='wildRestriction'>
+              <img className='image ' src={getColorSrc(r)} alt={r} />
+              <div className='icon'>
+                <div></div>
+              </div>
+            </div>
+          ))}
+          <div className='glowTextDark'>)</div>
+        </div>
+      )}
       {discard && (
         <img className='discardIcon' src={discardSrc} alt='discard' />
       )}
@@ -131,13 +150,28 @@ const colorUi = (discard: boolean) => (
 const getColorUi = colorUi(false)
 const discardColorUi = colorUi(true)
 
+const getColorSrc = (value: ResourceType) => {
+  switch (value) {
+    case 'red':
+      return redSrc
+    case 'green':
+      return greenSrc
+    case 'blue':
+      return blueSrc
+    case 'black':
+      return blackSrc
+    case 'gold':
+      return goldSrc
+  }
+}
+
 const creaturesUi = (value: And<Creature>) => {
   const creatures = getAnd<Creature>(value)
   return <div className='creatures'>{creatures.map(creatureUi)}</div>
 }
 
 const creatureUi = (value: Creature, index: number) => {
-  const iconSrc = getCreatureIcon(value)
+  const iconSrc = getCreatureSrc(value)
   return (
     <img
       key={'creature-' + index}
@@ -148,7 +182,7 @@ const creatureUi = (value: Creature, index: number) => {
   )
 }
 
-const getCreatureIcon = (value: Creature) => {
+const getCreatureSrc = (value: Creature) => {
   switch (value) {
     case 'creature':
       return creatureSrc
