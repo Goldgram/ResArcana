@@ -19,7 +19,7 @@ const DESTRUCTION: ScrollType = {
   type: 'scroll',
   actions: [
     {
-      cost: { destroy: 'any-artifact' },
+      cost: { destroy: 'anyArtifact' },
       reward: {
         destroyedArtifactBonus: {
           wild: 1,

@@ -271,7 +271,7 @@ const SACRIFICIAL_PIT: PlaceOfPowerType = {
       cost: {
         tap: 'self',
         discard: { resources: { black: 1 } },
-        destroy: { or: ['dragon', 'creature'] }
+        destroy: 'dragonOrCreature'
       },
       reward: {
         destroyedArtifactInGold: true

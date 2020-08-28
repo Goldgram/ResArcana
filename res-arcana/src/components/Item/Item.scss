@@ -1,5 +1,6 @@
 $border: #ad7a66;
 $text: #401708;
+$whiteOpacity: rgba(255, 255, 255, 0.6);
 
 /* generic */
 .bold {
@@ -12,7 +13,8 @@ $text: #401708;
 
 .glowTextDark {
   color: $text;
-  text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+  text-shadow: -1px 0 $whiteOpacity, 0 1px $whiteOpacity, 1px 0 $whiteOpacity,
+    0 -1px $whiteOpacity;
 }
 
 /* item */
@@ -43,7 +45,6 @@ $text: #401708;
     position: absolute;
     left: 0;
     top: 0;
-    width: 28px;
     .resource {
       margin: 4px 0 0 4px;
     }
@@ -150,10 +151,12 @@ $text: #401708;
   }
 
   .plus {
+    padding: 0 2px;
     line-height: 20px;
     font-size: 20px;
   }
   .slash {
+    padding: 0 2px;
     line-height: 10px;
     font-size: 40px;
     margin-top: -6px;
@@ -281,6 +284,53 @@ $text: #401708;
     .image {
       height: 42px;
       margin-top: -2px;
+    }
+  }
+
+  .destroy {
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    &.self {
+      font-size: 14px;
+      line-height: 15px;
+    }
+    &.creature {
+      width: 118px;
+      font-size: 15px;
+      line-height: 16px;
+    }
+    &.anyArtifact {
+      width: 84px;
+      font-size: 13px;
+      line-height: 14px;
+    }
+    &.anotherArtifact,
+    &.dragonOrCreature {
+      width: 96px;
+      font-size: 13px;
+      line-height: 14px;
+    }
+
+    .thisComp {
+      position: relative;
+      width: 36px;
+      height: 40px;
+      .card {
+        position: absolute;
+        height: 36px;
+        bottom: 0;
+        left: 6px;
+      }
+      .arrow {
+        position: absolute;
+        height: 29px;
+        top: 0;
+        left: 9px;
+      }
     }
   }
 }

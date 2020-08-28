@@ -49,14 +49,19 @@ interface Reaction {
 
 export interface ActionCost {
   tap?: And<TapType>
-  destroy?: Or<DestroyType>
+  destroy?: DestroyType
   discard?: Discard
   wildDiscard?: boolean
 }
 
 export type TapType = Creature | 'self'
 
-type DestroyType = Creature | 'self' | 'another-artifact' | 'any-artifact'
+export type DestroyType =
+  | 'self'
+  | 'anotherArtifact'
+  | 'anyArtifact'
+  | 'creature'
+  | 'dragonOrCreature'
 
 interface Discard {
   resources?: Or<Resources>

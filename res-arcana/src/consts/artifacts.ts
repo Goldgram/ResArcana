@@ -474,7 +474,7 @@ const CORRUPT_ALTAR: ArtifactType = {
       }
     },
     {
-      cost: { tap: 'self', destroy: 'any-artifact' },
+      cost: { tap: 'self', destroy: 'anyArtifact' },
       reward: {
         destroyedArtifactBonus: {
           wild: 2,
@@ -701,7 +701,7 @@ const FIERY_WHIP: ArtifactType = {
     {
       cost: {
         tap: 'self',
-        destroy: 'another-artifact'
+        destroy: 'anotherArtifact'
       },
       reward: {
         destroyedArtifactBonus: {
@@ -1571,7 +1571,7 @@ const VORTEX_OF_DESTRUCTION: ArtifactType = {
     {
       cost: {
         tap: 'self',
-        destroy: 'another-artifact'
+        destroy: 'anotherArtifact'
       },
       reward: {
         destroyedArtifactBonus: {

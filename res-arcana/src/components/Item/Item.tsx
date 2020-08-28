@@ -8,7 +8,8 @@ import {
   Action,
   ActionCost,
   ActionReward,
-  TapType
+  TapType,
+  DestroyType
 } from '../../types/types'
 import { getAnd, getOr } from '../../types/functions'
 
@@ -20,6 +21,7 @@ import actionArrowSrc from '../../assets/action-arrow.png'
 import cardSrc from '../../assets/card.png'
 import anySrc from '../../assets/any-comp.png'
 import tapSrc from '../../assets/tap.png'
+import thisCompSrc from '../../assets/this-comp.png'
 
 import './Item.scss'
 
@@ -166,6 +168,7 @@ const joinUi = (divider: JSX.Element) => (array: JSX.Element[]) => {
   return (
     <div className='join'>
       {array
+        .filter((e) => !!e)
         .reduce((acc: JSX.Element[], ele, index) => {
           return index === 0 ? [ele] : acc.concat(divider, ele)
         }, [])
@@ -195,10 +198,15 @@ const actionsUi = (actions: Action[]) => {
 }
 
 const actionCost = (cost: ActionCost) => {
-  const { tap } = cost
-  const taps = tap ? getAnd<TapType>(tap) : []
+  const { tap, destroy } = cost
 
-  const costArray = [...taps.map(tapUi)]
+  const tapArray = tap ? getAnd<TapType>(tap) : []
+  const tapsElements = tapArray.map(tapUi)
+
+  const destroyArray = destroy ? [destroy] : []
+  const destroyElements = destroyArray.map(destroyUi)
+
+  const costArray = [...tapsElements, ...destroyElements]
   return joinAndUi(costArray)
 }
 
@@ -222,6 +230,51 @@ const getTapSrc = (value: TapType) => {
       return demonSrc
     case 'self':
       return cardSrc
+  }
+}
+
+const destroyUi = (value: DestroyType, index: number) => {
+  return (
+    <div key={'destroy-' + index} className={'destroy ' + value}>
+      <div className='bold glowTextDark'>{getDestroyText(value)}</div>
+      {value === 'self' && (
+        <div className='thisComp'>
+          <img className='card' src={cardSrc} alt='this component' />
+          <img className='arrow' src={thisCompSrc} alt='this component' />
+        </div>
+      )}
+    </div>
+  )
+}
+
+const getDestroyText = (value: DestroyType) => {
+  switch (value) {
+    case 'self':
+      return <>Destroy</>
+    case 'anotherArtifact':
+      return (
+        <>
+          destroy <i>another</i> of your artifacts
+        </>
+      )
+    case 'anyArtifact':
+      return (
+        <>
+          destroy <i>any</i> one of your artifacts
+        </>
+      )
+    case 'creature':
+      return (
+        <>
+          destroy one of your <i>Creatures</i>
+        </>
+      )
+    case 'dragonOrCreature':
+      return (
+        <>
+          destroy one of your <i>Dragons</i> or <i>Creatures</i>
+        </>
+      )
   }
 }
 
