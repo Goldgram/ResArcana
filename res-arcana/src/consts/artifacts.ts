@@ -382,7 +382,11 @@ const ATHANOR: ArtifactType = {
     {
       cost: {
         tap: 'self',
-        discard: { resources: { red: 6 }, targetSelf: true, wildDiscard: true }
+        discard: {
+          resources: { red: 6 },
+          resourcesOnSelf: true,
+          wildDiscard: true
+        }
       },
       reward: {
         gain: {
@@ -998,7 +1002,7 @@ const SACRIFICIAL_DAGGER: ArtifactType = {
     {
       cost: {
         destroy: 'self',
-        discard: { card: 1 }
+        discard: { aCard: true }
       },
       reward: {
         destroyedArtifactBonus: {

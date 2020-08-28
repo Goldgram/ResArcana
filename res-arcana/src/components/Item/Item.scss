@@ -20,7 +20,7 @@ $whiteOpacity: rgba(255, 255, 255, 0.6);
 /* item */
 .item {
   position: relative;
-  width: 320px;
+  width: 380px;
   min-height: 20px;
   border-radius: 12px;
   border: 1px solid $border;
@@ -69,12 +69,22 @@ $whiteOpacity: rgba(255, 255, 255, 0.6);
       align-items: center;
     }
 
-    .discard {
+    .equalsIcon {
       position: absolute;
-      bottom: -4px;
-      left: -4px;
-      width: 16px;
-      height: 16px;
+      top: 0;
+      right: -1px;
+      height: 12px;
+    }
+
+    &.discard {
+      padding-bottom: 4px;
+
+      .discardIcon {
+        position: absolute;
+        bottom: 0;
+        left: -3px;
+        height: 16px;
+      }
     }
 
     &.gold {
@@ -117,12 +127,11 @@ $whiteOpacity: rgba(255, 255, 255, 0.6);
 
   .creatures {
     position: absolute;
-    right: 0;
+    right: 5px;
     top: 2px;
 
     .creature {
-      height: 46px;
-      width: 46px;
+      height: 44px;
       display: block;
     }
   }
@@ -160,7 +169,7 @@ $whiteOpacity: rgba(255, 255, 255, 0.6);
   }
 
   .plus {
-    padding: 0 2px;
+    padding: 0 4px;
     line-height: 20px;
     font-size: 20px;
   }
@@ -323,23 +332,48 @@ $whiteOpacity: rgba(255, 255, 255, 0.6);
       font-size: 13px;
       line-height: 14px;
     }
+  }
 
-    .thisComp {
-      position: relative;
-      width: 36px;
-      height: 40px;
-      .card {
-        position: absolute;
-        height: 36px;
-        bottom: 0;
-        left: 6px;
-      }
-      .arrow {
-        position: absolute;
-        height: 29px;
-        top: 0;
-        left: 9px;
-      }
+  .thisComp {
+    position: relative;
+    width: 36px;
+    height: 40px;
+    .card {
+      position: absolute;
+      height: 36px;
+      bottom: 0;
+      left: 6px;
     }
+    .arrow {
+      position: absolute;
+      height: 29px;
+      top: 0;
+      left: 9px;
+    }
+  }
+
+  .discardAnyCreature {
+    display: flex;
+    align-items: center;
+    .discardText {
+      font-size: 14px;
+      line-height: 15px;
+      padding: 0 6px 0 1px;
+    }
+    .discardCreature {
+      height: 40px;
+    }
+  }
+
+  .discardACard {
+    width: 58px;
+    font-size: 14px;
+    line-height: 15px;
+    text-align: center;
+  }
+
+  .withThisComp {
+    display: flex;
+    align-items: center;
   }
 }

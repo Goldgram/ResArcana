@@ -25,6 +25,7 @@ import anySrc from '../../assets/any-comp.png'
 import tapSrc from '../../assets/tap.png'
 import thisCompSrc from '../../assets/this-comp.png'
 import discardSrc from '../../assets/discard.png'
+import equalsSrc from '../../assets/equals.png'
 
 import './Item.scss'
 
@@ -101,16 +102,28 @@ const costUi = (value: Resources) => {
 }
 
 const colorUi = (discard: boolean) => (
-  value: number | undefined,
+  value: number | string | undefined,
   className: string = '',
-  wildRestrictions?: any
+  wildRestrictions?: any,
+  withEquals?: boolean
 ) => {
   if (R.isNil(value)) return undefined
+
+  const classes = [
+    'resource bold glowTextLight',
+    className,
+    discard ? 'discard' : ''
+  ].join(' ')
   return (
-    <div className={'resource bold glowTextLight ' + className}>
-      {value > 1 && <div className='number'>{value}</div>}
+    <div className={classes}>
+      {value !== 1 && <div className='number'>{value}</div>}
       {wildRestrictions && ' W'}
-      {discard && <img className='discard' src={discardSrc} alt='discard' />}
+      {discard && (
+        <img className='discardIcon' src={discardSrc} alt='discard' />
+      )}
+      {withEquals && (
+        <img className='equalsIcon' src={equalsSrc} alt='equals' />
+      )}
     </div>
   )
 }
@@ -170,7 +183,7 @@ const collectUi = (value: Or<Resources>) => {
 }
 
 const joinUi = (divider: JSX.Element) => (
-  array: (JSX.Element | undefined)[]
+  array: (JSX.Element | undefined | false)[]
 ) => {
   return (
     <div className='join'>
@@ -242,15 +255,17 @@ const destroyUi = (value: DestroyType) => {
   return (
     <div key='destroy-0' className={'destroy ' + value}>
       <div className='bold glowTextDark'>{getDestroyText(value)}</div>
-      {value === 'self' && (
-        <div className='thisComp'>
-          <img className='card' src={cardSrc} alt='this component' />
-          <img className='arrow' src={thisCompSrc} alt='this component' />
-        </div>
-      )}
+      {value === 'self' && thisComp}
     </div>
   )
 }
+
+const thisComp = (
+  <div className='thisComp'>
+    <img className='card' src={cardSrc} alt='this component' />
+    <img className='arrow' src={thisCompSrc} alt='this component' />
+  </div>
+)
 
 const getDestroyText = (value: DestroyType) => {
   switch (value) {
@@ -284,17 +299,42 @@ const getDestroyText = (value: DestroyType) => {
 }
 
 const discardUi = (value: DiscardType) => {
-  const { resources } = value
+  const {
+    resources,
+    anyResources,
+    wildDiscard,
+    anyCreature,
+    aCard,
+    resourcesOnSelf
+  } = value
 
-  const resourcesElements = resources
-    ? getDiscardResources(resources)
-    : undefined
+  const discardArray = [
+    resources && getDiscardResources(resources, !!resourcesOnSelf),
+    anyResources && discardColorUi('?', 'wild'),
+    wildDiscard && discardColorUi('?', 'wild', undefined, true),
+    anyCreature && discardAnyCreature,
+    aCard && discardACard
+  ]
 
-  const discardArray = [resourcesElements]
   return joinAndUi(discardArray)
 }
 
-const getDiscardResources = (resources: Or<Resources>) => {
+const discardAnyCreature = (
+  <div className='discardAnyCreature'>
+    <div className='bold glowTextDark discardText'>discard</div>
+    {joinOrUi([
+      <img className='discardCreature' src={demonSrc} alt='demon' />,
+      <img className='discardCreature' src={dragonSrc} alt='dragon' />,
+      <img className='discardCreature' src={creatureSrc} alt='creature' />
+    ])}
+  </div>
+)
+
+const discardACard = (
+  <div className='bold glowTextDark discardACard'>discard a card</div>
+)
+
+const getDiscardResources = (resources: Or<Resources>, onSelf: boolean) => {
   const resourcesArray = resources ? getOr<Resources>(resources) : []
 
   const resourcesElements = resourcesArray.map((r) => {
@@ -308,10 +348,23 @@ const getDiscardResources = (resources: Or<Resources>) => {
       discardColorUi(wild, 'wild', wildRestrictions)
     ])
   })
-  return joinOrUi(resourcesElements)
+  const joinedElements = joinOrUi(resourcesElements)
+  return withThisComp(joinedElements, onSelf)
+}
+
+const withThisComp = (elements: JSX.Element, onSelf: boolean) => {
+  return onSelf ? (
+    <div className='withThisComp'>
+      {elements}
+      <div className='bold glowTextDark'>on</div>
+      {thisComp}
+    </div>
+  ) : (
+    elements
+  )
 }
 
 const actionReward = (reward: ActionReward) => {
-  const costArray = [<div>c</div>, <div>d</div>]
-  return joinAndUi(costArray)
+  const rewardArray = [<div>c</div>, <div>d</div>]
+  return joinAndUi(rewardArray)
 }

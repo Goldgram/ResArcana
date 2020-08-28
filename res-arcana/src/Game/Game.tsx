@@ -16,9 +16,9 @@ export const Game = () => {
   }, [])
   return (
     <>
-      <Card title='Mages' list={MAGES} initIndex={0} />
+      <Card title='Mages' list={MAGES} initIndex={10} />
       <br />
-      <Card title='Arfitacts' list={ARTIFACTS} initIndex={0} />
+      <Card title='Arfitacts' list={ARTIFACTS} initIndex={12} />
       <br />
       <Card title='Monuments' list={MONUMENTS} initIndex={0} />
       <br />

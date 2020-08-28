@@ -235,9 +235,7 @@ const BARD: MageType = {
     {
       cost: {
         tap: 'self',
-        discard: {
-          creature: { or: ['dragon', 'creature', 'demon'] }
-        }
+        discard: { anyCreature: true }
       },
       reward: {
         gain: {

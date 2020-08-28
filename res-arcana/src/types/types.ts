@@ -64,11 +64,11 @@ export type DestroyType =
 
 export interface DiscardType {
   resources?: Or<Resources>
-  anyResources?: true
-  creature?: Or<Creature>
-  card?: number
-  targetSelf?: boolean
+  resourcesOnSelf?: boolean
+  anyResources?: boolean
   wildDiscard?: boolean
+  anyCreature?: boolean
+  aCard?: boolean
 }
 
 // Action Reward
