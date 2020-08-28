@@ -382,8 +382,7 @@ const ATHANOR: ArtifactType = {
     {
       cost: {
         tap: 'self',
-        discard: { resources: { red: 6 }, targetSelf: true },
-        wildDiscard: true
+        discard: { resources: { red: 6 }, targetSelf: true, wildDiscard: true }
       },
       reward: {
         gain: {
@@ -894,8 +893,7 @@ const PHILOSOPHERS_STONE: ArtifactType = {
     {
       cost: {
         tap: 'self',
-        discard: { resources: { wild: 2 } },
-        wildDiscard: true
+        discard: { resources: { wild: 2 }, wildDiscard: true }
       },
       reward: {
         gain: {
@@ -926,7 +924,7 @@ const PRISM: ArtifactType = {
       }
     },
     {
-      cost: { tap: 'self', wildDiscard: true },
+      cost: { tap: 'self', discard: { wildDiscard: true } },
       reward: {
         gain: {
           target: 'player',

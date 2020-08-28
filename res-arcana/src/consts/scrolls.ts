@@ -55,7 +55,7 @@ const PROJECTION: ScrollType = {
   type: 'scroll',
   actions: [
     {
-      cost: { wildDiscard: true },
+      cost: { discard: { wildDiscard: true } },
       reward: {
         gain: {
           target: 'player',
@@ -102,9 +102,7 @@ const TRANSFORM: ScrollType = {
   type: 'scroll',
   actions: [
     {
-      cost: {
-        wildDiscard: true
-      },
+      cost: { discard: { wildDiscard: true } },
       reward: {
         gain: {
           target: 'player',

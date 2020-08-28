@@ -9,7 +9,8 @@ import {
   ActionCost,
   ActionReward,
   TapType,
-  DestroyType
+  DestroyType,
+  DiscardType
 } from '../../types/types'
 import { getAnd, getOr } from '../../types/functions'
 
@@ -198,15 +199,16 @@ const actionsUi = (actions: Action[]) => {
 }
 
 const actionCost = (cost: ActionCost) => {
-  const { tap, destroy } = cost
+  const { tap, destroy, discard } = cost
 
   const tapArray = tap ? getAnd<TapType>(tap) : []
   const tapsElements = tapArray.map(tapUi)
 
-  const destroyArray = destroy ? [destroy] : []
-  const destroyElements = destroyArray.map(destroyUi)
+  const destroyElements = destroy ? [destroyUi(destroy)] : []
 
-  const costArray = [...tapsElements, ...destroyElements]
+  const discardElements = discard ? [discardUi(discard)] : []
+
+  const costArray = [...tapsElements, ...destroyElements, ...discardElements]
   return joinAndUi(costArray)
 }
 
@@ -233,9 +235,9 @@ const getTapSrc = (value: TapType) => {
   }
 }
 
-const destroyUi = (value: DestroyType, index: number) => {
+const destroyUi = (value: DestroyType) => {
   return (
-    <div key={'destroy-' + index} className={'destroy ' + value}>
+    <div key='destroy-0' className={'destroy ' + value}>
       <div className='bold glowTextDark'>{getDestroyText(value)}</div>
       {value === 'self' && (
         <div className='thisComp'>
@@ -276,6 +278,10 @@ const getDestroyText = (value: DestroyType) => {
         </>
       )
   }
+}
+
+const discardUi = (value: DiscardType) => {
+  return <>AAAAAAABBBBBBCCCCC</>
 }
 
 const actionReward = (reward: ActionReward) => {

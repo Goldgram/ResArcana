@@ -50,8 +50,7 @@ interface Reaction {
 export interface ActionCost {
   tap?: And<TapType>
   destroy?: DestroyType
-  discard?: Discard
-  wildDiscard?: boolean
+  discard?: DiscardType
 }
 
 export type TapType = Creature | 'self'
@@ -63,12 +62,13 @@ export type DestroyType =
   | 'creature'
   | 'dragonOrCreature'
 
-interface Discard {
+export interface DiscardType {
   resources?: Or<Resources>
   anyResources?: true
   creature?: Or<Creature>
   card?: number
   targetSelf?: boolean
+  wildDiscard?: boolean
 }
 
 // Action Reward
