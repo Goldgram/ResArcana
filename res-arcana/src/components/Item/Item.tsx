@@ -11,7 +11,8 @@ import {
   ActionReward,
   TapType,
   DestroyType,
-  DiscardType
+  DiscardType,
+  ResourceType
 } from '../../types/types'
 import { getAnd, getOr } from '../../types/functions'
 
@@ -21,11 +22,11 @@ import creatureSrc from '../../assets/creature.png'
 import collectIconSrc from '../../assets/collect.png'
 import actionArrowSrc from '../../assets/action-arrow.png'
 import cardSrc from '../../assets/card.png'
-import anySrc from '../../assets/any-comp.png'
 import tapSrc from '../../assets/tap.png'
 import thisCompSrc from '../../assets/this-comp.png'
 import discardSrc from '../../assets/discard.png'
 import equalsSrc from '../../assets/equals.png'
+// import anySrc from '../../assets/any-comp.png'
 
 import './Item.scss'
 
@@ -104,7 +105,7 @@ const costUi = (value: Resources) => {
 const colorUi = (discard: boolean) => (
   value: number | string | undefined,
   className: string = '',
-  wildRestrictions?: any,
+  wildRestrictions?: And<ResourceType>,
   withEquals?: boolean
 ) => {
   if (R.isNil(value)) return undefined

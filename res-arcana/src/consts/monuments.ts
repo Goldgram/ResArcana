@@ -62,7 +62,7 @@ const GREAT_PYRAMID: MonumentType = {
 
 const HANGING_GARDENS: MonumentType = {
   id: 'monument-4',
-  title: 'hanging Gardens',
+  title: 'Hanging Gardens',
   type: 'monument',
   cost: { gold: 4 },
   points: 1,

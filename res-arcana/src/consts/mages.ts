@@ -229,7 +229,7 @@ const WITCH: MageType = {
 
 const BARD: MageType = {
   id: 'mage-11',
-  title: 'bard',
+  title: 'Bard',
   type: 'mage',
   actions: [
     {

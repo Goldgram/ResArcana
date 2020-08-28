@@ -2,7 +2,7 @@
 
 export type Creature = 'dragon' | 'creature' | 'demon'
 
-type ResourceType = 'red' | 'green' | 'blue' | 'black' | 'gold'
+export type ResourceType = 'red' | 'green' | 'blue' | 'black' | 'gold'
 
 export interface _And<T> {
   and: T[]
