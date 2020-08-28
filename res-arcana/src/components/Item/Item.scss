@@ -51,59 +51,68 @@ $whiteOpacity: rgba(255, 255, 255, 0.6);
   }
 
   .resource {
-    height: 40px;
-    min-width: 40px;
+    position: relative;
+    height: 36px;
+    min-width: 36px;
     display: flex;
     justify-content: center;
     align-items: center;
     background-repeat: no-repeat;
-    background-size: 40px 40px;
+    background-size: 36px 36px;
     background-position: left top;
-  }
 
-  .resourceNumber {
-    height: 40px;
-    width: 40px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+    .number {
+      height: 36px;
+      width: 36px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
 
-  .gold {
-    background-image: url('../../assets/gold.png');
-  }
+    .discard {
+      position: absolute;
+      bottom: -4px;
+      left: -4px;
+      width: 16px;
+      height: 16px;
+    }
 
-  .wild {
-    background-image: url('../../assets/wild.png');
-  }
+    &.gold {
+      background-image: url('../../assets/gold.png');
+    }
 
-  .red {
-    background-image: url('../../assets/red.png');
-  }
+    &.wild {
+      background-image: url('../../assets/wild.png');
+    }
 
-  .green {
-    background-image: url('../../assets/green.png');
-  }
+    &.red {
+      background-image: url('../../assets/red.png');
+    }
 
-  .blue {
-    background-image: url('../../assets/blue.png');
-  }
+    &.green {
+      background-image: url('../../assets/green.png');
+    }
 
-  .black {
-    background-image: url('../../assets/black.png');
-  }
+    &.blue {
+      background-image: url('../../assets/blue.png');
+    }
 
-  .red .resourceNumber,
-  .green .resourceNumber,
-  .blue .resourceNumber {
-    padding-top: 9px;
-  }
-  .black .resourceNumber {
-    padding-top: 7px;
-  }
-  .gold .resourceNumber,
-  .wild .resourceNumber {
-    padding-top: 6px;
+    &.black {
+      background-image: url('../../assets/black.png');
+    }
+
+    &.red .number,
+    &.green .number,
+    &.blue .number {
+      padding-top: 9px;
+    }
+    &.black .number {
+      padding-top: 7px;
+    }
+    &.gold .number,
+    &.wild .number {
+      padding-top: 4px;
+    }
   }
 
   .creatures {

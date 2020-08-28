@@ -1,4 +1,5 @@
 import React, { isValidElement } from 'react'
+import * as R from 'ramda'
 import {
   And,
   Or,
@@ -23,6 +24,7 @@ import cardSrc from '../../assets/card.png'
 import anySrc from '../../assets/any-comp.png'
 import tapSrc from '../../assets/tap.png'
 import thisCompSrc from '../../assets/this-comp.png'
+import discardSrc from '../../assets/discard.png'
 
 import './Item.scss'
 
@@ -82,34 +84,38 @@ export const Item = ({ value }: ItemProps) => {
 
 const costUi = (value: Resources) => {
   if (!Object.keys(value).length) {
-    return <div className='cost'>{colorUi(0)}</div>
+    return <div className='cost'>{getColorUi(0)}</div>
   }
 
   const { gold, wild, red, green, blue, black } = value
   return (
     <div className='cost'>
-      {gold && colorUi(gold, 'gold')}
-      {wild && colorUi(wild, 'wild')}
-      {red && colorUi(red, 'red')}
-      {green && colorUi(green, 'green')}
-      {blue && colorUi(blue, 'blue')}
-      {black && colorUi(black, 'black')}
+      {gold && getColorUi(gold, 'gold')}
+      {wild && getColorUi(wild, 'wild')}
+      {red && getColorUi(red, 'red')}
+      {green && getColorUi(green, 'green')}
+      {blue && getColorUi(blue, 'blue')}
+      {black && getColorUi(black, 'black')}
     </div>
   )
 }
 
-const colorUi = (
-  value: number,
+const colorUi = (discard: boolean) => (
+  value: number | undefined,
   className: string = '',
   wildRestrictions?: any
 ) => {
+  if (R.isNil(value)) return undefined
   return (
     <div className={'resource bold glowTextLight ' + className}>
-      {value > 1 && <div className='resourceNumber'>{value}</div>}
+      {value > 1 && <div className='number'>{value}</div>}
       {wildRestrictions && ' W'}
+      {discard && <img className='discard' src={discardSrc} alt='discard' />}
     </div>
   )
 }
+const getColorUi = colorUi(false)
+const discardColorUi = colorUi(true)
 
 const creaturesUi = (value: And<Creature>) => {
   const creatures = getAnd<Creature>(value)
@@ -144,16 +150,14 @@ const getCreatureIcon = (value: Creature) => {
 const collectUi = (value: Or<Resources>) => {
   const resources = getOr<Resources>(value).map((r, index) => {
     const { gold, red, green, blue, black, wild, wildRestrictions } = r
-    return joinAndUi(
-      [
-        gold && colorUi(gold, 'gold'),
-        blue && colorUi(blue, 'blue'),
-        green && colorUi(green, 'green'),
-        black && colorUi(black, 'black'),
-        red && colorUi(red, 'red'),
-        wild && colorUi(wild, 'wild', wildRestrictions)
-      ].filter(isValidElement)
-    )
+    return joinAndUi([
+      getColorUi(gold, 'gold'),
+      getColorUi(blue, 'blue'),
+      getColorUi(green, 'green'),
+      getColorUi(black, 'black'),
+      getColorUi(red, 'red'),
+      getColorUi(wild, 'wild', wildRestrictions)
+    ])
   })
   return (
     <div className='collect'>
@@ -165,11 +169,13 @@ const collectUi = (value: Or<Resources>) => {
   )
 }
 
-const joinUi = (divider: JSX.Element) => (array: JSX.Element[]) => {
+const joinUi = (divider: JSX.Element) => (
+  array: (JSX.Element | undefined)[]
+) => {
   return (
     <div className='join'>
       {array
-        .filter((e) => !!e)
+        .filter(isValidElement)
         .reduce((acc: JSX.Element[], ele, index) => {
           return index === 0 ? [ele] : acc.concat(divider, ele)
         }, [])
@@ -201,11 +207,8 @@ const actionsUi = (actions: Action[]) => {
 const actionCost = (cost: ActionCost) => {
   const { tap, destroy, discard } = cost
 
-  const tapArray = tap ? getAnd<TapType>(tap) : []
-  const tapsElements = tapArray.map(tapUi)
-
+  const tapsElements = tap ? getAnd<TapType>(tap).map(tapUi) : []
   const destroyElements = destroy ? [destroyUi(destroy)] : []
-
   const discardElements = discard ? [discardUi(discard)] : []
 
   const costArray = [...tapsElements, ...destroyElements, ...discardElements]
@@ -281,7 +284,31 @@ const getDestroyText = (value: DestroyType) => {
 }
 
 const discardUi = (value: DiscardType) => {
-  return <>AAAAAAABBBBBBCCCCC</>
+  const { resources } = value
+
+  const resourcesElements = resources
+    ? getDiscardResources(resources)
+    : undefined
+
+  const discardArray = [resourcesElements]
+  return joinAndUi(discardArray)
+}
+
+const getDiscardResources = (resources: Or<Resources>) => {
+  const resourcesArray = resources ? getOr<Resources>(resources) : []
+
+  const resourcesElements = resourcesArray.map((r) => {
+    const { gold, red, green, blue, black, wild, wildRestrictions } = r
+    return joinAndUi([
+      discardColorUi(gold, 'gold'),
+      discardColorUi(blue, 'blue'),
+      discardColorUi(green, 'green'),
+      discardColorUi(black, 'black'),
+      discardColorUi(red, 'red'),
+      discardColorUi(wild, 'wild', wildRestrictions)
+    ])
+  })
+  return joinOrUi(resourcesElements)
 }
 
 const actionReward = (reward: ActionReward) => {
