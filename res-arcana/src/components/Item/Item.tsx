@@ -92,18 +92,26 @@ export const Item = ({ value }: ItemProps) => {
 
 const costUi = (value: Resources) => {
   if (!Object.keys(value).length) {
-    return <div className='cost'>{getColorUi(0)}</div>
+    return (
+      <div className='cost'>
+        <div className='resources'>{getColorUi(0, 'zero')}</div>
+        <div className='triangle'></div>
+      </div>
+    )
   }
 
   const { gold, wild, red, green, blue, black } = value
   return (
     <div className='cost'>
-      {gold && getColorUi(gold, 'gold')}
-      {wild && getColorUi(wild, 'wild')}
-      {red && getColorUi(red, 'red')}
-      {green && getColorUi(green, 'green')}
-      {blue && getColorUi(blue, 'blue')}
-      {black && getColorUi(black, 'black')}
+      <div className='resources'>
+        {gold && getColorUi(gold, 'gold')}
+        {wild && getColorUi(wild, 'wild')}
+        {red && getColorUi(red, 'red')}
+        {green && getColorUi(green, 'green')}
+        {blue && getColorUi(blue, 'blue')}
+        {black && getColorUi(black, 'black')}
+      </div>
+      <div className='triangle'></div>
     </div>
   )
 }
