@@ -17,6 +17,10 @@ $whiteOpacity: rgba(255, 255, 255, 0.6);
     0 -1px $whiteOpacity;
 }
 
+.sidePadding2 {
+  padding: 0 2px;
+}
+
 /* item */
 .item {
   position: relative;
@@ -443,19 +447,19 @@ $whiteOpacity: rgba(255, 255, 255, 0.6);
 
   .thisComp {
     position: relative;
-    width: 36px;
+    width: 32px;
     height: 40px;
     .card {
       position: absolute;
       height: 36px;
       bottom: 0;
-      left: 6px;
+      left: 2px;
     }
     .thisArrow {
       position: absolute;
       height: 29px;
       top: 0;
-      left: 9px;
+      left: 5px;
     }
   }
 

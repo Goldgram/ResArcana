@@ -289,7 +289,7 @@ const WARRIORS_HALL: MonumentType = {
           resources: { red: 1 },
           target: 'player'
         },
-        rivalsGainResources: { red: 1 }
+        rivalsGainResource: 'red'
       }
     }
   ],

@@ -76,7 +76,7 @@ export interface DiscardType {
 export interface ActionReward {
   unTap?: UnTapType
   gain?: Gain
-  rivalsGainResources?: Resources
+  rivalsGainResource?: ResourceType
   reorderTopCards?: number
   drawCards?: number
   drawAndDiscard?: [number, number]

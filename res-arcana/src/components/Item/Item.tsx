@@ -287,7 +287,9 @@ const tapUi = (value: TapType, index: number) => {
 const destroyUi = (value: DestroyType) => {
   return (
     <div key='destroy-0' className={'destroy ' + value}>
-      <div className='bold glowTextDark'>{getDestroyText(value)}</div>
+      <div className='bold glowTextDark sidePadding2'>
+        {getDestroyText(value)}
+      </div>
       {value === 'self' && thisComp}
     </div>
   )
@@ -389,7 +391,7 @@ const withThisComp = (elements: JSX.Element, onSelf: boolean) => {
   return onSelf ? (
     <div className='withThisComp'>
       {elements}
-      <div className='bold glowTextDark'>on</div>
+      <div className='bold glowTextDark sidePadding2'>on</div>
       {thisComp}
     </div>
   ) : (
@@ -398,12 +400,14 @@ const withThisComp = (elements: JSX.Element, onSelf: boolean) => {
 }
 
 const actionReward = (reward: ActionReward) => {
-  const { unTap, gain, rivalsGainResources } = reward
+  const { unTap, gain, rivalsGainResource } = reward
+
+  const gainElements = gain ? getGain(gain) : []
 
   const rewardArray = [
     unTap && unTapUi(unTap),
-    gain && getGain(gain),
-    rivalsGainResources && getrivalsGain(rivalsGainResources)
+    ...gainElements,
+    rivalsGainResource && getRivalsGain(rivalsGainResource)
   ]
   return joinAndUi(rewardArray)
 }
@@ -453,9 +457,26 @@ const getTapSrc = (value: TapType | UnTapType) => {
 }
 
 const getGain = (value: Gain) => {
-  return <div>gain</div>
+  const { resources, target } = value
+  return [
+    resources && getGainResources(resources, target === 'self')
+    // <div>gain other</div>
+  ]
 }
 
-const getrivalsGain = (value: Resources) => {
+const getGainResources = (resources: Resources, onSelf: boolean) => {
+  const { gold, red, green, blue, black, wild, wildRestrictions } = resources
+  const joinedElements = joinAndUi([
+    getColorUi(gold, 'gold'),
+    getColorUi(blue, 'blue'),
+    getColorUi(green, 'green'),
+    getColorUi(black, 'black'),
+    getColorUi(red, 'red'),
+    getColorUi(wild, 'wild', wildRestrictions)
+  ])
+  return withThisComp(joinedElements, onSelf)
+}
+
+const getRivalsGain = (value: ResourceType) => {
   return <div>rivals gain</div>
 }

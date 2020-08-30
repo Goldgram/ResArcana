@@ -69,7 +69,7 @@ const HAND_OF_GLORY: ArtifactType = {
           resources: { black: 2 },
           target: 'player'
         },
-        rivalsGainResources: { black: 1 }
+        rivalsGainResource: 'black'
       }
     }
   ],
@@ -232,7 +232,7 @@ const TREE_OF_LIFE: ArtifactType = {
           resources: { green: 3 },
           target: 'player'
         },
-        rivalsGainResources: { green: 1 }
+        rivalsGainResource: 'green'
       }
     }
   ],
@@ -698,7 +698,7 @@ const FIERY_WHIP: ArtifactType = {
       cost: { tap: 'self' },
       reward: {
         gain: { resources: { red: 3 }, target: 'player' },
-        rivalsGainResources: { red: 1 }
+        rivalsGainResource: 'red'
       }
     },
     {
@@ -816,7 +816,7 @@ const JEWELED_STATUETTE: ArtifactType = {
           resources: { black: 3 },
           target: 'player'
         },
-        rivalsGainResources: { black: 1 }
+        rivalsGainResource: 'black'
       }
     },
     {
