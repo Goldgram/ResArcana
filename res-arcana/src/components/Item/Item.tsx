@@ -12,7 +12,9 @@ import {
   TapType,
   DestroyType,
   DiscardType,
-  ResourceType
+  ResourceType,
+  UnTapType,
+  Gain
 } from '../../types/types'
 import { getAnd, getOr } from '../../types/functions'
 
@@ -23,6 +25,7 @@ import collectIconSrc from '../../assets/collect.png'
 import actionArrowSrc from '../../assets/action-arrow.png'
 import cardSrc from '../../assets/card.png'
 import tapSrc from '../../assets/tap.png'
+import unTapSrc from '../../assets/unTap.png'
 import thisCompSrc from '../../assets/this-comp.png'
 import discardSrc from '../../assets/discard.png'
 import equalsSrc from '../../assets/equals.png'
@@ -31,10 +34,10 @@ import greenSrc from '../../assets/green.png'
 import blueSrc from '../../assets/blue.png'
 import blackSrc from '../../assets/black.png'
 import goldSrc from '../../assets/gold.png'
-// import anySrc from '../../assets/any-comp.png'
+import anySrc from '../../assets/any-comp.png'
+import anyReverseSrc from '../../assets/any-comp-reverse.png'
 
 import './Item.scss'
-import { readdirSync } from 'fs'
 
 interface ItemProps {
   value: ItemType
@@ -135,8 +138,8 @@ const colorUi = (discard: boolean) => (
       {wildRestrictions && (
         <div className='wildRestrictions'>
           <div className='glowTextDark'>(</div>
-          {getAnd<ResourceType>(wildRestrictions).map((r) => (
-            <div className='wildRestriction'>
+          {getAnd<ResourceType>(wildRestrictions).map((r, i) => (
+            <div key={'restriction' + i} className='wildRestriction'>
               <img className='image ' src={getColorSrc(r)} alt={r} />
               <div className='icon'>
                 <div></div>
@@ -263,11 +266,11 @@ const actionsUi = (actions: Action[]) => {
 const actionCost = (cost: ActionCost) => {
   const { tap, destroy, discard } = cost
 
-  const tapsElements = tap ? getAnd<TapType>(tap).map(tapUi) : []
+  const tapElements = tap ? getAnd<TapType>(tap).map(tapUi) : []
   const destroyElements = destroy ? [destroyUi(destroy)] : []
   const discardElements = discard ? [discardUi(discard)] : []
 
-  const costArray = [...tapsElements, ...destroyElements, ...discardElements]
+  const costArray = [...tapElements, ...destroyElements, ...discardElements]
   return joinAndUi(costArray)
 }
 
@@ -276,22 +279,9 @@ const tapUi = (value: TapType, index: number) => {
   return (
     <div key={'tap-' + index} className={'tap ' + value}>
       <img className='image' src={imgSrc} alt={value} />
-      <img className='tapArrow' src={tapSrc} alt={value} />
+      <img className='arrow' src={tapSrc} alt={value} />
     </div>
   )
-}
-
-const getTapSrc = (value: TapType) => {
-  switch (value) {
-    case 'creature':
-      return creatureSrc
-    case 'dragon':
-      return dragonSrc
-    case 'demon':
-      return demonSrc
-    case 'self':
-      return cardSrc
-  }
 }
 
 const destroyUi = (value: DestroyType) => {
@@ -306,7 +296,7 @@ const destroyUi = (value: DestroyType) => {
 const thisComp = (
   <div className='thisComp'>
     <img className='card' src={cardSrc} alt='this component' />
-    <img className='arrow' src={thisCompSrc} alt='this component' />
+    <img className='thisArrow' src={thisCompSrc} alt='this component' />
   </div>
 )
 
@@ -408,6 +398,64 @@ const withThisComp = (elements: JSX.Element, onSelf: boolean) => {
 }
 
 const actionReward = (reward: ActionReward) => {
-  const rewardArray = [<div>c</div>, <div>d</div>]
+  const { unTap, gain, rivalsGainResources } = reward
+
+  const rewardArray = [
+    unTap && unTapUi(unTap),
+    gain && getGain(gain),
+    rivalsGainResources && getrivalsGain(rivalsGainResources)
+  ]
   return joinAndUi(rewardArray)
+}
+
+const unTapUi = (value: UnTapType) => {
+  const imgSrc = getTapSrc(value)
+  return (
+    <div className={'unTap ' + value}>
+      <img className='image' src={imgSrc} alt={value} />
+      {value === 'self' && [
+        <img
+          key='self0'
+          className='thisArrow'
+          src={thisCompSrc}
+          alt='this component'
+        />,
+        <div key='self1' className='bold glowTextDark text'>
+          (when this card is turned)
+        </div>
+      ]}
+      {value === 'allDemons' && [
+        <div key='demons0' className='bold glowTextDark'>
+          All players'
+        </div>,
+        <img key='demons1' className='image2' src={imgSrc} alt='demon2' />,
+        <img key='demons2' className='image3' src={imgSrc} alt='demon3' />
+      ]}
+      <img className='arrow' src={unTapSrc} alt={value} />
+    </div>
+  )
+}
+
+const getTapSrc = (value: TapType | UnTapType) => {
+  switch (value) {
+    case 'creature':
+      return creatureSrc
+    case 'dragon':
+      return dragonSrc
+    case 'demon':
+    case 'allDemons':
+      return demonSrc
+    case 'self':
+      return cardSrc
+    case 'any':
+      return anyReverseSrc
+  }
+}
+
+const getGain = (value: Gain) => {
+  return <div>gain</div>
+}
+
+const getrivalsGain = (value: Resources) => {
+  return <div>rivals gain</div>
 }

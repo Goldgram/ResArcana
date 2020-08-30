@@ -445,7 +445,7 @@ const CHALICE_OF_FIRE: ArtifactType = {
         }
       },
       reward: {
-        untap: 'any'
+        unTap: 'any'
       }
     }
   ]
@@ -728,7 +728,7 @@ const GUARD_DOG: ArtifactType = {
     {
       cost: { discard: { resources: { red: 1 } } },
       reward: {
-        untap: 'self'
+        unTap: 'self'
       }
     }
   ],
@@ -1153,7 +1153,7 @@ const CHAOS_IMP: ArtifactType = {
         }
       },
       reward: {
-        untap: 'demon'
+        unTap: 'demon'
       }
     },
     {

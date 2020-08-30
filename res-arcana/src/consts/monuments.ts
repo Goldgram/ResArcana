@@ -264,7 +264,7 @@ const DEMON_WORKSHOP: MonumentType = {
         }
       },
       reward: {
-        untap: 'any'
+        unTap: 'any'
       }
     }
   ],

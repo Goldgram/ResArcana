@@ -433,7 +433,7 @@ const TEMPLE_OF_THE_ABYSS: PlaceOfPowerType = {
   actions: [
     {
       cost: { tap: 'self', discard: { resources: { green: 2 } } },
-      reward: { untap: 'allDemons' }
+      reward: { unTap: 'allDemons' }
     },
     {
       cost: { discard: { resources: { blue: 2, black: 2 } } },

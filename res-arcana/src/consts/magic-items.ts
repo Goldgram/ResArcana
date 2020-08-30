@@ -63,7 +63,7 @@ const REANIMATE: MagicItemType = {
   actions: [
     {
       cost: { tap: 'self', discard: { resources: { wild: 1 } } },
-      reward: { untap: 'any' }
+      reward: { unTap: 'any' }
     }
   ]
 }

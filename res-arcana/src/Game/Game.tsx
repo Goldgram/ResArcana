@@ -16,13 +16,13 @@ export const Game = () => {
   }, [])
   return (
     <>
-      <Card title='Mages' list={MAGES} initIndex={0} />
+      <Card title='Mages' list={MAGES} initIndex={5} />
       <br />
-      <Card title='Arfitacts' list={ARTIFACTS} initIndex={7} />
+      <Card title='Arfitacts' list={ARTIFACTS} initIndex={25} />
       <br />
-      <Card title='Monuments' list={MONUMENTS} initIndex={3} />
+      <Card title='Monuments' list={MONUMENTS} initIndex={12} />
       <br />
-      <Card title='Places of Power' list={flattenedPoP} initIndex={0} />
+      <Card title='Places of Power' list={flattenedPoP} initIndex={12} />
     </>
   )
 }

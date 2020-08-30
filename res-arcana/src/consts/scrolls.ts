@@ -123,7 +123,7 @@ const VITALITY: ScrollType = {
   actions: [
     {
       cost: { discard: { resources: { red: 2 } } },
-      reward: { untap: 'any' }
+      reward: { unTap: 'any' }
     }
   ],
   expansion: 1

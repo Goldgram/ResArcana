@@ -138,7 +138,7 @@ const DRUID: MageType = {
   actions: [
     {
       cost: { tap: 'self' },
-      reward: { untap: 'creature' }
+      reward: { unTap: 'creature' }
     }
   ]
 }
@@ -220,7 +220,7 @@ const WITCH: MageType = {
           }
         }
       },
-      reward: { untap: 'any' }
+      reward: { unTap: 'any' }
     }
   ]
 }
@@ -326,7 +326,7 @@ const DEMONOLOGIST: MageType = {
         tap: 'self'
       },
       reward: {
-        untap: 'demon'
+        unTap: 'demon'
       }
     }
   ],

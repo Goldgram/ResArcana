@@ -74,7 +74,7 @@ export interface DiscardType {
 // Action Reward
 
 export interface ActionReward {
-  untap?: UnTapType
+  unTap?: UnTapType
   gain?: Gain
   rivalsGainResources?: Resources
   reorderTopCards?: number
@@ -95,7 +95,7 @@ export interface ActionReward {
 
 export type UnTapType = Creature | 'self' | 'any' | 'allDemons'
 
-interface Gain {
+export interface Gain {
   target: 'player' | 'self' | 'any'
   resources?: Resources
   equalToRival?: [ResourceType, ResourceType | Creature]
